@@ -4,12 +4,12 @@ var id: String
 var choices: Array[Choice]
 var prompt: String
 
-func _init(_id: String, _choices: Array, _prompt: String):
+func _init(_id: String, _choices: Array[Choice], _prompt: String):
 	id = _id
 	choices = _choices
-	_prompt = prompt
+	prompt = _prompt
 
 func _select_choice(index: int):
-	print(choices[index].meter_changes)
+	return choices[index]
 	
 	
