@@ -1,0 +1,9 @@
+extends Node
+
+enum Meters {
+	CYBER_KNOWLEDGE,
+	DEVICE_HEALTH,
+	DATA_SECURITY,
+	SOCIAL_TRUST,
+	STRESS
+}
