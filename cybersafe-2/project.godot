@@ -11,18 +11,29 @@ config_version=5
 [application]
 
 config/name="CyberSafe 2"
-run/main_scene="uid://cjail0e0m4pxq"
+run/main_scene="uid://imdm81b51di2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Constants="*res://constants.gd"
+Stores="*res://stores.gd"
+Player="*res://player.gd"
+SceneTransition="*res://Scenes/scene_transition.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
+window/size/window_width_override=1910
+window/size/window_height_override=1070
+
+[gui]
+
+theme/quality/msaa_2d=0
+theme/size/mode=0
 
 [rendering]
 

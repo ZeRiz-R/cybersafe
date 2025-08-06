@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cike150wbqadn"]
+
+[ext_resource type="Script" uid="uid://o5s0bfe7485s" path="res://meter_bar.gd" id="1_aoe8o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoe8o"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.2, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xig56"]
+content_margin_left = 5.0
+bg_color = Color(7.87419e-05, 0.0225575, 0.182548, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pe2g"]
+bg_color = Color(0.25831, 0.713878, 0, 1)
+skew = Vector2(0.2, 0)
+border_color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 629.0
+offset_bottom = 65.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_aoe8o")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aoe8o")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_xig56")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2pe2g")
+value = 49.2
+show_percentage = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PanelContainer/ProgressBar"]
+visible = false

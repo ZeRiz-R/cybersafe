@@ -1,0 +1,184 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgsspealiduw6"]
+
+[ext_resource type="Script" uid="uid://npar8e0nojeh" path="res://Scenes/make_decision.gd" id="1_epanq"]
+[ext_resource type="PackedScene" uid="uid://bv2ma7godj7ip" path="res://choice_button_ctrl.tscn" id="2_fbwvq"]
+[ext_resource type="Texture2D" uid="uid://23vvi8bwketw" path="res://Assets/qMark2.png" id="3_fbwvq"]
+[ext_resource type="PackedScene" uid="uid://bsd3q418acec5" path="res://floating.tscn" id="4_kxkcy"]
+
+[sub_resource type="Animation" id="Animation_kxkcy"]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChoiceButtons:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QMark2:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QMark2:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fde4v"]
+resource_name = "transition_in"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChoiceButtons:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0, 0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0.1, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QMark2:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(698.21, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QMark2:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uc8vf"]
+_data = {
+&"RESET": SubResource("Animation_kxkcy"),
+&"transition_in": SubResource("Animation_fde4v")
+}
+
+[node name="MakeDecision" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_epanq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.862745)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 69.0
+offset_bottom = 31.0
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "CLOSED"
+
+[node name="ChoiceButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -44.52
+offset_right = 40.0
+offset_bottom = -4.52
+rotation = 1.5708
+metadata/_edit_use_anchors_ = true
+
+[node name="ChoiceButton" parent="ChoiceButtons" instance=ExtResource("2_fbwvq")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.303646
+anchor_top = 0.325
+anchor_right = 0.303646
+anchor_bottom = 0.325
+offset_left = 570.854
+offset_top = 338.0
+offset_right = 570.854
+offset_bottom = 338.0
+rotation = 0.0698132
+float_speed = 0.575
+metadata/_edit_use_anchors_ = true
+
+[node name="ChoiceButton2" parent="ChoiceButtons" instance=ExtResource("2_fbwvq")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375521
+anchor_top = 0.537963
+anchor_right = 0.375521
+anchor_bottom = 0.537963
+offset_left = 705.979
+offset_top = 559.482
+offset_right = 705.979
+offset_bottom = 559.482
+rotation = 0.0698132
+float_radius = -25.335
+float_speed = 0.645
+metadata/_edit_use_anchors_ = true
+
+[node name="ChoiceButton3" parent="ChoiceButtons" instance=ExtResource("2_fbwvq")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.448437
+anchor_top = 0.752778
+anchor_right = 0.448437
+anchor_bottom = 0.752778
+offset_left = 843.062
+offset_top = 782.889
+offset_right = 843.062
+offset_bottom = 782.889
+rotation = 0.0698132
+float_radius = -19.82
+float_speed = 0.595
+metadata/_edit_use_anchors_ = true
+
+[node name="QMark2" type="Sprite2D" parent="."]
+position = Vector2(1521, 514)
+texture = ExtResource("3_fbwvq")
+
+[node name="Floating" parent="QMark2" instance=ExtResource("4_kxkcy")]
+float_radius = 25.745
+float_speed = 0.63
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uc8vf")
+}

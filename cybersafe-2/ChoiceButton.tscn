@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpc8yu3ebeah2"]
+
+[ext_resource type="Texture2D" uid="uid://cckf23rkcv7m4" path="res://Assets/ChoiceButton.png" id="1_nq0dp"]
+[ext_resource type="Script" uid="uid://cg8w1rr8qwt5d" path="res://choice_button.gd" id="1_t83hs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_84lad"]
+font_size = 31
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t83hs")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(859, 494)
+
+[node name="ChoiceButton" type="Sprite2D" parent="Area2D"]
+position = Vector2(97.2, 8.60001)
+texture = ExtResource("1_nq0dp")
+
+[node name="Label" type="Label" parent="Area2D/ChoiceButton"]
+offset_left = -444.0
+offset_top = 62.0
+offset_right = 413.0
+offset_bottom = 168.0
+rotation = -0.270526
+text = "DEFAULT CHOICE. THIS IS A GOOD CHOICE!"
+label_settings = SubResource("LabelSettings_84lad")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2(97.2, 8.60001)
+polygon = PackedVector2Array(-570, -21, 594, -271, 387, -9, -135, 120, -546, 271)

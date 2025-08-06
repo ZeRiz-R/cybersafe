@@ -4,6 +4,7 @@ class_name CalendarManager
 
 var currentDate := Vector2i(1, 1)
 var calendar := {}
+var activeEvent := GameEvent
 
 func add_event(day: int, week: int, event: GameEvent):
 	var key = Vector2i(day, week)
@@ -20,23 +21,7 @@ func progress_time():
 		currentDate.y += 1
 		
 func load_test_event():
-	var choice1 = Choice.new("choice1", {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5})
-	var choice2 = Choice.new("choice2", {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5})
-	var choice3 = Choice.new("choice3", {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5})
-	var decision = Decision.new("DecisionTest", [choice1, choice2, choice3], "This is a test... believe it!")
-	var event = GameEvent.new("TestEvent", Vector2i(2, 1), decision)
+	var event = Constants.dummyEvent
 	add_event(event.date.x, event.date.y, event)
 
 func print_event():
@@ -44,11 +29,7 @@ func print_event():
 		print(currentDate)
 		progress_time()
 	var event = calendar[currentDate]
-	print(event.event.id)
-	print(event.event.prompt)
-	for choice in event.event.choices:
-		print(choice.text)
-		for key in choice.meter_changes:
-			print(key, choice.meter_changes[key])
+	if event.event is EmailDecision:
+		Stores.add_email(event.event)
 			
 	

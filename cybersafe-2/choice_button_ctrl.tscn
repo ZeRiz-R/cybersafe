@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv2ma7godj7ip"]
+
+[ext_resource type="Script" uid="uid://bd7oo1q4jbhod" path="res://choice_button2.gd" id="1_6ilku"]
+[ext_resource type="Texture2D" uid="uid://cckf23rkcv7m4" path="res://Assets/ChoiceButton.png" id="1_s16gg"]
+[ext_resource type="Script" uid="uid://cdselh7lgm6ym" path="res://texture_button.gd" id="2_7vg5o"]
+[ext_resource type="PackedScene" uid="uid://bsd3q418acec5" path="res://floating.tscn" id="2_m7ulj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lc5u"]
+font_size = 30
+
+[node name="ChoiceButton" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ilku")
+
+[node name="Floating" parent="." instance=ExtResource("2_m7ulj")]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -474.0
+offset_top = -219.0
+offset_right = 636.0
+offset_bottom = 249.0
+texture_normal = ExtResource("1_s16gg")
+script = ExtResource("2_7vg5o")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347748
+anchor_top = 0.521368
+anchor_right = 0.347748
+anchor_bottom = 0.521368
+offset_left = -290.0
+offset_top = 54.0
+offset_right = 325.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.270526
+text = "DEFAULT CHOICE. THIS IS A GOOD CHOICE!"
+label_settings = SubResource("LabelSettings_3lc5u")
+metadata/_edit_use_anchors_ = true
