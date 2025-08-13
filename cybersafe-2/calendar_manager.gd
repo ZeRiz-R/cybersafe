@@ -2,23 +2,23 @@ extends Node
 
 class_name CalendarManager
 
-var currentDate := Vector2i(0, 1)
+var currentDate := Vector2i(1, 0) # Week / Day
 var calendar := {}
 var activeEvent := GameEvent
 
-func add_event(day: int, week: int, event: GameEvent):
-	var key = Vector2i(day, week)
+func add_event(week: int, day: int, event: GameEvent):
+	var key = Vector2i(week, day)
 	calendar[key] = event
 
-func get_event(day: int, week: int):
-	var key = Vector2i(day, week)
+func get_event(week: int, day: int):
+	var key = Vector2i(week, day)
 	return calendar.get(key, null)
 
 func progress_time():
-	currentDate.x += 1
-	if currentDate.x > 7:
-		currentDate.x = 1
-		currentDate.y += 1
+	currentDate.y += 1
+	if currentDate.y > 7:
+		currentDate.y = 1
+		currentDate.x += 1
 		
 func load_test_event():
 	var event = Constants.dummyEvent
@@ -45,4 +45,5 @@ func print_event():
 	if event.event is ChatDecision:
 		Stores.add_chat_event(event.event)
 			
-	
+func get_date():
+	return currentDate

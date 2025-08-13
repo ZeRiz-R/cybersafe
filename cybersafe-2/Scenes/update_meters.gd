@@ -11,7 +11,7 @@ func _ready():
 	await(iterate_meters()) # Iterate through meters
 	# Update value
 	# Display reason
-	SceneTransition.change_scene("res://Scenes/dashboard.tscn")
+	SceneTransition.change_scene("res://Scenes/dashboard.tscn", "fade")
 	
 func iterate_meters():
 	var index = 0

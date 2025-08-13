@@ -28,12 +28,13 @@ func _on_mouse_exited():
 func _on_pressed():
 	match self.name:
 		"EmailButton":
-			SceneTransition.change_scene("res://Scenes/email_inbox.tscn")
+			SceneTransition.change_scene("res://Scenes/email_inbox.tscn", "tiles")
 		"MessagesButton":
-			SceneTransition.change_scene("res://Scenes/messages_inbox.tscn")
+			SceneTransition.change_scene("res://Scenes/messages_inbox.tscn", "tiles")
 		"BackToDashboard":
-			SceneTransition.change_scene("res://Scenes/dashboard.tscn")
+			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
 		"TimeButton":
+			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow_time")
 			Calendar.print_event()
 		"DecisionButton":
 			decision_button_pressed()

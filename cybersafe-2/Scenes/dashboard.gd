@@ -12,6 +12,14 @@ func _ready():
 	for bar in meterBars:
 		bar.set_meter_value(Player.meters[allMeters[index]])
 		index += 1
+		
+	set_date()
+		
+@onready var week_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/WeekLabel
+@onready var day_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/DayLabel
+func set_date():
+	week_label.text = "WEEK " + str(Calendar.get_date().x)
+	day_label.text = "DAY " + str(Calendar.get_date().y)
 
 func get_progress_bars(node: Node, arr: Array):
 	var children = node.get_children()

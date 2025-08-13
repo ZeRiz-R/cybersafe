@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5rsqagf1vsqm"]
+[gd_scene load_steps=14 format=3 uid="uid://5rsqagf1vsqm"]
 
 [ext_resource type="Script" uid="uid://bnhe1pdlqd3hf" path="res://Scenes/scene_transition.gd" id="1_crfs3"]
 [ext_resource type="Shader" uid="uid://cvjqthdaa75m5" path="res://Scenes/ShaderTransitions/tiled_sweep.gdshader" id="2_vin40"]
@@ -8,6 +8,23 @@ shader = ExtResource("2_vin40")
 shader_parameter/progress = 0.0
 shader_parameter/reverse = false
 shader_parameter/numberOfTiles = Vector2(16, 9)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vin40"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.771539, 0, 0.215056, 1)
+corner_radius_top_left = 1000
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+corner_radius_bottom_left = 1000
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8sxkv"]
+grow_begin = 0.0
+grow_end = 28.0
+thickness = 16
 
 [sub_resource type="Animation" id="Animation_o2r8w"]
 resource_name = "RESET"
@@ -34,6 +51,52 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arrow:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2151, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arrow:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(19, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Clock:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Clock/ClockHand:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
 }
 
 [sub_resource type="Animation" id="Animation_ae14o"]
@@ -92,15 +155,109 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_8sxkv"]
+resource_name = "in_arrow"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2151, -0.25, 0, 0.25, 0, 729, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(19, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_sd3nk"]
+resource_name = "out_arrow"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(729, -0.25, 0, 0.25, 0, 3487, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(19, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_6nemr"]
+resource_name = "clock_ascend"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clock:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.31), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4k12m"]
+resource_name = "clock_spin"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clock/ClockHand:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 5.06145, 4.71239]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yjsvl"]
 _data = {
 &"RESET": SubResource("Animation_o2r8w"),
+&"clock_ascend": SubResource("Animation_6nemr"),
+&"clock_spin": SubResource("Animation_4k12m"),
+&"in_arrow": SubResource("Animation_8sxkv"),
+&"out_arrow": SubResource("Animation_sd3nk"),
 &"transition_in": SubResource("Animation_ae14o"),
 &"transition_out": SubResource("Animation_vin40")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
 script = ExtResource("1_crfs3")
+
+[node name="Arrow" type="Polygon2D" parent="."]
+position = Vector2(-2151, 19)
+scale = Vector2(1.57105, 1.04359)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-987.001, -55.8545, 188.489, -57.8662, 851, -59, 1347, 500, 816, 1065, 172.14, 1063.93, -988, 1062, -486.859, 522.234)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_8sxkv")
@@ -110,6 +267,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Clock" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -200.0
+offset_right = 198.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(200, 200)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vin40")
+
+[node name="ClockHand" type="Panel" parent="Clock"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4895
+anchor_top = 0.5545
+anchor_right = 0.4895
+anchor_bottom = 0.5545
+offset_left = 4.19997
+offset_top = -21.8
+offset_right = 154.2
+offset_bottom = -3.79999
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(0, 8)
+theme_override_styles/panel = SubResource("StyleBoxLine_8sxkv")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
