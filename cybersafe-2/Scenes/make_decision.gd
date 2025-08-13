@@ -14,19 +14,20 @@ func load_choices(decision: Decision):
 	var choices = decision.choices
 	for i in range(len(buttons)):
 		buttons[i].set_label_text(choices[i].text)
-		buttons[i].set_meta("meter_changes", choices[i].meter_changes)
+		buttons[i].set_meta("choice", choices[i])
 		
 @onready var closeButton: Button = $MarginContainer/Button
 func connect_buttons():
 	var buttons = choiceButtons.get_children()
 	for btn in buttons:
-		btn.pressed.connect(_on_button_pressed.bind(btn.get_meta("meter_changes")))
+		btn.pressed.connect(_on_button_pressed.bind(btn.get_meta("choice")))
 	closeButton.pressed.connect(close)
 
-func _on_button_pressed(meter_changes: Dictionary):
-	Player.update_meters(meter_changes)
+func _on_button_pressed(choice: Choice):
+	# Player.update_meters(choice.meter_changes)
+	Stores.activeDecision.select_choice(choice)
 	Stores.activeDecision.complete_decision()
-	Stores.activeDecision = null
+	# Stores.activeDecision = null
 	close()
 		
 

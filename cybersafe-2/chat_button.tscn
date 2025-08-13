@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpbnha6xs8wmf"]
+
+[ext_resource type="Script" uid="uid://dv70ij0uu4lic" path="res://chat_button.gd" id="1_y3f6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn6ad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3f6x"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_esrfc"]
+font_size = 36
+
+[node name="ChatButton" type="Button"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = -1
+anchor_right = 0.2125
+anchor_bottom = 0.135185
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gn6ad")
+script = ExtResource("1_y3f6x")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Image" type="Panel" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_y3f6x")
+
+[node name="ChatName" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CHAT NAME"
+label_settings = SubResource("LabelSettings_esrfc")

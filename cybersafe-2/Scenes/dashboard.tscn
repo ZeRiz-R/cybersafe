@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="1_bc6a6"]
 [ext_resource type="StyleBox" uid="uid://q37ofqwrwb84" path="res://hover_button_style.tres" id="2_ly5nh"]
 [ext_resource type="StyleBox" uid="uid://b4v7tnml20sk0" path="res://base_button_style.tres" id="2_vyiww"]
-[ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://MeterBar.tscn" id="6_kql8j"]
+[ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="6_kql8j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_42qyo"]
 font_size = 35
@@ -260,7 +260,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2"]
+[node name="TimeButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.29
@@ -278,7 +278,10 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Panel" type="Panel" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_1w0xl")
 
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
@@ -389,11 +392,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CYBER KNOWLEDGE"
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer4/VBoxContainer"]
+[node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer4/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-value = 50.0
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer"]
 layout_mode = 2
@@ -414,8 +414,5 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CYBER KNOWLEDGE"
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer5/VBoxContainer"]
+[node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer5/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-value = 50.0

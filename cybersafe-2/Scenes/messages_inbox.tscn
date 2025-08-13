@@ -1,0 +1,396 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfhr410vu6ta7"]
+
+[ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
+[ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
+[ext_resource type="PackedScene" uid="uid://d3ptlu5bkxn4p" path="res://chat_list.tscn" id="2_88lbi"]
+[ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_x1i7j"]
+[ext_resource type="PackedScene" uid="uid://48lrcbch5nyx" path="res://Scenes/chat_screen.tscn" id="3_iicym"]
+[ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="6_kqqou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqqou"]
+bg_color = Color(0.715295, 0.0694249, 0, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88lbi"]
+bg_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+shadow_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_iicym"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkrng"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1i7j"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88lbi"]
+
+[sub_resource type="Animation" id="Animation_iicym"]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_x1i7j"]
+resource_name = "open_chat"
+length = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(830, -0.125, 0, 0.125, 0, 0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0, 0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+
+[sub_resource type="Animation" id="Animation_mkrng"]
+resource_name = "slide_in"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1410, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.401426, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1i7j"]
+_data = {
+&"RESET": SubResource("Animation_iicym"),
+&"open_chat": SubResource("Animation_x1i7j"),
+&"slide_in": SubResource("Animation_mkrng")
+}
+
+[node name="MessageInbox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mkrng")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.721569, 0.278431, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackToDashboard" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 2.94
+theme_override_styles/normal = SubResource("StyleBoxFlat_kqqou")
+text = "BACK BUTTON RETURN HOME"
+script = ExtResource("2_x1i7j")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "CHAT DESCRIPTION"
+label_settings = ExtResource("1_88lbi")
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+text = "METERS"
+label_settings = ExtResource("1_88lbi")
+horizontal_alignment = 1
+
+[node name="PhoneWrapper" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(840, 1040)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PhoneContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -520.0
+offset_right = 420.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(409, 572)
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.86
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_88lbi")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "12:03"
+label_settings = SubResource("LabelSettings_iicym")
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkrng")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+
+[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+
+[node name="Panel3" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_88lbi")
+
+[node name="ChatList" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("2_88lbi")]
+layout_mode = 2
+
+[node name="ChatScreenWrapper" type="Control" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ChatScreen" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper" instance=ExtResource("3_iicym")]
+layout_mode = 2
+offset_right = 740.0
+offset_bottom = 856.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DecisionButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("6_kqqou")
+text = "MAKE DECISION"
+script = ExtResource("2_x1i7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x1i7j")
+}

@@ -1,7 +1,7 @@
 extends Node
 
 @onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/PanelContainer2/PanelContainer/ScrollContainer/VBoxContainer
-@onready var decisionButton: Button = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/Button
+@onready var decisionButton: Button = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/DecisionButton
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 func _ready():
 	load_emails()
@@ -24,7 +24,6 @@ func connect_buttons():
 		var emailDecision = btn.get_meta("email_decision") as EmailDecision
 		btn.pressed.connect(_on_inbox_pressed.bind(emailDecision))
 
-	decisionButton.pressed.connect(_on_decision_pressed)
 	decisionButton.disabled = true
 		
 @onready var titleLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/Label
@@ -40,14 +39,25 @@ func _on_inbox_pressed(emailDecision: EmailDecision):
 	
 	if not (emailDecision.complete):
 		Stores.set_active_decision(emailDecision)
+		Stores.activeDecision.choice_selected.connect(_on_choice_selected)
 		decisionButton.disabled = false
 	else:
-		decisionButton.disabled = true
+		decisionButton.disabled = true	
 	
-func _on_decision_pressed():
-	print("making a decision")
-	var decisionScreen = preload("res://Scenes/make_decision.tscn").instantiate()
-	var uiLayer = get_node(".")
-	uiLayer.add_child(decisionScreen)
-	decisionButton.disabled = true
+func _on_choice_selected(choice: Choice):
+	print("Choice selected")
+	match choice.id:
+		"Correct":
+			pass
+			# Set visual element (e.g. green tick?)
+		"Incorrect":
+			pass
+		"Ignore":
+			pass
+		# ZoomToEmail()
+		# DisplayVisual()
+	await(Stores.activeDecision.display_outcome_text(get_tree().current_scene))# QueueOutcomeText()
+		# CompleteDecision()
+	SceneTransition.change_scene("res://Scenes/update_meters.tscn")
+	# UpdateMetersVisual() Maybe different scene
 	

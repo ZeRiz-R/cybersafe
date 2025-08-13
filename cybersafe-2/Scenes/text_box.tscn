@@ -1,0 +1,173 @@
+[gd_scene load_steps=9 format=3 uid="uid://dopf7cqqwqivp"]
+
+[ext_resource type="Script" uid="uid://c0t0pnfhtwvf0" path="res://Scenes/text_box.gd" id="1_k7ve7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(-0.625, -0.07)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7ve7"]
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.175, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1.15514e-06, 0.979622, 0.514354, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0rgj"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tto5"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nwibb"]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(669, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0kxgl"]
+resource_name = "slide_in"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1149, -0.25, 0, 0.25, 0, 669, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot2p7"]
+_data = {
+&"RESET": SubResource("Animation_nwibb"),
+&"slide_in": SubResource("Animation_0kxgl")
+}
+
+[node name="TextBox" type="CanvasLayer"]
+script = ExtResource("1_k7ve7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.862745)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 69.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="OuterPanelContainer" type="PanelContainer" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/OuterPanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k7ve7")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer/OuterPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/OuterPanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "* "
+label_settings = SubResource("LabelSettings_d0rgj")
+
+[node name="Content" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "The quick brown fox jumps over the lazy dog. And he says to me that there dog is so lazy I could eat a dog. The dog turns in "
+label_settings = SubResource("LabelSettings_d0rgj")
+autowrap_mode = 2
+clip_text = true
+
+[node name="End" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(27, 69)
+layout_mode = 2
+size_flags_vertical = 8
+text = " *"
+label_settings = SubResource("LabelSettings_d0rgj")
+
+[node name="Name" type="Control" parent="TextBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextBoxContainer/Name"]
+layout_mode = 2
+anchor_left = 0.0147727
+anchor_top = -0.105727
+anchor_right = 0.0147727
+anchor_bottom = -0.105727
+offset_left = -25.4091
+offset_top = 7.48745
+offset_right = 1734.59
+offset_bottom = 42.4874
+size_flags_vertical = 0
+text = "MYSTERIOUS VOICE"
+label_settings = SubResource("LabelSettings_5tto5")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ot2p7")
+}

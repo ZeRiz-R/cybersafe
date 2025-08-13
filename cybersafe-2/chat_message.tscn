@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5khr4g8eysxj"]
+
+[ext_resource type="Script" uid="uid://bs1a13di3145d" path="res://chat_message_box.gd" id="1_x63xj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sac4d"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x63xj"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(-0.505, 0.035)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkygh"]
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(-0.715, 0.025)
+
+[node name="ChatMessageContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(650, 175)
+offset_right = 650.0
+offset_bottom = 175.0
+scale = Vector2(1.00482, 1)
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_x63xj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Sender" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SENDER"
+
+[node name="IconMessageContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Icon" type="Panel" parent="VBoxContainer/IconMessageContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_sac4d")
+
+[node name="BigMessageContainer" type="PanelContainer" parent="VBoxContainer/IconMessageContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_x63xj")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/IconMessageContainer/BigMessageContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkygh")
+
+[node name="MessageContainer" type="MarginContainer" parent="VBoxContainer/IconMessageContainer/BigMessageContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Message" type="Label" parent="VBoxContainer/IconMessageContainer/BigMessageContainer/MessageContainer"]
+layout_mode = 2
+text = "THIS IS A TEST MESSAGE! I've heard..."
+autowrap_mode = 2

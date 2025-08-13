@@ -10,7 +10,7 @@ func _ready():
 	print("Getting ready")
 	var meterBars = get_progress_bars(meterBox, [])
 	for bar in meterBars:
-		bar.value = Player.meters[allMeters[index]]
+		bar.set_meter_value(Player.meters[allMeters[index]])
 		index += 1
 
 func get_progress_bars(node: Node, arr: Array):

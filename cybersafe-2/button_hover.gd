@@ -22,12 +22,25 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), tween_duration)
-	z_index = 1
+	z_index = 0
 
 
 func _on_pressed():
 	match self.name:
 		"EmailButton":
 			SceneTransition.change_scene("res://Scenes/email_inbox.tscn")
+		"MessagesButton":
+			SceneTransition.change_scene("res://Scenes/messages_inbox.tscn")
 		"BackToDashboard":
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn")
+		"TimeButton":
+			Calendar.print_event()
+		"DecisionButton":
+			decision_button_pressed()
+			
+func decision_button_pressed():
+	print("making a decision")
+	var decisionScreen = preload("res://Scenes/make_decision.tscn").instantiate()
+	var uiLayer = get_tree().current_scene
+	uiLayer.add_child(decisionScreen)
+	self.disabled = true

@@ -124,8 +124,8 @@ content_margin_right = 59.0
 content_margin_bottom = 34.0
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(-0.1, -0.1)
-border_width_left = 20
-border_width_top = 30
+border_width_left = 10
+border_width_top = 20
 border_width_right = 25
 border_width_bottom = 10
 border_color = Color(0, 0, 0, 1)
@@ -393,7 +393,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_bottom = 20
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer"]
+[node name="DecisionButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3

@@ -29,9 +29,14 @@ bg_color = Color(0.25831, 0.713878, 0, 1)
 skew = Vector2(0.2, 0)
 border_color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer"]
-offset_right = 629.0
-offset_bottom = 65.0
+[node name="MeterBar" type="MarginContainer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_right = 1913.0
+offset_bottom = 75.0
+grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -47,7 +52,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_xig56")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2pe2g")
-value = 49.2
+value = 30.0
 show_percentage = false
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PanelContainer/ProgressBar"]
