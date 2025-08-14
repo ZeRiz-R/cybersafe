@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=22 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://q37ofqwrwb84" path="res://hover_button_style.tres" id="2_ly5nh"]
 [ext_resource type="StyleBox" uid="uid://b4v7tnml20sk0" path="res://base_button_style.tres" id="2_vyiww"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="6_kql8j"]
+[ext_resource type="PackedScene" uid="uid://davqlofgnkvuh" path="res://alert.tscn" id="6_nw0fu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_42qyo"]
 font_size = 35
@@ -222,6 +223,19 @@ theme_override_styles/normal = ExtResource("2_vyiww")
 text = "EMAIL BUTTON"
 script = ExtResource("1_23vhs")
 
+[node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/EmailButton" instance=ExtResource("6_nw0fu")]
+top_level = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = 102.0
+grow_horizontal = 0
+
 [node name="MessagesButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -230,6 +244,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_76h3o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_23vhs")
 text = "MESSAGES BUTTON"
 script = ExtResource("1_23vhs")
+
+[node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MessagesButton" instance=ExtResource("6_nw0fu")]
+top_level = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_top = -23.0
+offset_right = 25.0
+offset_bottom = 105.0
+grow_horizontal = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

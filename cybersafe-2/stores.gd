@@ -1,7 +1,10 @@
 extends Node
 
 var emailStore := []
+var unreadEmails := 0
+
 var chatStore := {}
+var unreadChats := 0
 var chatsInOrder := []
 
 var activeDecision: Decision
@@ -11,6 +14,7 @@ func _init() -> void:
 
 func add_email(emailDecision: EmailDecision):
 	emailStore.append(emailDecision)
+	unreadEmails += 1
 	
 func get_all_emails() -> Array:
 	return emailStore
@@ -30,7 +34,8 @@ func add_chat_event(chatDecision: ChatDecision):
 	var chatName = chatDecision.chatName
 	for message in chatDecision.messages:
 		add_message(chatName, message)
-	Stores.chatStore[chatName].currentDecision = chatDecision
+	chatStore[chatName].currentDecision = chatDecision
+	unreadChats += 1
 	
 func add_chat(chat: Chat):
 	chatStore[chat.chatName] = chat
@@ -43,4 +48,10 @@ func get_all_chat_names() -> Array:
 	
 func set_active_decision(decision: Decision):
 	activeDecision = decision
+	
+func popUnreadEmail():
+	unreadEmails = min(unreadEmails - 1, 0)
+
+func popUnreadChat():
+	unreadChats = min(unreadChats - 1, 0)
 	

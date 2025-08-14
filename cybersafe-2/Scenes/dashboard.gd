@@ -14,12 +14,26 @@ func _ready():
 		index += 1
 		
 	set_date()
+	ready_alerts()
 		
 @onready var week_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/WeekLabel
 @onready var day_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/DayLabel
 func set_date():
 	week_label.text = "WEEK " + str(Calendar.get_date().x)
 	day_label.text = "DAY " + str(Calendar.get_date().y)
+	
+@onready var alertEmail: TextureRect = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/EmailButton/Alert
+@onready var alertChat: TextureRect = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MessagesButton/Alert
+func ready_alerts():
+	if Stores.unreadEmails > 0:
+		alertEmail.appear()
+	else:
+		alertEmail.disappear()
+	
+	if Stores.unreadChats > 0:
+		alertChat.appear()
+	else:
+		alertChat.disappear()
 
 func get_progress_bars(node: Node, arr: Array):
 	var children = node.get_children()

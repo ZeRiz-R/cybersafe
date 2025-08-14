@@ -7,3 +7,7 @@ func _init(_id: String, _prompt: String, _choices: Array[Choice], _chatName: Str
 	super._init(_id, _prompt, _choices)
 	chatName = _chatName
 	messages = _messages
+
+func complete_decision():
+	super.complete_decision()
+	Stores.popUnreadChat()
