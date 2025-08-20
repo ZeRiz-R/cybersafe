@@ -27,7 +27,7 @@ var choice3 = Choice.new("Ignore", "Ignore", {Constants.Meters.CYBER_KNOWLEDGE: 
 										 Constants.Meters.SOCIAL_TRUST: +5,
 										 Constants.Meters.STRESS: -5}, ["Decent Stuff", "We'll see how this turns out another time"])
 var email = Email.new("testsender@test.co.uk", "This is a test email", "This is a test email", [])
-var dummyDecision = EmailDecision.new("DecisionTest", "This is a test... believe it!", [choice1, choice2, choice3],  email)
+var dummyDecision = EmailDecision.new("DecisionTest", "This is a test... believe it!", "Here is a top tip for an email", [choice1, choice2, choice3],  email)
 var dummyEvent = GameEvent.new("TestEvent", Vector2i(3, 1), dummyDecision)
 
 # TEST CHAT STUFF
@@ -50,5 +50,5 @@ var choice3c = Choice.new("Paladins", "Play Paladins. It was bettter anyway...",
 										 Constants.Meters.DATA_SECURITY: +4,
 										 Constants.Meters.SOCIAL_TRUST: +5,
 										 Constants.Meters.STRESS: -5}, ["Uhhhhh...", "Seems like you haven't heard the news.", "Paladins is dead."])
-var dummyChatDecision = ChatDecision.new("PlayOverwatch", "TestPrompt", [choice1c, choice2c, choice3c], "Winton Overwat", [chat1, chat2, chat3])
-var dummyChatEvent = GameEvent.new("PlayOverwatch", Vector2(4, 2), dummyChatDecision)
+var dummyChatDecision = ChatDecision.new("PlayOverwatch", "TestPrompt", "Learn the fastest rollouts to get to the objective!", [choice1c, choice2c, choice3c], "Winton Overwat", [chat1, chat2, chat3])
+var dummyChatEvent = GameEvent.new("PlayOverwatch", Vector2(1, 1), dummyChatDecision)

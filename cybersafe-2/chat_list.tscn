@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ptlu5bkxn4p"]
+[gd_scene load_steps=5 format=3 uid="uid://d3ptlu5bkxn4p"]
 
 [ext_resource type="Script" uid="uid://gcbqkc11ml6d" path="res://chat_list.gd" id="1_mxq2f"]
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="2_mxq2f"]
+
+[sub_resource type="FontVariation" id="FontVariation_en2yl"]
+base_font = ExtResource("2_mxq2f")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mxq2f"]
+font = SubResource("FontVariation_en2yl")
 font_size = 60
 
 [node name="ChatList" type="VBoxContainer"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfhr410vu6ta7"]
+[gd_scene load_steps=19 format=3 uid="uid://dfhr410vu6ta7"]
 
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
 [ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
 [ext_resource type="PackedScene" uid="uid://d3ptlu5bkxn4p" path="res://chat_list.tscn" id="2_88lbi"]
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_x1i7j"]
 [ext_resource type="PackedScene" uid="uid://48lrcbch5nyx" path="res://Scenes/chat_screen.tscn" id="3_iicym"]
+[ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/WiFi_whit.png" id="4_p3ju4"]
+[ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/data_signal.png" id="5_00fjs"]
+[ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/battery_icon.png" id="6_bcmw0"]
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="6_kqqou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqqou"]
@@ -40,9 +43,6 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1i7j"]
-bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88lbi"]
 
@@ -320,8 +320,9 @@ theme_override_constants/margin_right = 40
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 6
 size_flags_stretch_ratio = 0.2
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -339,28 +340,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mkrng")
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="WiFiWrapper" type="MarginContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="WiFi" type="TextureRect" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/WiFiWrapper"]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+size_flags_horizontal = 3
+texture = ExtResource("4_p3ju4")
+expand_mode = 3
 
-[node name="Panel3" type="Panel" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
+[node name="Data" type="TextureRect" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_x1i7j")
+size_flags_horizontal = 3
+texture = ExtResource("5_00fjs")
+expand_mode = 3
+
+[node name="Battery" type="TextureRect" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_bcmw0")
+expand_mode = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer"]
 clip_contents = true

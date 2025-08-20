@@ -5,16 +5,18 @@ var id: String
 var choices: Array[Choice]
 var selection: Choice
 var prompt: String
+var tip: String
 
 var complete: bool
 
 signal choice_selected(choice: Choice)
 
-func _init(_id: String, _prompt: String, _choices: Array[Choice]):
+func _init(_id: String, _prompt: String, _tip: String, _choices: Array[Choice]):
 	id = _id
 	choices = _choices
 	prompt = _prompt
 	selection = choices[0]
+	tip = _tip
 	complete = false
 	
 func select_choice(choice: Choice):

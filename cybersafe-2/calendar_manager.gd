@@ -26,6 +26,7 @@ func load_test_event():
 	
 	event = Constants.dummyChatEvent
 	add_event(event.date.x, event.date.y, event)
+	print_event()
 
 
 func print_event():

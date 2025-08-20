@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dopf7cqqwqivp"]
+[gd_scene load_steps=12 format=3 uid="uid://dopf7cqqwqivp"]
 
 [ext_resource type="Script" uid="uid://c0t0pnfhtwvf0" path="res://Scenes/text_box.gd" id="1_k7ve7"]
+[ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="2_0kxgl"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="2_ot2p7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
 content_margin_left = 20.0
@@ -19,10 +21,15 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1.15514e-06, 0.979622, 0.514354, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_ot2p7"]
+base_font = ExtResource("2_ot2p7")
+
 [sub_resource type="LabelSettings" id="LabelSettings_d0rgj"]
+font = SubResource("FontVariation_ot2p7")
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_5tto5"]
+font = ExtResource("2_0kxgl")
 font_size = 25
 font_color = Color(0, 0, 0, 1)
 

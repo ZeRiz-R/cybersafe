@@ -1,13 +1,190 @@
-[gd_scene load_steps=5 format=3 uid="uid://v5qjksiesbbu"]
+[gd_scene load_steps=16 format=3 uid="uid://v5qjksiesbbu"]
 
 [ext_resource type="Script" uid="uid://bbmvqiirctny4" path="res://Scenes/update_meters.gd" id="1_rjh0p"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="1_rnfwq"]
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="2_vod8q"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="4_61qh5"]
+
+[sub_resource type="FontVariation" id="FontVariation_048ak"]
+base_font = ExtResource("2_vod8q")
+
+[sub_resource type="LabelSettings" id="LabelSettings_64awo"]
+font = SubResource("FontVariation_048ak")
+font_size = 100
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_v8t64"]
+base_font = ExtResource("2_vod8q")
 
 [sub_resource type="LabelSettings" id="LabelSettings_rnfwq"]
-font_size = 30
+font = SubResource("FontVariation_v8t64")
+font_size = 40
 
-[sub_resource type="LabelSettings" id="LabelSettings_rjh0p"]
-font_size = 20
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpnml"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.156863, 0.309804, 0.509804, 0)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(1, 0.705965, 0.556583, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_200kl"]
+base_font = ExtResource("4_61qh5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_056uk"]
+font = SubResource("FontVariation_200kl")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jnl0"]
+font = SubResource("FontVariation_200kl")
+font_size = 40
+
+[sub_resource type="Animation" id="Animation_vod8q"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer2/MeterUpdatesWrapper/MeterUpdates:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer2/MeterUpdatesWrapper/MeterUpdates:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer2/MeterUpdatesWrapper/MeterUpdates:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_61qh5"]
+resource_name = "show_top_tip"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2/MeterUpdatesWrapper/MeterUpdates:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 18.8496]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer2/MeterUpdatesWrapper/MeterUpdates:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer2/TopTipWrapper/TopTipBox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 40), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64awo"]
+_data = {
+&"RESET": SubResource("Animation_vod8q"),
+&"show_top_tip": SubResource("Animation_61qh5")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,7 +202,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.201527, 0.201527, 0.201527, 1)
+color = Color(6.37732e-07, 0.206478, 0.314483, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -36,155 +213,207 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 250
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+[node name="MeterUpdatesWrapper" type="Control" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MeterUpdates" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper"]
+layout_mode = 2
+offset_right = 1720.0
+offset_bottom = 946.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(847, 468)
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates"]
+layout_mode = 2
+text = "METERS"
+label_settings = SubResource("LabelSettings_64awo")
+horizontal_alignment = 1
+
+[node name="Meters" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 4.66
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+[node name="CK" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/CK"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CYBER KNOWLEDGE"
 label_settings = SubResource("LabelSettings_rnfwq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/CK"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/CK/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.67
 
-[node name="Meter" parent="MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_rnfwq")]
+[node name="Meter" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/CK/HBoxContainer" instance=ExtResource("1_rnfwq")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Reason" type="Control" parent="MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer/Meter"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer/HBoxContainer/Meter/Reason"]
-layout_mode = 0
-offset_left = 22.97
-offset_right = 201.97
-offset_bottom = 28.0
-text = "RISK OF MALWARE"
-label_settings = SubResource("LabelSettings_rjh0p")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+[node name="DH" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DH"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Device Health"
 label_settings = SubResource("LabelSettings_rnfwq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DH"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DH/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.67
 
-[node name="Meter" parent="MarginContainer2/VBoxContainer/VBoxContainer2/HBoxContainer" instance=ExtResource("1_rnfwq")]
+[node name="Meter" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DH/HBoxContainer" instance=ExtResource("1_rnfwq")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+[node name="DS" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DS"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Data Security"
 label_settings = SubResource("LabelSettings_rnfwq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/VBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DS"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer/VBoxContainer3/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DS/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.67
 
-[node name="Meter" parent="MarginContainer2/VBoxContainer/VBoxContainer3/HBoxContainer" instance=ExtResource("1_rnfwq")]
+[node name="Meter" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/DS/HBoxContainer" instance=ExtResource("1_rnfwq")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+[node name="ST" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/ST"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Social Trust"
 label_settings = SubResource("LabelSettings_rnfwq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/VBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/ST"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer/VBoxContainer4/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/ST/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.67
 
-[node name="Meter" parent="MarginContainer2/VBoxContainer/VBoxContainer4/HBoxContainer" instance=ExtResource("1_rnfwq")]
+[node name="Meter" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/ST/HBoxContainer" instance=ExtResource("1_rnfwq")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="MarginContainer2/VBoxContainer"]
+[node name="S" type="VBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/VBoxContainer5"]
+[node name="Label" type="Label" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/S"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Stress"
 label_settings = SubResource("LabelSettings_rnfwq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer/VBoxContainer5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/S"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer2/VBoxContainer/VBoxContainer5/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/S/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.67
 
-[node name="Meter" parent="MarginContainer2/VBoxContainer/VBoxContainer5/HBoxContainer" instance=ExtResource("1_rnfwq")]
+[node name="Meter" parent="MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters/S/HBoxContainer" instance=ExtResource("1_rnfwq")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="TopTipWrapper" type="Control" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="TopTipBox" type="MarginContainer" parent="MarginContainer2/TopTipWrapper"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -860.0
+offset_top = -473.0
+offset_right = 860.0
+offset_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(861, 491)
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_bottom = 400
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/TopTipWrapper/TopTipBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpnml")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/TopTipWrapper/TopTipBox/PanelContainer"]
+layout_mode = 2
+
+[node name="TopTip" type="Label" parent="MarginContainer2/TopTipWrapper/TopTipBox/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "||| TOP TIP |||"
+label_settings = SubResource("LabelSettings_056uk")
+
+[node name="TipText" type="Label" parent="MarginContainer2/TopTipWrapper/TopTipBox/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "HERE IS A TOP TIP FOR ALL YOU TOP TIP ENJOYERS"
+label_settings = SubResource("LabelSettings_5jnl0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_64awo")
+}

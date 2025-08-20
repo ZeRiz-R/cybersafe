@@ -12,6 +12,7 @@ func _ready():
 	chat_screen_wrapper.visible = false
 	chat_screen = chat_screen_wrapper.get_child(0)
 	chat_list.open_chat.connect(_on_chat_pressed)
+	chat_screen.close_chat.connect(_on_chat_closed)
 	decision_button.disabled = true
 
 func _on_chat_pressed(chat: Chat):
@@ -26,6 +27,11 @@ func _on_chat_pressed(chat: Chat):
 	chat_screen.initialise(chat)
 	anim_player.play("open_chat")
 
+func _on_chat_closed():
+	anim_player.play_backwards("open_chat")
+	decision_button.disabled = true
+	await(anim_player.animation_finished)
+	chat_screen_wrapper.visible = false
 
 func _on_choice_selected(choice: Choice):
 	print("Choice selected")

@@ -1,12 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=27 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="1_bc6a6"]
 [ext_resource type="StyleBox" uid="uid://q37ofqwrwb84" path="res://hover_button_style.tres" id="2_ly5nh"]
 [ext_resource type="StyleBox" uid="uid://b4v7tnml20sk0" path="res://base_button_style.tres" id="2_vyiww"]
+[ext_resource type="Texture2D" uid="uid://4iwbyrirtnd8" path="res://Assets/mail-icon-skew.png" id="5_nw0fu"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="6_kql8j"]
 [ext_resource type="PackedScene" uid="uid://davqlofgnkvuh" path="res://alert.tscn" id="6_nw0fu"]
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="9_mt3ts"]
+[ext_resource type="LabelSettings" uid="uid://cal8u1bqpls3r" path="res://GodotLabels/MeterNames.tres" id="9_vld2e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_42qyo"]
 font_size = 35
@@ -23,10 +26,18 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 31365
 
+[sub_resource type="FontVariation" id="FontVariation_nw0fu"]
+base_font = ExtResource("9_mt3ts")
+
 [sub_resource type="LabelSettings" id="LabelSettings_kql8j"]
+font = SubResource("FontVariation_nw0fu")
 font_size = 111
 
+[sub_resource type="FontVariation" id="FontVariation_3r00j"]
+base_font = ExtResource("9_mt3ts")
+
 [sub_resource type="LabelSettings" id="LabelSettings_lrl1v"]
+font = SubResource("FontVariation_3r00j")
 font_size = 76
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76h3o"]
@@ -220,7 +231,8 @@ size_flags_vertical = 3
 theme = ExtResource("1_bc6a6")
 theme_override_styles/hover = ExtResource("2_ly5nh")
 theme_override_styles/normal = ExtResource("2_vyiww")
-text = "EMAIL BUTTON"
+icon = ExtResource("5_nw0fu")
+icon_alignment = 1
 script = ExtResource("1_23vhs")
 
 [node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/EmailButton" instance=ExtResource("6_nw0fu")]
@@ -366,8 +378,10 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CYBER KNOWLEDGE"
+label_settings = ExtResource("9_vld2e")
 
 [node name="Meter" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
@@ -389,7 +403,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Device Health"
+label_settings = ExtResource("9_vld2e")
 
 [node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
@@ -411,7 +426,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Data Security "
+label_settings = ExtResource("9_vld2e")
 
 [node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer3/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
@@ -433,7 +449,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer4/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Social Trust"
+label_settings = ExtResource("9_vld2e")
 
 [node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer4/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2
@@ -455,7 +472,8 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer5/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CYBER KNOWLEDGE"
+text = "Stress"
+label_settings = ExtResource("9_vld2e")
 
 [node name="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer5/VBoxContainer" instance=ExtResource("6_kql8j")]
 layout_mode = 2

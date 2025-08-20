@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpc8yu3ebeah2"]
+[gd_scene load_steps=5 format=3 uid="uid://cpc8yu3ebeah2"]
 
 [ext_resource type="Texture2D" uid="uid://cckf23rkcv7m4" path="res://Assets/ChoiceButton.png" id="1_nq0dp"]
 [ext_resource type="Script" uid="uid://cg8w1rr8qwt5d" path="res://choice_button.gd" id="1_t83hs"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="3_t83hs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_84lad"]
+font = ExtResource("3_t83hs")
 font_size = 31
 
 [node name="Node2D" type="Node2D"]

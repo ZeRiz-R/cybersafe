@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5khr4g8eysxj"]
+[gd_scene load_steps=17 format=3 uid="uid://c5khr4g8eysxj"]
 
 [ext_resource type="Script" uid="uid://bs1a13di3145d" path="res://chat_message_box.gd" id="1_x63xj"]
+[ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="2_qvr0r"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="3_mlgxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8kgr"]
+font = ExtResource("2_qvr0r")
+font_size = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sac4d"]
 corner_radius_top_left = 100
@@ -18,8 +24,389 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkygh"]
+content_margin_left = 30.0
+content_margin_right = 10.0
 bg_color = Color(0, 0, 0, 1)
 skew = Vector2(-0.715, 0.025)
+border_color = Color(9.62615e-07, 0.93082, 0.77247, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_7bdti"]
+base_font = ExtResource("3_mlgxf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbbu2"]
+font = SubResource("FontVariation_7bdti")
+font_size = 23
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvr0r"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Animation" id="Animation_mlgxf"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/LeftDot/LeftDot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Wrapper/VBoxContainer:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Wrapper/VBoxContainer:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control2/MidDot:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control3/RightDot:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_qvr0r"]
+resource_name = "load_message"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/VBoxContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1.3), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/VBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x63xj"]
+resource_name = "open_typing"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.5708, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nkygh"]
+resource_name = "send_message"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 35), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c8kgr"]
+resource_name = "typing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/LeftDot/LeftDot:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 24), Vector2(0, 15), Vector2(0, 24), Vector2(0, 33), Vector2(0, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control2/MidDot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 24), Vector2(0, 15), Vector2(0, 24), Vector2(0, 33), Vector2(0, 24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control3/RightDot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.45, 0.6, 0.75, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 24), Vector2(0, 15), Vector2(0, 24), Vector2(0, 33), Vector2(0, 24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7bdti"]
+_data = {
+&"RESET": SubResource("Animation_mlgxf"),
+&"load_message": SubResource("Animation_qvr0r"),
+&"open_typing": SubResource("Animation_x63xj"),
+&"send_message": SubResource("Animation_nkygh"),
+&"typing": SubResource("Animation_c8kgr")
+}
 
 [node name="ChatMessageContainer" type="MarginContainer"]
 custom_minimum_size = Vector2(650, 175)
@@ -34,40 +421,151 @@ theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 script = ExtResource("1_x63xj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Wrapper" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="Sender" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 135.0
+pivot_offset = Vector2(48.5731, 80)
+
+[node name="Sender" type="Label" parent="Wrapper/VBoxContainer"]
 layout_mode = 2
 text = "SENDER"
+label_settings = SubResource("LabelSettings_c8kgr")
 
-[node name="IconMessageContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="IconMessageContainer" type="HBoxContainer" parent="Wrapper/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 
-[node name="Icon" type="Panel" parent="VBoxContainer/IconMessageContainer"]
+[node name="Icon" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_sac4d")
 
-[node name="BigMessageContainer" type="PanelContainer" parent="VBoxContainer/IconMessageContainer"]
+[node name="MessageBoxWrapper" type="MarginContainer" parent="Wrapper/VBoxContainer/IconMessageContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MessageWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper"]
+layout_mode = 2
+
+[node name="BigMessageContainer" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_right = 445.0
+offset_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x63xj")
 
-[node name="Panel" type="Panel" parent="VBoxContainer/IconMessageContainer/BigMessageContainer"]
+[node name="Panel" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkygh")
 
-[node name="MessageContainer" type="MarginContainer" parent="VBoxContainer/IconMessageContainer/BigMessageContainer"]
+[node name="MessageContainer" type="MarginContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="Message" type="Label" parent="VBoxContainer/IconMessageContainer/BigMessageContainer/MessageContainer"]
+[node name="Message" type="Label" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer/MessageContainer"]
 layout_mode = 2
 text = "THIS IS A TEST MESSAGE! I've heard..."
+label_settings = SubResource("LabelSettings_lbbu2")
 autowrap_mode = 2
+
+[node name="TypingWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper"]
+layout_mode = 2
+
+[node name="Typing" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -54.0
+offset_right = 200.0
+offset_bottom = 54.0
+grow_vertical = 2
+rotation = -1.5708
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(100.719, 52)
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x63xj")
+
+[node name="PanelContainer" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkygh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer"]
+layout_mode = 2
+
+[node name="LeftDot" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="LeftDot" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/LeftDot"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 44.0
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
+
+[node name="Control2" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="MidDot" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 44.0
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
+
+[node name="Control3" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="RightDot" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 44.0
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
+
+[node name="MessageContainer" type="MarginContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Message" type="Label" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/MessageContainer"]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7bdti")
+}

@@ -2,12 +2,21 @@ extends MarginContainer
 
 var chat: Chat
 var chat_message := preload("res://chat_message.tscn")
+signal close_chat
 
-@onready var chat_name: Label = $VBoxContainer/HBoxContainer/ChatName
+@onready var chat_name: Label = $VBoxContainer/MarginContainer/HBoxContainer/ChatName
+@onready var back_button: TextureButton = $VBoxContainer/MarginContainer/HBoxContainer/BackButton
+func _ready():
+	back_button.pressed.connect(_on_back_button_pressed)
+
+func _on_back_button_pressed():
+	emit_signal("close_chat")
+
 func initialise(_chat: Chat):
 	chat = _chat
 	chat_name.text = chat.chatName
 	load_chats()
+	queue_messages()
 
 
 @onready var chatArea: VBoxContainer = $VBoxContainer/ScrollContainer/VBoxContainer
@@ -22,3 +31,21 @@ func load_chats():
 		if message.isPlayerMessage:
 			msg.size_flags_horizontal = SIZE_SHRINK_END
 		msg.connect_message(message)
+		msg.display_message()
+		#await(get_tree().create_timer(0.3).timeout)
+		#msg.queue_message()
+		#await(msg.message_sent)
+
+func queue_messages():
+	while not chat.unsent.is_empty():
+		var message = chat.unsent[0]
+		var msg = chat_message.instantiate()
+		chatArea.add_child(msg)
+		if message.isPlayerMessage:
+			msg.size_flags_horizontal = SIZE_SHRINK_END
+		msg.connect_message(message)
+		await(get_tree().create_timer(0.3).timeout)
+		msg.queue_message()
+		await(msg.message_sent)
+		chat.dequeue_message()
+		

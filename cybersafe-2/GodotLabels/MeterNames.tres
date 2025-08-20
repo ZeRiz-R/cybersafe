@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://cal8u1bqpls3r"]
+
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="1_ietoq"]
+
+[sub_resource type="FontVariation" id="FontVariation_048ak"]
+base_font = ExtResource("1_ietoq")
+
+[resource]
+font = SubResource("FontVariation_048ak")
+font_size = 22
+font_color = Color(0, 0, 0, 1)

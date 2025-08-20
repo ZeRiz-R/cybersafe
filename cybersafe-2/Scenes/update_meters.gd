@@ -1,16 +1,20 @@
 extends Control
 
-@onready var meterBox: VBoxContainer = $MarginContainer2/VBoxContainer
+@onready var meterBox: VBoxContainer = $MarginContainer2/MeterUpdatesWrapper/MeterUpdates/Meters
 var allMeters = Constants.Meters.values()
 var meterBars: Array
 var choice: Choice
 
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 func _ready():
 	choice = Stores.activeDecision.selection
 	load_meters()
+	set_tip()
 	await(iterate_meters()) # Iterate through meters
 	# Update value
 	# Display reason
+	anim_player.play("show_top_tip")
+	await(anim_player.animation_finished)
 	SceneTransition.change_scene("res://Scenes/dashboard.tscn", "fade")
 	
 func iterate_meters():
@@ -38,3 +42,7 @@ func get_progress_bars(node: Node, arr: Array):
 			arr.append(child)
 		get_progress_bars(child, arr)
 	return arr
+	
+@onready var tip_text: Label = $MarginContainer2/TopTipWrapper/TopTipBox/PanelContainer/VBoxContainer/TipText
+func set_tip():
+	tip_text.text = Stores.activeDecision.tip

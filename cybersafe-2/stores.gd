@@ -26,7 +26,7 @@ func add_message(chatName: String, message: ChatMessage):
 		chatStore[chatName] = Chat.new(chatName, [])
 		chat = chatStore.get(chatName)
 	
-	chat.add_message(message)
+	chat.queue_message(message)
 	chatsInOrder.erase(chatName)
 	chatsInOrder.insert(0, chatName)
 

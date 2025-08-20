@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://48lrcbch5nyx"]
+[gd_scene load_steps=10 format=3 uid="uid://48lrcbch5nyx"]
 
 [ext_resource type="Script" uid="uid://cmo4kaq86dd2g" path="res://Scenes/chat_screen.gd" id="1_52q4q"]
 [ext_resource type="PackedScene" uid="uid://c5khr4g8eysxj" path="res://chat_message.tscn" id="1_vy133"]
+[ext_resource type="Texture2D" uid="uid://bo0yisa1lke0c" path="res://Assets/white_back_arrow.png" id="2_j1scr"]
+[ext_resource type="Texture2D" uid="uid://b74ddfhnd6vr" path="res://Assets/back_arrow_hover.png" id="3_rhckb"]
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="4_b1hvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy133"]
 bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
@@ -12,7 +15,11 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="FontVariation" id="FontVariation_rhckb"]
+base_font = ExtResource("4_b1hvo")
+
 [sub_resource type="LabelSettings" id="LabelSettings_j1scr"]
+font = SubResource("FontVariation_rhckb")
 font_size = 60
 
 [node name="ChatScreen" type="MarginContainer"]
@@ -28,19 +35,35 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vy133")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("2_j1scr")
+texture_hover = ExtResource("3_rhckb")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_52q4q")
 
-[node name="ChatName" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="ChatName" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "CHATNAME"
 label_settings = SubResource("LabelSettings_j1scr")
+text_overrun_behavior = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
