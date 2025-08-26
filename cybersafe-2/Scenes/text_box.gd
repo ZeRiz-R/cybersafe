@@ -6,13 +6,14 @@ const CHAR_READ_RATE = 0.03
 signal available
 
 # Animated Elements
-@onready var outer_panel_container: PanelContainer = $TextBoxContainer/OuterPanelContainer
+@onready var outer_panel_container: PanelContainer = $TextBoxContainer/VBoxContainer/OuterPanelContainer
 @export var wobble := Vector2(-0.25, -0.04)
+var skew = Vector2(-0.625, -0.07)
 
 # Text Elements
-@onready var start: Label = $TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/Start
-@onready var content: Label = $TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/Content
-@onready var end: Label = $TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/End
+@onready var start: Label = $TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/Start
+@onready var content: Label = $TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/Content
+@onready var end: Label = $TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/End
 var text_tween: Tween
 
 var textQueue = []
@@ -48,8 +49,8 @@ func _process(delta: float) -> void:
 		state.FINISHED:
 			if Input.is_action_just_pressed("finish_text"):
 				change_state(state.READY)
-				hide_textbox()
 				if (textQueue.is_empty()):
+					hide_textbox()
 					queue_free()
 
 func open_textbox():
@@ -103,7 +104,5 @@ func hide_textbox():
 func animate_outer():
 	var tween = get_tree().create_tween().set_loops()
 	var sb: StyleBoxFlat = outer_panel_container.get_theme_stylebox("panel")
-	var skew_x = sb.skew.x
-	var skew_y = sb.skew.y
 	tween.tween_property(sb, "skew", wobble, 0.1)
-	tween.tween_property(sb, "skew", Vector2(skew_x, skew_y), 0.1)
+	tween.tween_property(sb, "skew", skew, 0.1)

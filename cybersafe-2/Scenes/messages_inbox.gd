@@ -6,7 +6,7 @@ extends Control
 @onready var chat_screen_wrapper: Control = $MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper
 @onready var chat_screen: MarginContainer
 @onready var displayArea: PanelContainer = $MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer
-@onready var decision_button: Button = $MarginContainer/HBoxContainer/VBoxContainer3/DecisionButton
+@onready var decision_button: Button = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/DecisionButton
 func _ready():
 	anim_player.play("slide_in")
 	chat_screen_wrapper.visible = false
@@ -45,7 +45,7 @@ func _on_choice_selected(choice: Choice):
 			pass
 		# ZoomToEmail()
 		# DisplayVisual()
-	await(Stores.activeDecision.display_outcome_text(get_tree().current_scene))# QueueOutcomeText()
+	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 		# CompleteDecision()
 	SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
 	# UpdateMetersVisual() Maybe different scene

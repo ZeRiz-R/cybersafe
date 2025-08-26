@@ -20,7 +20,7 @@ func _ready():
 func iterate_meters():
 	var index = 0
 	print("Iterating meters")
-	Player.update_meters(choice.meter_changes)
+	Player.update_meters(choice.meterChanges)
 	for bar in meterBars:
 		bar.tween_meter_value(Player.meters[allMeters[index]])
 		await(get_tree().create_timer(1).timeout)

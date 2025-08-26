@@ -2,11 +2,15 @@ extends CanvasLayer
 @onready var color_rect: ColorRect = $ColorRect
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var arrow: Polygon2D = $Arrow
+signal transition_finished
+signal transitioning
+
 func _ready():
 	print("Loaded Animation Player")
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func change_scene(new_scene: String, transition: String):
+	emit_signal("transitioning")
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
 	match transition:
 		"fade":
@@ -18,6 +22,7 @@ func change_scene(new_scene: String, transition: String):
 		"arrow_time":
 			arrow_time_transition(new_scene)
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	emit_signal("transition_finished")
 	
 func fade_transition(new_scene: String):
 	color_rect.material.shader = preload("res://Scenes/ShaderTransitions/fade.gdshader")

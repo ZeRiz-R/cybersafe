@@ -7,7 +7,11 @@ var chatStore := {}
 var unreadChats := 0
 var chatsInOrder := []
 
+var ignoredStore := []
+var ignoredEventDates := []
+
 var activeDecision: Decision
+var activeMeterChange: Dictionary
 
 func _init() -> void:
 	activeDecision = Constants.dummyDecision
@@ -54,4 +58,17 @@ func popUnreadEmail():
 
 func popUnreadChat():
 	unreadChats = min(unreadChats - 1, 0)
+	
+func addIgnoredEvent(event: IgnoreEvent):
+	ignoredStore.append(event)
+	
+func queueIgnoredEvent(date: Vector2i):
+	for i in range(len(ignoredEventDates)):
+		if date.x <= ignoredEventDates[i].x and date.y <= ignoredEventDates[i].y:
+			ignoredEventDates.insert(i, date)
+			return
+	ignoredEventDates.append(date)
+
+func popIgnoredEvent():
+	return ignoredEventDates.pop_front()
 	

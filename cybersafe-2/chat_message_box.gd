@@ -12,12 +12,16 @@ extends MarginContainer
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 signal message_sent
 
+@onready var avatar: PanelContainer = $Wrapper/VBoxContainer/IconMessageContainer/AvatarWrapper/Avatar
 func connect_message(chatMessage: ChatMessage):
 	sender.text = chatMessage.sender
 	message.text = chatMessage.message
+	avatar.select_image(chatMessage.sender)
+	
 	if chatMessage.isPlayerMessage:
 		# Swap icon and message, then align right
 		icon_message_container.move_child(message_box_wrapper, 0) # Moves message_container to top of hbox
+		avatar.select_image("Avatar1")
 		sender.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		
 func display_message():
@@ -27,7 +31,9 @@ func display_message():
 func queue_message():
 	anim_player.play("load_message")
 	anim_player.queue("open_typing")
+	anim_player.speed_scale = 1.325
 	anim_player.queue("typing")
+	anim_player.speed_scale = 1
 	await(get_tree().create_timer(2).timeout)
 	anim_player.play("send_message")
 	print("emitting signal message sent")

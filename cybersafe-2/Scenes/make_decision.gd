@@ -26,6 +26,8 @@ func connect_buttons():
 func _on_button_pressed(choice: Choice):
 	# Player.update_meters(choice.meter_changes)
 	Stores.activeDecision.select_choice(choice)
+	if choice is IgnoreChoice:
+		choice.add_followup_event()
 	Stores.activeDecision.complete_decision()
 	# Stores.activeDecision = null
 	close()

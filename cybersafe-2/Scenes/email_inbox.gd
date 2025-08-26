@@ -1,11 +1,12 @@
 extends Node
 
-@onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer/PanelContainer2/PanelContainer/ScrollContainer/VBoxContainer
+@onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/LeftBoxWrapper/VBoxContainer/PanelContainer2/ScrollContainer/VBoxContainer
 @onready var decisionButton: Button = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/DecisionButton
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 func _ready():
 	load_emails()
 	connect_buttons()
+	anim_player.play("entry")
 
 func load_emails():
 	# Removes all buttons from the email inbox
@@ -26,9 +27,10 @@ func connect_buttons():
 
 	decisionButton.disabled = true
 		
-@onready var titleLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/Label
-@onready var senderLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/Label
-@onready var bodyLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer2/PanelContainer/Label
+
+@onready var titleLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/TitleWrapper/Title
+@onready var senderLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/SenderWrapper/Sender
+@onready var bodyLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/Body
 func _on_inbox_pressed(emailDecision: EmailDecision):
 	var email = emailDecision.email
 	titleLabel.text = email.title
@@ -44,7 +46,7 @@ func _on_inbox_pressed(emailDecision: EmailDecision):
 	else:
 		decisionButton.disabled = true	
 	
-func _on_choice_selected(choice: Choice):
+func _on_choice_selected(choice):
 	print("Choice selected")
 	match choice.id:
 		"Correct":
@@ -56,8 +58,12 @@ func _on_choice_selected(choice: Choice):
 			pass
 		# ZoomToEmail()
 		# DisplayVisual()
-	await(Stores.activeDecision.display_outcome_text(get_tree().current_scene))# QueueOutcomeText()
-		# CompleteDecision()
-	SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
-	# UpdateMetersVisual() Maybe different scene
+	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
+	
+	if choice is IgnoreChoice:
+		print("Ignored!!!")
+		SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow")
+	else:
+		SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
+	
 	

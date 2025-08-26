@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=38 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
@@ -13,11 +13,7 @@
 [ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="9_mt3ts"]
 [ext_resource type="LabelSettings" uid="uid://cal8u1bqpls3r" path="res://GodotLabels/MeterNames.tres" id="9_vld2e"]
 
-[sub_resource type="FontVariation" id="FontVariation_oeawy"]
-base_font = ExtResource("9_mt3ts")
-
 [sub_resource type="LabelSettings" id="LabelSettings_42qyo"]
-font = SubResource("FontVariation_oeawy")
 font_size = 35
 font_color = Color(0, 0, 0, 1)
 
@@ -173,134 +169,6 @@ font_size = 150
 font_color = Color(0.907342, 0, 0.174475, 1)
 outline_size = 11
 
-[sub_resource type="Animation" id="Animation_oeawy"]
-resource_name = "IgnoreEventActivate"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.666667, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 911)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Overlays:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.133333, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Overlays/ScreenDarken:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.133333, 0.869394, 1.16667, 2.99898, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Overlays/ImpactContainer:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.26667, 1.46667, 2.73333, 2.93333),
-"transitions": PackedFloat32Array(0.277392, 1, 1, 2.07053),
-"update": 0,
-"values": [Vector2(-1204, 465), Vector2(123, 465), Vector2(675, 465), Vector2(2400, 465)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.133333, 1.86667, 1.87762),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["1 Day", "1 Day", "0 Days"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:label_settings:font_color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.86667, 1.87701),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.907342, 0, 0.174475, 1), Color(2.40654e-07, 0.614157, 0.100192, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:position")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1.7967, 1.8, 1.83333, 1.85378, 1.86628, 1.90146, 1.93333, 1.96667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.88, -35.57), Vector2(0, 0), Vector2(-12.24, -11.545), Vector2(0.77002, -17.465), Vector2(-8.64502, 4.695), Vector2(-22.165, -20.4), Vector2(-5.15503, -13.845), Vector2(2.88, -35.57)]
-}
-
-[sub_resource type="Animation" id="Animation_048ak"]
-resource_name = "OpenIgnorePanel"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.133333, 0.263333, 0.333333, 0.433333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.4, 0.409), Vector2(1.1, 0.7), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_3r00j"]
 resource_name = "RESET"
 tracks/0/type = "value"
@@ -366,7 +234,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:text")
+tracks/5/path = NodePath("Overlays/ImpactContainer/CountdownText:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -378,7 +246,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:label_settings:font_color")
+tracks/6/path = NodePath("Overlays/ImpactContainer/CountdownText:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -387,17 +255,109 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.907342, 0, 0.174475, 1)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Overlays/ImpactContainer/CountdownWrapper/CountdownText:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+
+[sub_resource type="Animation" id="Animation_048ak"]
+resource_name = "OpenIgnorePanel"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.4, 0.409), Vector2(1.1, 0.7), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oeawy"]
+resource_name = "IgnoreEventActivate"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.266667, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 911)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlays:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlays/ScreenDarken:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.502728, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Overlays/ImpactContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 1.9, 2.1),
+"transitions": PackedFloat32Array(0.277392, 1, 1, 2.07053),
+"update": 0,
+"values": [Vector2(-1204, 465), Vector2(123, 465), Vector2(675, 465), Vector2(1960, 465)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Overlays/ImpactContainer/CountdownText:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["1 Day", "0 Days"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Overlays/ImpactContainer/CountdownText:label_settings:font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.907342, 0, 0.174475, 1), Color(2.40654e-07, 0.614157, 0.100192, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oeawy"]
@@ -839,9 +799,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1440.0
+offset_left = 1000.0
 offset_top = -75.0
-offset_right = 2609.0
+offset_right = 2169.0
 offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -852,24 +812,12 @@ text = "IMPACT TIMER"
 label_settings = SubResource("LabelSettings_3r00j")
 metadata/_edit_use_anchors_ = true
 
-[node name="CountdownWrapper" type="Control" parent="Overlays/ImpactContainer"]
+[node name="CountdownText" type="Label" parent="Overlays/ImpactContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CountdownText" type="Label" parent="Overlays/ImpactContainer/CountdownWrapper"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 1169.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
 text = "1 Day"
 label_settings = SubResource("LabelSettings_048ak")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

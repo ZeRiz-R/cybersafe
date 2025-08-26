@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dopf7cqqwqivp"]
+[gd_scene load_steps=14 format=3 uid="uid://dopf7cqqwqivp"]
 
 [ext_resource type="Script" uid="uid://c0t0pnfhtwvf0" path="res://Scenes/text_box.gd" id="1_k7ve7"]
 [ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="2_0kxgl"]
 [ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="2_ot2p7"]
+[ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="2_w6krc"]
+[ext_resource type="PackedScene" uid="uid://bsd3q418acec5" path="res://floating.tscn" id="3_8gqem"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
 content_margin_left = 20.0
@@ -11,6 +13,11 @@ content_margin_right = 10.0
 content_margin_bottom = 10.0
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(-0.625, -0.07)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tto5"]
+font = ExtResource("2_0kxgl")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7ve7"]
 bg_color = Color(0, 0, 0, 1)
@@ -27,11 +34,6 @@ base_font = ExtResource("2_ot2p7")
 [sub_resource type="LabelSettings" id="LabelSettings_d0rgj"]
 font = SubResource("FontVariation_ot2p7")
 font_size = 50
-
-[sub_resource type="LabelSettings" id="LabelSettings_5tto5"]
-font = ExtResource("2_0kxgl")
-font_size = 25
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_nwibb"]
 resource_name = "RESET"
@@ -57,6 +59,18 @@ tracks/1/keys = {
 "points": PackedFloat32Array(669, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0kxgl"]
 resource_name = "slide_in"
@@ -80,8 +94,20 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1149, -0.25, 0, 0.25, 0, 669, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1149, -0.25, 0, 0.25, 0, 269, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ot2p7"]
@@ -103,44 +129,92 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextBoxContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 69.0
-offset_bottom = 480.0
+offset_bottom = 880.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
+metadata/_edit_use_anchors_ = true
 
-[node name="OuterPanelContainer" type="PanelContainer" parent="TextBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextBoxContainer"]
 layout_mode = 2
+
+[node name="AvatarWrapper" type="Control" parent="TextBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+
+[node name="Avatar" parent="TextBoxContainer/VBoxContainer/AvatarWrapper" instance=ExtResource("2_w6krc")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+size_flags_horizontal = 10
+size_flags_vertical = 1
+
+[node name="Floating" parent="TextBoxContainer/VBoxContainer/AvatarWrapper/Avatar" instance=ExtResource("3_8gqem")]
+float_radius = 10.0
+float_speed = 2.0
+
+[node name="OuterPanelContainer" type="PanelContainer" parent="TextBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
 
-[node name="Panel" type="Panel" parent="TextBoxContainer/OuterPanelContainer"]
+[node name="Name" type="Control" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/Name"]
+layout_mode = 2
+anchor_left = 0.0147727
+anchor_top = -0.105727
+anchor_right = 0.0147727
+anchor_bottom = -0.105727
+offset_left = -25.4089
+offset_top = -17.7423
+offset_right = 1734.59
+offset_bottom = 17.2576
+size_flags_vertical = 0
+text = "MYSTERIOUS VOICE"
+label_settings = SubResource("LabelSettings_5tto5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k7ve7")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer/OuterPanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/OuterPanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Start" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+[node name="Start" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "* "
 label_settings = SubResource("LabelSettings_d0rgj")
 
-[node name="Content" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+[node name="Content" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -149,30 +223,12 @@ label_settings = SubResource("LabelSettings_d0rgj")
 autowrap_mode = 2
 clip_text = true
 
-[node name="End" type="Label" parent="TextBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
+[node name="End" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(27, 69)
 layout_mode = 2
 size_flags_vertical = 8
 text = " *"
 label_settings = SubResource("LabelSettings_d0rgj")
-
-[node name="Name" type="Control" parent="TextBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TextBoxContainer/Name"]
-layout_mode = 2
-anchor_left = 0.0147727
-anchor_top = -0.105727
-anchor_right = 0.0147727
-anchor_bottom = -0.105727
-offset_left = -25.4091
-offset_top = 7.48745
-offset_right = 1734.59
-offset_bottom = 42.4874
-size_flags_vertical = 0
-text = "MYSTERIOUS VOICE"
-label_settings = SubResource("LabelSettings_5tto5")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5khr4g8eysxj"]
+[gd_scene load_steps=18 format=3 uid="uid://c5khr4g8eysxj"]
 
 [ext_resource type="Script" uid="uid://bs1a13di3145d" path="res://chat_message_box.gd" id="1_x63xj"]
 [ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="2_qvr0r"]
+[ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="3_c8kgr"]
 [ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="3_mlgxf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c8kgr"]
@@ -56,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 24)]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -164,7 +165,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 24)]
+"values": [Vector2(0, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -176,7 +177,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 24)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qvr0r"]
@@ -281,6 +282,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/LeftDot/LeftDot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control2/MidDot:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/PanelContainer/HBoxContainer/Control3/RightDot:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 24)]
 }
 
 [sub_resource type="Animation" id="Animation_nkygh"]
@@ -443,24 +480,51 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 25
 
+[node name="AvatarWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Avatar" parent="Wrapper/VBoxContainer/IconMessageContainer/AvatarWrapper" instance=ExtResource("3_c8kgr")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(0, 0)
+
 [node name="Icon" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_sac4d")
 
 [node name="MessageBoxWrapper" type="MarginContainer" parent="Wrapper/VBoxContainer/IconMessageContainer"]
+custom_minimum_size = Vector2(445, 108)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="MessageWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper"]
+custom_minimum_size = Vector2(445, 108)
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="BigMessageContainer" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-offset_right = 445.0
-offset_bottom = 108.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x63xj")
@@ -517,9 +581,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 4.0
+offset_top = -20.0
 offset_right = 40.0
-offset_bottom = 44.0
+offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
@@ -533,9 +597,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 4.0
+offset_top = -20.0
 offset_right = 40.0
-offset_bottom = 44.0
+offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
@@ -549,9 +613,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 4.0
+offset_top = -20.0
 offset_right = 40.0
-offset_bottom = 44.0
+offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")

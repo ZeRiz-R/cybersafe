@@ -21,10 +21,10 @@ func progress_time():
 		currentDate.x += 1
 		
 func load_test_event():
-	var event = Constants.dummyEvent
+	var event = Constants.dummyDecision
 	add_event(event.date.x, event.date.y, event)
 	
-	event = Constants.dummyChatEvent
+	event = Constants.dummyChatDecision
 	add_event(event.date.x, event.date.y, event)
 	print_event()
 
@@ -41,10 +41,13 @@ func print_event():
 	if not event:
 		return
 	
-	if event.event is EmailDecision:
-		Stores.add_email(event.event)
-	if event.event is ChatDecision:
-		Stores.add_chat_event(event.event)
+	if event is EmailDecision:
+		Stores.add_email(event)
+	if event is ChatDecision:
+		Stores.add_chat_event(event)
+	if event is IgnoreEvent:
+		Stores.popIgnoredEvent()
+		Stores.addIgnoredEvent(event)
 			
 func get_date():
 	return currentDate

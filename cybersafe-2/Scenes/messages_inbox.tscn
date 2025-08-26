@@ -1,23 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfhr410vu6ta7"]
+[gd_scene load_steps=22 format=3 uid="uid://dfhr410vu6ta7"]
 
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
 [ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
 [ext_resource type="PackedScene" uid="uid://d3ptlu5bkxn4p" path="res://chat_list.tscn" id="2_88lbi"]
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_x1i7j"]
 [ext_resource type="PackedScene" uid="uid://48lrcbch5nyx" path="res://Scenes/chat_screen.tscn" id="3_iicym"]
+[ext_resource type="PackedScene" uid="uid://ct0lqd441l27g" path="res://small_meter_box.tscn" id="4_00fjs"]
 [ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/WiFi_whit.png" id="4_p3ju4"]
 [ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/data_signal.png" id="5_00fjs"]
 [ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/battery_icon.png" id="6_bcmw0"]
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="6_kqqou"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqqou"]
-bg_color = Color(0.715295, 0.0694249, 0, 1)
-skew = Vector2(0.1, 0)
-border_width_left = 20
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88lbi"]
 bg_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
@@ -27,6 +19,7 @@ border_width_right = 10
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
+expand_margin_bottom = 50.0
 shadow_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_iicym"]
@@ -46,12 +39,38 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88lbi"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqqou"]
+bg_color = Color(0.715295, 0.0694249, 0, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00fjs"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcmw0"]
+bg_color = Color(0, 0.662745, 0.819608, 1)
+skew = Vector2(0.22, 0.08)
+
 [sub_resource type="Animation" id="Animation_iicym"]
 resource_name = "RESET"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:x")
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -62,68 +81,58 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:y")
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/5/type = "bezier"
+tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:x")
+tracks/5/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper/ChatScreen:position:y")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1410)]
 }
 
 [sub_resource type="Animation" id="Animation_x1i7j"]
@@ -154,61 +163,51 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_mkrng"]
 resource_name = "slide_in"
-length = 0.5
+length = 0.55
 tracks/0/type = "bezier"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:x")
+tracks/0/enabled = false
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"points": PackedFloat32Array(-0.401426, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.55)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position:y")
+tracks/1/enabled = false
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1410, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.55)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.401426, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
-tracks/3/type = "bezier"
+tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:x")
-tracks/3/interp = 1
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:position")
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.38, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"times": PackedFloat32Array(0, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1410), Vector2(0, -25), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x1i7j"]
@@ -249,39 +248,7 @@ theme_override_constants/margin_right = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BackToDashboard" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 2.94
-theme_override_styles/normal = SubResource("StyleBoxFlat_kqqou")
-text = "BACK BUTTON RETURN HOME"
-script = ExtResource("2_x1i7j")
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-text = "CHAT DESCRIPTION"
-label_settings = ExtResource("1_88lbi")
-horizontal_alignment = 1
-
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer2"]
-layout_mode = 2
-text = "METERS"
-label_settings = ExtResource("1_88lbi")
-horizontal_alignment = 1
+theme_override_constants/separation = 80
 
 [node name="PhoneWrapper" type="Control" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(840, 1040)
@@ -384,13 +351,62 @@ layout_mode = 2
 offset_right = 740.0
 offset_bottom = 856.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 40
 
-[node name="DecisionButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -1
+
+[node name="BackToDashboard" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 2.94
+theme_override_styles/normal = SubResource("StyleBoxFlat_kqqou")
+text = "BACK BUTTON RETURN HOME"
+script = ExtResource("2_x1i7j")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_00fjs")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "CHAT DESCRIPTION"
+label_settings = ExtResource("1_88lbi")
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcmw0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="MeterDisplay" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_00fjs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 40
+
+[node name="DecisionButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 6
+size_flags_stretch_ratio = 0.5
 theme = ExtResource("6_kqqou")
 text = "MAKE DECISION"
 script = ExtResource("2_x1i7j")
