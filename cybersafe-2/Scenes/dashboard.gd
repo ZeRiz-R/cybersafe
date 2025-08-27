@@ -19,7 +19,7 @@ func load_meters():
 	print("Getting ready")
 	var meterBars = get_progress_bars(meterBox, [])
 	for bar in meterBars:
-		bar.set_meter_value(Player.meters[allMeters[index]])
+		bar.tween_meter_value(Player.meters[allMeters[index]])
 		index += 1
 
 @onready var week_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/WeekLabel

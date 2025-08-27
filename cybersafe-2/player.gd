@@ -12,4 +12,6 @@ func update_meters(changes: Dictionary):
 	for stat in changes.keys():
 		var val = changes[stat]
 		meters[stat] += val
+		meters[stat] = min(meters[stat], 100)
+		meters[stat] = max(meters[stat], 0)
 		

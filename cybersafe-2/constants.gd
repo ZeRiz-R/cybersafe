@@ -21,7 +21,7 @@ var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.web
 				} 
 
 # TEST DECISION EMAIL
-var choice1 = Choice.new("Follow" ,"Follow", {Constants.Meters.CYBER_KNOWLEDGE: +15,
+var choice1 = Choice.new("Follow" ,"Follow", {Constants.Meters.CYBER_KNOWLEDGE: +30,
 										 Constants.Meters.DEVICE_HEALTH: +10,
 										 Constants.Meters.DATA_SECURITY: -10,
 										 Constants.Meters.SOCIAL_TRUST: -30,
@@ -31,7 +31,7 @@ var choice2 = Choice.new("Report", "Report", {Constants.Meters.CYBER_KNOWLEDGE: 
 										 Constants.Meters.DATA_SECURITY: +4,
 										 Constants.Meters.SOCIAL_TRUST: +5,
 										 Constants.Meters.STRESS: -5}, ["Bad Stuff", "It's not everyday you report an email!"])
-var choice3 = IgnoreChoice.new("Ignore", "Ignore", {Constants.Meters.CYBER_KNOWLEDGE: +2,
+var choice3 = IgnoreChoice.new("Ignore", "Ignore", {Constants.Meters.CYBER_KNOWLEDGE: +30,
 										 Constants.Meters.DEVICE_HEALTH: +3,
 										 Constants.Meters.DATA_SECURITY: +4,
 										 Constants.Meters.SOCIAL_TRUST: +5,
@@ -45,7 +45,7 @@ var chat1 = ChatMessage.new("Winton Overwat", "Overwatch 2 in big 2025", false)
 var chat2 = ChatMessage.new("FroggerTV", "Does this mean Overwatch is back?", true)
 var chat3 = ChatMessage.new("Winton Overwat", "Yes, Yes we are!", false)
 
-var choice1c = Choice.new("Play", "Play Overwatch. you could reach Grandmaster!", {Constants.Meters.CYBER_KNOWLEDGE: +15,
+var choice1c = Choice.new("Play", "Play Overwatch. you could reach Grandmaster!", {Constants.Meters.CYBER_KNOWLEDGE: +30,
 										 Constants.Meters.DEVICE_HEALTH: +10,
 										 Constants.Meters.DATA_SECURITY: -10,
 										 Constants.Meters.SOCIAL_TRUST: -30,

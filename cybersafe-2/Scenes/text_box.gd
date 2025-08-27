@@ -35,7 +35,7 @@ func _ready():
 	emit_signal("available")
 	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match currentState:
 		state.READY:
 			if not textQueue.is_empty():
@@ -92,6 +92,7 @@ func change_state(nextState: state):
 
 func show_textbox():
 	start.text = "* "
+	end.text = ""
 	textbox_container.show()
 
 func hide_textbox():

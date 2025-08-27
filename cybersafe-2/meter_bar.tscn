@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cike150wbqadn"]
 
 [ext_resource type="Script" uid="uid://o5s0bfe7485s" path="res://meter_bar.gd" id="1_aoe8o"]
+[ext_resource type="StyleBox" uid="uid://drgcb7ulo0grh" path="res://meter_bar.tres" id="2_aaaq2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoe8o"]
 content_margin_left = 10.0
@@ -24,11 +25,6 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pe2g"]
-bg_color = Color(0.25831, 0.713878, 0, 1)
-skew = Vector2(0.2, 0)
-border_color = Color(0, 0, 0, 1)
-
 [node name="MeterBar" type="MarginContainer"]
 anchors_preset = 4
 anchor_top = 0.5
@@ -51,8 +47,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_aoe8o")
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_xig56")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2pe2g")
-value = 30.0
+theme_override_styles/fill = ExtResource("2_aaaq2")
 show_percentage = false
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PanelContainer/ProgressBar"]

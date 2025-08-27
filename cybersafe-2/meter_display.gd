@@ -1,13 +1,30 @@
 extends PanelContainer
 
-func _ready():
-	load_meters()
-	# animate_outer()
-
 @onready var meterBox: VBoxContainer = $PanelContainer/MetersWrapper/MeterBox
+@onready var panel_container: PanelContainer = $PanelContainer
+@export var boxColour: Color
 var meterBars: Array
 var allMeters = Constants.Meters.values()
 
+func _ready():
+	load_meters()
+	set_panel_colour(boxColour)
+	# animate_outer()
+
+func set_panel_colour(colour: Color):
+	# Set main panel
+	var sb = panel_container.get_theme_stylebox("panel") as StyleBoxFlat
+	sb.bg_color = colour
+	
+	# Set borders of icons
+	var m1 = get_node("PanelContainer/MetersWrapper/MeterBox/Meter4/PanelContainer")
+	sb = m1.get_theme_stylebox("panel") as StyleBoxFlat
+	sb.border_color = colour
+	
+	m1 = get_node("PanelContainer/MetersWrapper/MeterBox/Meter5/PanelContainer")
+	sb = m1.get_theme_stylebox("panel") as StyleBoxFlat
+	sb.border_color = colour
+	
 func load_meters():
 	var index = 0;
 	print("Getting ready")

@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct0lqd441l27g"]
+[gd_scene load_steps=14 format=3 uid="uid://ct0lqd441l27g"]
 
 [ext_resource type="Script" uid="uid://csfh1hirpwdkh" path="res://meter_display.gd" id="1_xyo1q"]
+[ext_resource type="Texture2D" uid="uid://c1k3a2g7olig4" path="res://Assets/Meters/Gradient/worldwide_8264695.png" id="2_1y6bq"]
 [ext_resource type="LabelSettings" uid="uid://cal8u1bqpls3r" path="res://GodotLabels/MeterNames.tres" id="2_ulqom"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="3_wst37"]
+[ext_resource type="Texture2D" uid="uid://bvyhps2xio05j" path="res://Assets/Meters/Gradient/laptop_10369150.png" id="5_ebh1y"]
+[ext_resource type="Texture2D" uid="uid://dqfkvsh0x1xj7" path="res://Assets/Meters/Gradient/padlock_14259448.png" id="6_yfa2t"]
+[ext_resource type="Texture2D" uid="uid://devx6duv3mqjj" path="res://Assets/Meters/Gradient/target-audience_11966590.png" id="7_h5bub"]
+[ext_resource type="Texture2D" uid="uid://ces5thovsxcuj" path="res://Assets/Meters/Gradient/storm_10130043.png" id="8_02a4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m0wr"]
 content_margin_left = 30.0
@@ -18,8 +23,37 @@ border_width_bottom = 20
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_griq0"]
+resource_local_to_scene = true
 bg_color = Color(0.646736, 0.524432, 1, 1)
 skew = Vector2(-0.48, -0.04)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg1mp"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.647059, 0.52549, 1, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckw36"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.647059, 0.52549, 1, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei0fj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.647059, 0.52549, 1, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_right = 5.0
 
 [node name="MeterDisplay" type="PanelContainer"]
 offset_right = 441.0
@@ -29,6 +63,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.73
 theme_override_styles/panel = SubResource("StyleBoxFlat_0m0wr")
 script = ExtResource("1_xyo1q")
+boxColour = Color(0.647059, 0.52549, 1, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -48,21 +83,27 @@ scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
+[node name="Meter1" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -10
 
-[node name="Panel" type="Panel" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer"]
-custom_minimum_size = Vector2(20, 20)
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter1"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg1mp")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MetersWrapper/MeterBox/Meter1/PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_1y6bq")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter1"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/Meter1/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -70,102 +111,126 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CYBER KNOWLEDGE"
 label_settings = ExtResource("2_ulqom")
 
-[node name="Meter" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer/VBoxContainer" instance=ExtResource("3_wst37")]
+[node name="Meter" parent="PanelContainer/MetersWrapper/MeterBox/Meter1/VBoxContainer" instance=ExtResource("3_wst37")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
+[node name="Meter2" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -10
 
-[node name="Panel" type="Panel" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer2"]
-custom_minimum_size = Vector2(20, 20)
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg1mp")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MetersWrapper/MeterBox/Meter2/PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("5_ebh1y")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter2"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer2/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/Meter2/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Device Health"
 label_settings = ExtResource("2_ulqom")
 
-[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer2/VBoxContainer" instance=ExtResource("3_wst37")]
+[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter2/VBoxContainer" instance=ExtResource("3_wst37")]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
+[node name="Meter3" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -10
 
-[node name="Panel" type="Panel" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer3"]
-custom_minimum_size = Vector2(20, 20)
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter3"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg1mp")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MetersWrapper/MeterBox/Meter3/PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("6_yfa2t")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter3"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer3/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/Meter3/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Data Security "
 label_settings = ExtResource("2_ulqom")
 
-[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer3/VBoxContainer" instance=ExtResource("3_wst37")]
+[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter3/VBoxContainer" instance=ExtResource("3_wst37")]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
+[node name="Meter4" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -10
 
-[node name="Panel" type="Panel" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer4"]
-custom_minimum_size = Vector2(20, 20)
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter4"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ckw36")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MetersWrapper/MeterBox/Meter4/PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("7_h5bub")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter4"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer4/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/Meter4/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Social Trust"
 label_settings = ExtResource("2_ulqom")
 
-[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer4/VBoxContainer" instance=ExtResource("3_wst37")]
+[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter4/VBoxContainer" instance=ExtResource("3_wst37")]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
+[node name="Meter5" type="HBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = -10
 
-[node name="Panel" type="Panel" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer5"]
-custom_minimum_size = Vector2(20, 20)
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter5"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ei0fj")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/MetersWrapper/MeterBox/Meter5/PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("8_02a4j")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter5"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer5"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer5/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MetersWrapper/MeterBox/Meter5/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Stress"
 label_settings = ExtResource("2_ulqom")
 
-[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/HBoxContainer5/VBoxContainer" instance=ExtResource("3_wst37")]
+[node name="MarginContainer" parent="PanelContainer/MetersWrapper/MeterBox/Meter5/VBoxContainer" instance=ExtResource("3_wst37")]
 layout_mode = 2
