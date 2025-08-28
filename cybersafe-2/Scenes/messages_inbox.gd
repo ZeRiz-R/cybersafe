@@ -47,5 +47,6 @@ func _on_choice_selected(choice: Choice):
 		# DisplayVisual()
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 		# CompleteDecision()
-	SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
+	# SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
+	Constants.overlay_scene(Constants.update_meters_scene)
 	# UpdateMetersVisual() Maybe different scene

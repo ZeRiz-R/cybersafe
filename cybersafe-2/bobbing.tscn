@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn7dyqqvvl6yb"]
+
+[ext_resource type="Script" uid="uid://12xr7xgu08q0" path="res://bobbing.gd" id="1_4rmt6"]
+
+[node name="bobbing" type="Node"]
+script = ExtResource("1_4rmt6")

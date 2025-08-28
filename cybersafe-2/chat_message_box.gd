@@ -21,7 +21,8 @@ func connect_message(chatMessage: ChatMessage):
 	if chatMessage.isPlayerMessage:
 		# Swap icon and message, then align right
 		icon_message_container.move_child(message_box_wrapper, 0) # Moves message_container to top of hbox
-		avatar.select_image("Avatar1")
+		avatar.select_image(Player.playerIcon)
+		sender.text = Player.playerName
 		sender.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		
 func display_message():

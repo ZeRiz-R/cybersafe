@@ -5,6 +5,7 @@ extends Control
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var avatar: PanelContainer = $MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer/Control/AvatarContainer
+@onready var player_name: Label = $MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/PlayerName
 func _ready():
 	load_meters()
 	set_date()
@@ -56,8 +57,9 @@ func check_ignores():
 		ignore_panel.visible = false
 		
 func set_player_avatar():
-	avatar.select_image("Avatar1")
-
+	avatar.select_image(Player.playerIcon)
+	player_name.text = Player.playerName
+	
 func get_progress_bars(node: Node, arr: Array):
 	var children = node.get_children()
 	for child in children:

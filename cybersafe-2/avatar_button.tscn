@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cns1d7y2ppyv8"]
+
+[ext_resource type="Script" uid="uid://dbr2m6t8bc0h8" path="res://avatar_button.gd" id="1_vdsrw"]
+[ext_resource type="Script" uid="uid://dxgslgq8kc4tu" path="res://avatar_button_main.gd" id="1_y3ion"]
+[ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="2_y3ion"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep4nt"]
+bg_color = Color(0, 0.419608, 0.796078, 1)
+skew = Vector2(0.73, 0.53)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixbjh"]
+
+[node name="AvatarButton" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_y3ion")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxFlat_ep4nt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ixbjh")
+script = ExtResource("1_vdsrw")
+
+[node name="Avatar" parent="Button" instance=ExtResource("2_y3ion")]
+layout_mode = 1
+scale = Vector2(0.75, 0.75)

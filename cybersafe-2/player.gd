@@ -1,6 +1,7 @@
 extends Node
 
-var playerName: String
+var playerName := "Sabo"
+var playerIcon := "Default"
 var meters: Dictionary
 	
 func _init():

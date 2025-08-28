@@ -64,6 +64,6 @@ func _on_choice_selected(choice):
 		print("Ignored!!!")
 		SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow")
 	else:
-		SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
+		Constants.overlay_scene(Constants.update_meters_scene)
 	
 	

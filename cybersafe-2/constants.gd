@@ -16,8 +16,16 @@ func display_outcome_text(scene_root: Node, outcomeText: Array[String]):
 	await(textbox.tree_exited)
 
 # HASHMAP Mapping Names to Icons for messages
-var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.webp"), "scale": Vector2(0.85, 0.85), "position": Vector2(-25, -29) },
-				"Avatar1": { "texture": preload("res://Assets/Avatars/3.png"), "scale": Vector2(0.182, 0.182) }
+var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.webp"), "scale": Vector2(0.85, 0.85) },
+				"Avatar1": { "texture": preload("res://Assets/Avatars/1.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar2": { "texture": preload("res://Assets/Avatars/2.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar3": { "texture": preload("res://Assets/Avatars/3.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar4": { "texture": preload("res://Assets/Avatars/4.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar5": { "texture": preload("res://Assets/Avatars/5.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar6": { "texture": preload("res://Assets/Avatars/6.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar7": { "texture": preload("res://Assets/Avatars/7.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar8": { "texture": preload("res://Assets/Avatars/8.png"), "scale": Vector2(0.182, 0.182) },
+				"Avatar9": { "texture": preload("res://Assets/Avatars/9.png"), "scale": Vector2(0.182, 0.182) }
 				} 
 
 # TEST DECISION EMAIL
@@ -61,3 +69,12 @@ var choice3c = Choice.new("Paladins", "Play Paladins. It was bettter anyway...",
 										 Constants.Meters.SOCIAL_TRUST: +5,
 										 Constants.Meters.STRESS: -5}, ["Uhhhhh...", "Seems like you haven't heard the news.", "Paladins is dead."])
 var dummyChatDecision = ChatDecision.new("PlayOverwatch", Vector2i(1,1), "TestPrompt", "Learn the fastest rollouts to get to the objective!", [choice1c, choice2c, choice3c], "Winton Overwat", [chat1, chat2, chat3])
+
+
+const update_meters_scene := "res://Scenes/update_meters_2.tscn"
+func overlay_scene(scene_path: String):
+	print("Overlaying Scene")
+	var overlayed_scene = load(scene_path).instantiate()
+	var uiLayer = get_tree().current_scene
+	uiLayer.add_child(overlayed_scene)
+	
