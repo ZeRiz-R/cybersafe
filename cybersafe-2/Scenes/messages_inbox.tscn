@@ -1,12 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://dfhr410vu6ta7"]
+[gd_scene load_steps=23 format=3 uid="uid://dfhr410vu6ta7"]
 
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
 [ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
 [ext_resource type="PackedScene" uid="uid://d3ptlu5bkxn4p" path="res://chat_list.tscn" id="2_88lbi"]
+[ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_bcmw0"]
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_x1i7j"]
 [ext_resource type="PackedScene" uid="uid://48lrcbch5nyx" path="res://Scenes/chat_screen.tscn" id="3_iicym"]
 [ext_resource type="PackedScene" uid="uid://ct0lqd441l27g" path="res://small_meter_box.tscn" id="4_00fjs"]
-[ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/WiFi_whit.png" id="4_p3ju4"]
+[ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/Icons/WiFi_whit.png" id="4_p3ju4"]
 [ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/data_signal.png" id="5_00fjs"]
 [ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/battery_icon.png" id="6_bcmw0"]
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="6_kqqou"]
@@ -227,6 +228,7 @@ grow_vertical = 2
 script = ExtResource("1_mkrng")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,6 +236,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.721569, 0.278431, 1)
+
+[node name="Wastelands" parent="." instance=ExtResource("2_bcmw0")]
+layout_mode = 1
+
+[node name="ColorRect" parent="Wastelands" index="0"]
+color = Color(0, 0.721569, 0.278431, 1)
+
+[node name="TextureRect" parent="Wastelands" index="1"]
+layout_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -416,3 +427,5 @@ script = ExtResource("2_x1i7j")
 libraries = {
 &"": SubResource("AnimationLibrary_x1i7j")
 }
+
+[editable path="Wastelands"]

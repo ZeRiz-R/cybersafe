@@ -9,6 +9,7 @@ func _ready():
 	
 func _on_name_entered(entry: String):
 	Player.playerName = entry
+	Constants.placeholders["name"] = Player.playerName
 	anim_player.play("switch_to_avatar")
 	anim_player.queue("change_title")
 	

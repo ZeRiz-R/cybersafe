@@ -1,13 +1,21 @@
+extends Resource
+
 class_name Choice
 
-var id: String	# Correct, Incorrect, Ignore for emails
-var text: String
-var outcomeText: Array[String]
+@export var id: String	# Correct, Incorrect, Ignore for emails
+@export var text: String
+@export var outcomeText: Array[String]
 
 # map name to change in meter e.g. "social_trust", -5
-var meterChanges: Dictionary
+@export var meterChanges: Dictionary = {
+	"CK": {"Value": 0, "Reason": ""},
+	"DH": {"Value": 0, "Reason": ""},
+	"DS": {"Value": 0, "Reason": ""},
+	"ST": {"Value": 0, "Reason": ""},
+	"S": {"Value": 0, "Reason": ""},
+}
 
-func _init(_id: String, _text: String, _meterChanges: Dictionary, _outcomeText: Array[String]):
+func _init(_id = "", _text = "", _meterChanges = {}, _outcomeText: Array[String] = []):
 	id = _id
 	text = _text
 	meterChanges = _meterChanges

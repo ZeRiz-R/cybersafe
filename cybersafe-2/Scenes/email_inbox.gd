@@ -1,8 +1,9 @@
 extends Node
 
-@onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/LeftBoxWrapper/VBoxContainer/PanelContainer2/ScrollContainer/VBoxContainer
+@onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/LeftBoxWrapper/VBoxContainer/PanelContainer2/MarginContainer/ScrollContainer/VBoxContainer
 @onready var decisionButton: Button = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/DecisionButton
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+var emailButton = preload("res://email_button.tscn")
 func _ready():
 	load_emails()
 	connect_buttons()
@@ -14,10 +15,10 @@ func load_emails():
 		child.queue_free()
 	# Adds buttons for each email to the inbox
 	for emailDecision in Stores.get_all_emails():
-		var btn = Button.new()
-		btn.text = emailDecision.email.sender
+		var btn = emailButton.instantiate()
 		btn.set_meta("email_decision", emailDecision)
 		inbox.add_child(btn)
+		btn.initialise(emailDecision.email.title, emailDecision.complete == false)
 
 func connect_buttons():
 	var buttons = inbox.get_children()
@@ -30,12 +31,12 @@ func connect_buttons():
 
 @onready var titleLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/TitleWrapper/Title
 @onready var senderLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/SenderWrapper/Sender
-@onready var bodyLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/Body
+@onready var bodyLabel: RichTextLabel = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/Body
 func _on_inbox_pressed(emailDecision: EmailDecision):
 	var email = emailDecision.email
 	titleLabel.text = email.title
 	senderLabel.text = email.sender
-	bodyLabel.text = email.body
+	bodyLabel.parse_bbcode(email.body.format(Constants.placeholders))
 	
 	anim_player.play("slide_in")
 	
@@ -64,6 +65,7 @@ func _on_choice_selected(choice):
 		print("Ignored!!!")
 		SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow")
 	else:
-		Constants.overlay_scene(Constants.update_meters_scene)
+		SceneTransition.change_scene("res://Scenes/update_meters_2.tscn", "arrow")
+
 	
 	

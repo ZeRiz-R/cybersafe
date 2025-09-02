@@ -16,6 +16,7 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x63xj"]
+resource_local_to_scene = true
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(-0.505, 0.035)
 border_width_left = 10
@@ -25,6 +26,7 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkygh"]
+resource_local_to_scene = true
 content_margin_left = 30.0
 content_margin_right = 10.0
 bg_color = Color(0, 0, 0, 1)
@@ -529,7 +531,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x63xj")
 
-[node name="Panel" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer"]
+[node name="BlackPanel" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkygh")
 

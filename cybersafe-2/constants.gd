@@ -1,11 +1,16 @@
 extends Node
 
-enum Meters {
-	CYBER_KNOWLEDGE,
-	DEVICE_HEALTH,
-	DATA_SECURITY,
-	SOCIAL_TRUST,
-	STRESS
+var Meters = {
+	"CK": "Cyber Knowledge",
+	"DH": "Device Health",
+	"DS": "Data Security",
+	"ST": "Social Trust",
+	"S": "Stress"
+}
+
+var placeholders := {
+	"name": "placeholder",
+	"link": "#00cef2"
 }
 
 func display_outcome_text(scene_root: Node, outcomeText: Array[String]):
@@ -29,23 +34,23 @@ var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.web
 				} 
 
 # TEST DECISION EMAIL
-var choice1 = Choice.new("Follow" ,"Follow", {Constants.Meters.CYBER_KNOWLEDGE: +30,
-										 Constants.Meters.DEVICE_HEALTH: +10,
-										 Constants.Meters.DATA_SECURITY: -10,
-										 Constants.Meters.SOCIAL_TRUST: -30,
-										 Constants.Meters.STRESS: +10}, ["Good stuff", "It's not everyday you test an email!"])
-var choice2 = Choice.new("Report", "Report", {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5}, ["Bad Stuff", "It's not everyday you report an email!"])
-var choice3 = IgnoreChoice.new("Ignore", "Ignore", {Constants.Meters.CYBER_KNOWLEDGE: +30,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5}, ["Decent Stuff", "We'll see how this turns out another time"],
+var choice1 = Choice.new("Follow" ,"Follow", {"CK": {"Value": +30, "Reason": "Good reason"},
+										 "DH": {"Value": +10, "Reason": "Good reason"},
+										 "DS": {"Value": -10, "Reason": "Good reason"},
+										 "ST": {"Value": -30, "Reason": "Good reason"},
+										 "S": {"Value": +10, "Reason": "Good reason"}}, ["Good stuff", "It's not everyday you test an email!"])
+var choice2 = Choice.new("Report", "Report", {"CK": {"Value": +2, "Reason": "Good reason"},
+										 "DH": {"Value": +3, "Reason": "Good reason"},
+										 "DS": {"Value": +4, "Reason": "Good reason"},
+										 "ST": {"Value": +5, "Reason": "Good reason"},
+										 "S": {"Value": -5, "Reason": "Good reason"}}, ["Bad Stuff", "It's not everyday you report an email!"])
+var choice3 = IgnoreChoice.new("Ignore", "Ignore", {"CK": {"Value": +30, "Reason": "Good reason"},
+										 "DH": {"Value": +3, "Reason": "Good reason"},
+										 "DS": {"Value": +4, "Reason": "Good reason"},
+										 "ST": {"Value": +10, "Reason": "Good reason"},
+										 "S": {"Value": -5, "Reason": "Good reason"}}, ["Decent Stuff", "We'll see how this turns out another time"],
 										Vector2i(3, 2), ["Time to follow up on that ignore!", "Turns out it was all good."])
-var email = Email.new("testsender@test.co.uk", "This is a test email", "This is a test email", [])
+var email = Email.new("testsender@test.co.uk", "This is a test email", "This is a test email. [hint=warwick.ac.uk]Link[/hint]", [])
 var dummyDecision = EmailDecision.new("DecisionTest", Vector2i(3, 1), "This is a test... believe it!", "Here is a top tip for an email", [choice1, choice2, choice3],  email)
 
 # TEST CHAT STUFF
@@ -53,23 +58,24 @@ var chat1 = ChatMessage.new("Winton Overwat", "Overwatch 2 in big 2025", false)
 var chat2 = ChatMessage.new("FroggerTV", "Does this mean Overwatch is back?", true)
 var chat3 = ChatMessage.new("Winton Overwat", "Yes, Yes we are!", false)
 
-var choice1c = Choice.new("Play", "Play Overwatch. you could reach Grandmaster!", {Constants.Meters.CYBER_KNOWLEDGE: +30,
-										 Constants.Meters.DEVICE_HEALTH: +10,
-										 Constants.Meters.DATA_SECURITY: -10,
-										 Constants.Meters.SOCIAL_TRUST: -30,
-										 Constants.Meters.STRESS: +10}, ["Maybe not the best choice...", "Your enthusiasm quickly dries out as you re-enter that hellscape."])
-var choice2c = Choice.new("Uninstall", "Uninstall Overwatch. It's not worth the pain.",  {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5}, ["Great choice!", "Your life is way more peaceful"])
-var choice3c = Choice.new("Paladins", "Play Paladins. It was bettter anyway...", {Constants.Meters.CYBER_KNOWLEDGE: +2,
-										 Constants.Meters.DEVICE_HEALTH: +3,
-										 Constants.Meters.DATA_SECURITY: +4,
-										 Constants.Meters.SOCIAL_TRUST: +5,
-										 Constants.Meters.STRESS: -5}, ["Uhhhhh...", "Seems like you haven't heard the news.", "Paladins is dead."])
+var choice1c = ChatChoice.new("Play", "Play Overwatch. you could reach Grandmaster!", {"CK": {"Value": +30, "Reason": "Good reason"},
+										 "DH": {"Value": +10, "Reason": "Good reason"},
+										 "DS": {"Value": -10, "Reason": "Good reason"},
+										 "ST": {"Value": -30, "Reason": "Good reason"},
+										 "S": {"Value": +10, "Reason": "Good reason"}}, ["Maybe not the best choice...", "Your enthusiasm quickly dries out as you re-enter that hellscape."])
+var choice2c = ChatChoice.new("Uninstall", "Uninstall Overwatch. It's not worth the pain.",  {"CK": {"Value": +2, "Reason": "Good reason"},
+										 "DH": {"Value": +2, "Reason": "Good reason"},
+										 "DS": {"Value": +4, "Reason": "Good reason"},
+										 "ST": {"Value": +5, "Reason": "Good reason"},
+										 "S": {"Value": -5, "Reason": "Good reason"}}, ["Great choice!", "Your life is way more peaceful"])
+var choice3c = ChatChoice.new("Paladins", "Play Paladins. It was bettter anyway...", {"CK": {"Value": -10, "Reason": "Good reason"},
+										 "DH": {"Value": +5, "Reason": "Good reason"},
+										 "DS": {"Value": -5, "Reason": "Good reason"},
+										 "ST": {"Value": -10, "Reason": "Good reason"},
+										 "S": {"Value": +10, "Reason": "Good reason"}}, ["Uhhhhh...", "Seems like you haven't heard the news.", "Paladins is dead."])
 var dummyChatDecision = ChatDecision.new("PlayOverwatch", Vector2i(1,1), "TestPrompt", "Learn the fastest rollouts to get to the objective!", [choice1c, choice2c, choice3c], "Winton Overwat", [chat1, chat2, chat3])
 
+# @export var resourceTest := preload("res://Assets/GameEvents/test_email_decision.tres")
 
 const update_meters_scene := "res://Scenes/update_meters_2.tscn"
 func overlay_scene(scene_path: String):

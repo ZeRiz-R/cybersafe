@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfkylkqiwml2u"
-path="res://.godot/imported/mail-icon.png-2a21b0c0adce83db4ced97cc1a0d89a5.ctex"
+uid="uid://dpyhv0lspn4q2"
+path="res://.godot/imported/GeoPattern.jpg-51c47014f4f5243620bce21628b5af0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mail-icon.png"
-dest_files=["res://.godot/imported/mail-icon.png-2a21b0c0adce83db4ced97cc1a0d89a5.ctex"]
+source_file="res://Assets/GeoPattern.jpg"
+dest_files=["res://.godot/imported/GeoPattern.jpg-51c47014f4f5243620bce21628b5af0b.ctex"]
 
 [params]
 

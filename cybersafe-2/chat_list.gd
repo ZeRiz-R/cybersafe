@@ -17,7 +17,7 @@ func load_chats():
 		var chat = Stores.chatStore.get(chatName)
 		var btn = chat_button.instantiate()
 		inbox.add_child(btn)
-		btn.connect_chat(chat)
+		btn.connect_chat(chat, chat.currentDecision.complete == false)
 
 func connect_buttons():
 	var buttons = inbox.get_children()

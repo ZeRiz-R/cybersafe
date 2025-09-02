@@ -33,20 +33,13 @@ func _on_chat_closed():
 	await(anim_player.animation_finished)
 	chat_screen_wrapper.visible = false
 
-func _on_choice_selected(choice: Choice):
+func _on_choice_selected(choice: ChatChoice):
 	print("Choice selected")
-	match choice.id:
-		"Correct":
-			pass
-			# Set visual element (e.g. green tick?)
-		"Incorrect":
-			pass
-		"Ignore":
-			pass
+	await(chat_screen.followUp(choice.followUpMessages))
 		# ZoomToEmail()
 		# DisplayVisual()
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 		# CompleteDecision()
-	# SceneTransition.change_scene("res://Scenes/update_meters.tscn", "fade")
-	Constants.overlay_scene(Constants.update_meters_scene)
+	SceneTransition.change_scene("res://Scenes/update_meters_2.tscn", "arrow")
+	# Constants.overlay_scene(Constants.update_meters_scene)
 	# UpdateMetersVisual() Maybe different scene

@@ -87,17 +87,22 @@ text = "CHATNAME"
 label_settings = SubResource("LabelSettings_j1scr")
 text_overrun_behavior = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 60
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
-[node name="ChatMessageContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_vy133")]
+[node name="ChatMessageContainer" parent="VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" instance=ExtResource("1_vy133")]
 layout_mode = 2
 
-[node name="ChatMessageContainer2" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_vy133")]
+[node name="ChatMessageContainer2" parent="VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" instance=ExtResource("1_vy133")]
 layout_mode = 2

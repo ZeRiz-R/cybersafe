@@ -3,22 +3,29 @@ extends Control
 class_name MeterBar
 
 @onready var progress_bar: ProgressBar = $PanelContainer/ProgressBar
+@export var stress := false
 var sb
 	
 var duration := 1.5
 var prevColour := Color.WHITE
 var newColour := Color.WHITE
 
-const RED_COLOUR := Color(0x7b0e00ff)
-const LOW := 0
+const RED_COLOUR := Color(0xb60002ff)
+var LOW := 0
 const ORANGE_COLOUR := Color(0xe7a900ff)
-const MID := 31
+var MID := 31
 const GREEN_COLOUR := Color(0x42b600ff)
-const HIGH := 66
-const GOLD_COLOUR := Color(0x00a8fdff) # This is gold, the other is blue Color(0xf1c900ff)
+var HIGH := 66
+var GOLD_COLOUR := Color(0x00a8fdff) # This is gold, the other is blue Color(0xf1c900ff)
 
+@onready var panel_container: PanelContainer = $PanelContainer
 func _ready():
 	sb = progress_bar.get_theme_stylebox("fill") as StyleBoxFlat
+	if stress:
+		var temp = LOW
+		HIGH = LOW
+		var sbp = panel_container.get_theme_stylebox("panel") as StyleBoxFlat
+		sbp.bg_color = Color(0xff4846ff)
 	
 func _process(delta: float) -> void:
 	var newValue = progress_bar.value
@@ -60,4 +67,6 @@ func tween_meter_value(newValue: float):
 	#else:
 		#tween2.tween_property(sb, "bg_color", newColour, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
+func get_meter_value():
+	return progress_bar.value
 	

@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=8 format=3 uid="uid://2f842ktva7at"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_1875l"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://email.gd" id="2_durb3"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://email_decision.gd" id="3_40xvg"]
+
+[sub_resource type="Resource" id="Resource_hgjqp"]
+script = ExtResource("1_1875l")
+id = "1"
+text = "Follow Choice"
+outcomeText = Array[String](["This is the first text", "This is the second text", "This is the third text"])
+meterChanges = {
+"CK": 25,
+"DH": -15,
+"DS": -15,
+"S": 5,
+"ST": 10
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_gn6dc"]
+script = ExtResource("1_1875l")
+id = "2"
+text = "Don't Follow Choice"
+outcomeText = Array[String](["This is the first text", "This is the second text", "This is the third text"])
+meterChanges = {
+"CK": -25,
+"DH": -15,
+"DS": -15,
+"S": 5,
+"ST": 10
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_not1p"]
+script = ExtResource("1_1875l")
+id = "1"
+text = "Follow Choice"
+outcomeText = Array[String](["This is the first text", "This is the second text", "This is the third text"])
+meterChanges = {
+"CK": 25,
+"DH": -15,
+"DS": -15,
+"S": 5,
+"ST": 10
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_7eisf"]
+script = ExtResource("2_durb3")
+sender = "matthew.patthew@ratthew.ac.uk"
+title = "Urgent! Please respond to this test email."
+body = "Dear Student
+
+In order to test out our new email system, we will require you to make a decision regarding this email.
+
+Thank you for your cooperation.
+
+Best,
+Matthew Patthew"
+metadata/_custom_type_script = "uid://dy4cqea4brkbi"
+
+[resource]
+script = ExtResource("3_40xvg")
+email = SubResource("Resource_7eisf")
+choices = Array[ExtResource("1_1875l")]([SubResource("Resource_hgjqp"), SubResource("Resource_gn6dc"), SubResource("Resource_not1p")])
+prompt = "I don't even think this is used right now."
+id = "TestEvent"
+date = Vector2i(1, 4)
+metadata/_custom_type_script = "uid://dy6myhclbmobp"

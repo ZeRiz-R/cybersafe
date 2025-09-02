@@ -8,9 +8,11 @@ var activeEvent := GameEvent
 
 func add_event(week: int, day: int, event: GameEvent):
 	var key = Vector2i(week, day)
-	calendar[key] = event
+	var eventList = calendar.get(key, [])
+	eventList.append(event)
+	calendar[key] = eventList
 
-func get_event(week: int, day: int):
+func get_events(week: int, day: int):
 	var key = Vector2i(week, day)
 	return calendar.get(key, null)
 
@@ -20,13 +22,21 @@ func progress_time():
 		currentDate.y = 1
 		currentDate.x += 1
 		
-func load_test_event():
+func load_test_event(events):
 	var event = Constants.dummyDecision
 	add_event(event.date.x, event.date.y, event)
 	
 	event = Constants.dummyChatDecision
 	add_event(event.date.x, event.date.y, event)
+	
+	#event = Constants.resourceTest
+	#add_event(event.date.x, event.date.y, event)
+	
+	for event2 in events:
+		add_event(event2.date.x, event2.date.y, event2)
 	print_event()
+	
+	
 
 
 func print_event():
@@ -36,18 +46,19 @@ func print_event():
 		print(currentDate)
 		progress_time()
 		timeout += 1
-	var event = calendar.get(currentDate)
+	var events = calendar.get(currentDate, null)
 	
-	if not event:
+	if not events:
 		return
 	
-	if event is EmailDecision:
-		Stores.add_email(event)
-	if event is ChatDecision:
-		Stores.add_chat_event(event)
-	if event is IgnoreEvent:
-		Stores.popIgnoredEvent()
-		Stores.addIgnoredEvent(event)
+	for event in events:
+		if event is EmailDecision:
+			Stores.add_email(event)
+		if event is ChatDecision:
+			Stores.add_chat_event(event)
+		if event is IgnoreEvent:
+			Stores.popIgnoredEvent()
+			Stores.addIgnoredEvent(event)
 			
 func get_date():
 	return currentDate

@@ -1,8 +1,8 @@
 class_name EmailDecision extends Decision
 
-var email: Email
+@export var email: Email
 
-func _init(_id: String, _date: Vector2i, _prompt: String, _tip: String, _choices: Array[Choice], _email: Email):
+func _init(_id = "", _date = Vector2i.ZERO, _prompt = "", _tip = "", _choices: Array[Choice] = [], _email: Email = null):
 	super._init(_id, _date, _prompt, _tip, _choices)
 	email = _email
 

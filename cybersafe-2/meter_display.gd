@@ -4,7 +4,7 @@ extends PanelContainer
 @onready var panel_container: PanelContainer = $PanelContainer
 @export var boxColour: Color
 var meterBars: Array
-var allMeters = Constants.Meters.values()
+var allMeters = Constants.Meters.keys()
 
 func _ready():
 	load_meters()
@@ -29,8 +29,9 @@ func load_meters():
 	var index = 0;
 	print("Getting ready")
 	meterBars = get_progress_bars(meterBox, [])
-	for bar in meterBars:
-		bar.tween_meter_value(Player.meters[allMeters[index]])
+	for stat in allMeters:
+		var bar = meterBars[index]
+		bar.tween_meter_value(Player.meters[stat])
 		index += 1
 
 func get_progress_bars(node: Node, arr: Array):

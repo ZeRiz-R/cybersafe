@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd6ilycfjbv56"]
+
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="1_sh3k7"]
+[ext_resource type="Script" uid="uid://sdh5qlijf48a" path="res://reason_text.gd" id="2_ggwhe"]
+
+[sub_resource type="FontVariation" id="FontVariation_lm8nu"]
+base_font = ExtResource("1_sh3k7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5naub"]
+resource_local_to_scene = true
+font = SubResource("FontVariation_lm8nu")
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+outline_color = Color(0.356863, 0.866667, 0, 1)
+
+[node name="ReasonText" type="Label"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "RISK OF MALWARE "
+label_settings = SubResource("LabelSettings_5naub")
+horizontal_alignment = 2
+autowrap_mode = 2
+uppercase = true
+script = ExtResource("2_ggwhe")

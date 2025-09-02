@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=11 format=3 uid="uid://31642yybouus"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_xa37j"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://email.gd" id="2_llqw1"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://email_decision.gd" id="2_pdnsn"]
+[ext_resource type="Script" uid="uid://tfgm3dvhdk1j" path="res://ignore_event.gd" id="2_sncho"]
+[ext_resource type="Script" uid="uid://dsninvxrte1n7" path="res://ignore_choice.gd" id="3_hfvkh"]
+
+[sub_resource type="Resource" id="Resource_pdnsn"]
+resource_name = "Follow"
+script = ExtResource("1_xa37j")
+id = "Follow"
+text = "Follow instructions and register for your modules."
+outcomeText = Array[String](["Great choice!", "That was a legitimate email from the administrations team.", "You register for your modules and begin lectures on time, giving you a chance to meet your new classmates!"])
+meterChanges = {
+"CK": {
+"Reason": "Legitimate email",
+"Value": 10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Login info secure ",
+"Value": 5
+},
+"S": {
+"Reason": "on-time registration",
+"Value": -5
+},
+"ST": {
+"Reason": "On-time registration",
+"Value": 5
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_llqw1"]
+resource_name = "Report"
+script = ExtResource("1_xa37j")
+id = ""
+text = "Report the email. They'll never trick you!"
+outcomeText = Array[String](["Sending the report!", "IT has just gotten back!", "Turrns out the email was legitimate.", "At least you found out sooner rather than later!", "You still register for your modules on time."])
+meterChanges = {
+"CK": {
+"Reason": "False Positive",
+"Value": -5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "False Positive",
+"Value": 10
+},
+"ST": {
+"Reason": "On-time registration",
+"Value": 5
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_er7r6"]
+script = ExtResource("2_sncho")
+outcomeText = Array[String](["I almost forgot! You chose to ignore the module registration email.", "You just got an email from administration stating they have not received registration information from you.", "It turns out the email was legitimate, so you are now facing delays.", "Looks like you'll be missing out on an opportunity to meet your new classmates."])
+id = ""
+date = Vector2i(2, 1)
+metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
+
+[sub_resource type="Resource" id="Resource_15kbn"]
+resource_name = "Ignore"
+script = ExtResource("3_hfvkh")
+followUp = SubResource("Resource_er7r6")
+id = ""
+text = "Ignore the email.  It's not worth your time."
+outcomeText = Array[String](["Ignoring this one?", "I'm sure we'll hear about this soon enough."])
+meterChanges = {
+"CK": {
+"Reason": "Legitimate email",
+"Value": -5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Delayed registration",
+"Value": 10
+},
+"ST": {
+"Reason": "Delayed registration",
+"Value": -15
+}
+}
+metadata/_custom_type_script = "uid://dsninvxrte1n7"
+
+[sub_resource type="Resource" id="Resource_sncho"]
+script = ExtResource("2_llqw1")
+sender = "administration@warwick.ac.ukwarwick.ac.uk"
+title = "Module Registration"
+body = "Dear {name},
+
+Module registration must be completed by 6 October 2025. This can be done by signing into the [color={link}][hint=https://tabula.warwick.ac.uk]login portal[/hint][/color] and navigating to the Modules tab. If you require advice for module selection, please refer to the [color={link}][hint=https://warwick.ac.uk/modules]module webpages[/hint][/color] or contact module supervisors directly. Note that late module registration will cause delays to your university timetable release.
+
+Kind regards,
+
+Administration Team
+University of Warwick"
+metadata/_custom_type_script = "uid://dy4cqea4brkbi"
+
+[resource]
+script = ExtResource("2_pdnsn")
+email = SubResource("Resource_sncho")
+choices = Array[ExtResource("1_xa37j")]([SubResource("Resource_pdnsn"), SubResource("Resource_llqw1"), SubResource("Resource_15kbn")])
+prompt = ""
+tip = "Hover over embedded links to examine the URL!"
+id = ""
+date = Vector2i(1, 5)
+metadata/_custom_type_script = "uid://dy6myhclbmobp"

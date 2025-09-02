@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://drqet47ovldws"]
+
+[ext_resource type="Script" uid="uid://dsm4evadg2xvj" path="res://email_button.gd" id="1_dycss"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="1_yfrfy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dycss"]
+bg_color = Color(0.745581, 0.74558, 0.74558, 1)
+border_color = Color(0, 0.761127, 0.76819, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a40b"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_dycss"]
+base_font = ExtResource("1_yfrfy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8a40b"]
+font = SubResource("FontVariation_dycss")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vws0d"]
+bg_color = Color(0.8, 0, 0.152941, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="EmailButton" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_dycss")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(330, 50)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_dycss")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8a40b")
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 340.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="SubjectLabel" type="Label" parent="Button/MarginContainer"]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Test Subject 1"
+label_settings = SubResource("LabelSettings_8a40b")
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="RedIcon" type="Panel" parent="Button"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -10.0
+offset_right = -12.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vws0d")

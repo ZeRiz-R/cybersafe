@@ -1,18 +1,22 @@
-[gd_scene load_steps=47 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=55 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
 [ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="1_bc6a6"]
+[ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_cu835"]
 [ext_resource type="StyleBox" uid="uid://q37ofqwrwb84" path="res://hover_button_style.tres" id="2_ly5nh"]
 [ext_resource type="StyleBox" uid="uid://b4v7tnml20sk0" path="res://base_button_style.tres" id="2_vyiww"]
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="4_3r00j"]
-[ext_resource type="Texture2D" uid="uid://4iwbyrirtnd8" path="res://Assets/mail-icon-skew.png" id="5_nw0fu"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="6_kql8j"]
 [ext_resource type="PackedScene" uid="uid://davqlofgnkvuh" path="res://alert.tscn" id="6_nw0fu"]
+[ext_resource type="Texture2D" uid="uid://cfkylkqiwml2u" path="res://Assets/Icons/mail-icon.png" id="7_l6g1u"]
 [ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="9_3r00j"]
 [ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="9_mt3ts"]
 [ext_resource type="LabelSettings" uid="uid://cal8u1bqpls3r" path="res://GodotLabels/MeterNames.tres" id="9_vld2e"]
+[ext_resource type="Texture2D" uid="uid://cfdn5vra20fp3" path="res://Assets/Icons/mobile.png" id="10_cu835"]
 [ext_resource type="Texture2D" uid="uid://c1k3a2g7olig4" path="res://Assets/Meters/Gradient/worldwide_8264695.png" id="11_048ak"]
+[ext_resource type="Texture2D" uid="uid://b8jnsywqbdofv" path="res://Assets/Icons/game-controller.png" id="11_qoyim"]
+[ext_resource type="Texture2D" uid="uid://12cht766te20" path="res://Assets/Icons/paper.png" id="12_f5qqs"]
 [ext_resource type="Texture2D" uid="uid://bvyhps2xio05j" path="res://Assets/Meters/Gradient/laptop_10369150.png" id="14_3563c"]
 [ext_resource type="Texture2D" uid="uid://dqfkvsh0x1xj7" path="res://Assets/Meters/Gradient/padlock_14259448.png" id="15_a0omq"]
 [ext_resource type="Texture2D" uid="uid://devx6duv3mqjj" path="res://Assets/Meters/Gradient/target-audience_11966590.png" id="16_wldas"]
@@ -28,7 +32,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt2mv"]
 content_margin_left = 40.0
-bg_color = Color(0.803331, 0, 0.157164, 1)
+bg_color = Color(0.455781, 0.0013957, 0.651271, 1)
 skew = Vector2(-0.1, 0)
 border_width_left = 20
 border_width_top = 20
@@ -67,6 +71,10 @@ shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeawy"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3563c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0omq"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76h3o"]
 bg_color = Color(0.612186, 9.14484e-07, 0.356579, 1)
 skew = Vector2(0.16, 0.11)
@@ -95,7 +103,7 @@ border_width_bottom = 10
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw4wq"]
-bg_color = Color(0.904673, 0.688743, 7.70092e-07, 1)
+bg_color = Color(0.678431, 0, 0.117647, 1)
 skew = Vector2(-0.1, 0)
 border_width_left = 20
 border_width_top = 10
@@ -113,7 +121,7 @@ border_width_bottom = 10
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhl8p"]
-bg_color = Color(1, 0.484535, 0.913406, 1)
+bg_color = Color(0.905882, 0.690196, 0, 1)
 skew = Vector2(-0.1, 0)
 border_width_left = 10
 border_width_top = 10
@@ -170,6 +178,7 @@ corner_radius_bottom_left = 10000
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3563c"]
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(-0.04, 0.135)
+border_color = Color(0.968578, 0, 0.01698, 1)
 corner_radius_top_left = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
@@ -179,6 +188,25 @@ expand_margin_right = 14.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_140gl"]
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(0.425, 0.135)
+expand_margin_left = 6.0
+expand_margin_top = 20.0
+expand_margin_right = 5.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0omq"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(-0.04, 0.135)
+border_color = Color(0.968578, 0, 0.01698, 1)
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_top = 4.0
+expand_margin_right = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wldas"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.425, 0.135)
+border_color = Color(0.968578, 0, 0.01698, 1)
 expand_margin_left = 6.0
 expand_margin_top = 20.0
 expand_margin_right = 5.0
@@ -442,14 +470,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_42qyo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Wastelands" parent="." instance=ExtResource("2_cu835")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.845874, 0.857047, 1, 1)
+
+[node name="ColorRect" parent="Wastelands" index="0"]
+color = Color(0.668706, 0.739421, 0.914087, 1)
+
+[node name="TextureRect" parent="Wastelands" index="1"]
+layout_mode = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -577,9 +605,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_bc6a6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3563c")
 theme_override_styles/hover = ExtResource("2_ly5nh")
 theme_override_styles/normal = ExtResource("2_vyiww")
-icon = ExtResource("5_nw0fu")
+icon = ExtResource("7_l6g1u")
 icon_alignment = 1
 script = ExtResource("1_23vhs")
 
@@ -600,9 +629,11 @@ grow_horizontal = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a0omq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_76h3o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_23vhs")
-text = "MESSAGES BUTTON"
+icon = ExtResource("10_cu835")
+icon_alignment = 1
 script = ExtResource("1_23vhs")
 
 [node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MessagesButton" instance=ExtResource("6_nw0fu")]
@@ -629,7 +660,9 @@ size_flags_horizontal = 3
 theme = ExtResource("1_bc6a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vyiww")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bw4wq")
-text = "NEWS"
+icon = ExtResource("11_qoyim")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_23vhs")
 
 [node name="MinigamesButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -639,7 +672,9 @@ size_flags_stretch_ratio = 0.5
 theme = ExtResource("1_bc6a6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k1kl5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lhl8p")
-text = "MINIGAMES"
+icon = ExtResource("12_f5qqs")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_23vhs")
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/HBoxContainer"]
@@ -1077,7 +1112,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_3563c")
+theme_override_styles/panel = SubResource("StyleBoxFlat_a0omq")
 
 [node name="IconWrapper" type="Control" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer9/PanelContainer"]
 layout_mode = 2
@@ -1112,7 +1147,7 @@ theme_override_constants/separation = -5
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
-theme_override_styles/panel = SubResource("StyleBoxFlat_140gl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wldas")
 
 [node name="Control" type="Control" parent="MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer/HBoxContainer9/VBoxContainer/PanelContainer"]
 custom_minimum_size = Vector2(270, 23)
@@ -1125,8 +1160,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 13.0
 offset_top = -23.0
-offset_right = 240.0
+offset_right = 253.0
 grow_vertical = 0
 rotation = -0.0785398
 size_flags_vertical = 3
@@ -1149,6 +1185,7 @@ offset_right = 396.0
 offset_bottom = 50.0
 grow_vertical = 1
 rotation = -0.0785398
+stress = true
 
 [node name="Overlays" type="Control" parent="."]
 visible = false
@@ -1213,3 +1250,5 @@ horizontal_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_oeawy")
 }
+
+[editable path="Wastelands"]

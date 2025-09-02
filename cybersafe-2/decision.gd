@@ -2,20 +2,20 @@ extends GameEvent
 
 class_name Decision
 
-var choices: Array[Choice]
+@export var choices: Array[Choice]
 var selection: Choice
-var prompt: String
-var tip: String
+@export var prompt: String
+@export var tip: String
 
 var complete: bool
 
 signal choice_selected(choice: Choice)
 
-func _init(_id: String, _date: Vector2i, _prompt: String, _tip: String, _choices: Array[Choice]):
+func _init(_id = "", _date = Vector2i.ZERO, _prompt = "", _tip = "", _choices: Array[Choice] = []):
 	super._init(_id, _date)
 	choices = _choices
 	prompt = _prompt
-	selection = choices[0]
+	selection = Choice.new()
 	tip = _tip
 	complete = false
 	

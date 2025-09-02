@@ -1,11 +1,12 @@
+extends Resource
 class_name Email
 
-var sender: String
-var title: String
-var body: String
+@export var sender: String
+@export var title: String
+@export_multiline var body: String
 var attachments = []
 
-func _init(_sender: String, _title: String, _body: String, _attachments: Array):
+func _init(_sender = "", _title = "", _body = "", _attachments = []):
 	sender = _sender
 	title = _title
 	body = _body

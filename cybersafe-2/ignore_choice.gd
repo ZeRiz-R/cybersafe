@@ -1,9 +1,9 @@
 extends Choice
 class_name IgnoreChoice
 
-var followUp: IgnoreEvent
+@export var followUp: IgnoreEvent
 
-func _init(_id, _text, _meterChanges, _outcomeText: Array[String], _outcomeDate, _outcomeText2: Array[String]) -> void:
+func _init(_id = "", _text = "", _meterChanges = {}, _outcomeText: Array[String] = [""], _outcomeDate = Vector2.ZERO, _outcomeText2: Array[String] = [""]) -> void:
 	super._init(_id, _text, _meterChanges, _outcomeText)
 	followUp = IgnoreEvent.new(_id, _outcomeDate, meterChanges, _outcomeText2)
 

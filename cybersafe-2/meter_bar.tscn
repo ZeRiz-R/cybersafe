@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://drgcb7ulo0grh" path="res://meter_bar.tres" id="2_aaaq2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoe8o"]
+resource_local_to_scene = true
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0

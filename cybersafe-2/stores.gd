@@ -17,7 +17,7 @@ func _init() -> void:
 	activeDecision = Constants.dummyDecision
 
 func add_email(emailDecision: EmailDecision):
-	emailStore.append(emailDecision)
+	emailStore.insert(0, emailDecision)
 	unreadEmails += 1
 	
 func get_all_emails() -> Array:
@@ -60,7 +60,7 @@ func popUnreadChat():
 	unreadChats = min(unreadChats - 1, 0)
 	
 func addIgnoredEvent(event: IgnoreEvent):
-	ignoredStore.append(event)
+	ignoredStore.insert(0, event)
 	
 func queueIgnoredEvent(date: Vector2i):
 	for i in range(len(ignoredEventDates)):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://davqlofgnkvuh"]
 
-[ext_resource type="Texture2D" uid="uid://degtcu5yvlrrn" path="res://Assets/red_bell_2.png" id="1_727io"]
+[ext_resource type="Texture2D" uid="uid://degtcu5yvlrrn" path="res://Assets/Icons/red_bell_2.png" id="1_727io"]
 [ext_resource type="Script" uid="uid://4o06qjrlus1q" path="res://alert.gd" id="2_rmfhe"]
 
 [sub_resource type="Animation" id="Animation_rmfhe"]

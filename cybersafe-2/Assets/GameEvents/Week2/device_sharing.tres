@@ -1,0 +1,211 @@
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=21 format=3 uid="uid://bobf7tn0vw5h1"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_qe14p"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://chat_message.gd" id="2_1avhh"]
+[ext_resource type="Script" uid="uid://dsobpwkok5jeb" path="res://chat_choice.gd" id="3_1avhh"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://chat_decision.gd" id="3_8tfoq"]
+
+[sub_resource type="Resource" id="Resource_vy0r3"]
+script = ExtResource("2_1avhh")
+sender = "{name}"
+message = "yeah sure"
+duration = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_dudq7"]
+script = ExtResource("2_1avhh")
+sender = "{name}"
+message = "here you go!"
+duration = 1.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_swv4f"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "appreciate it!"
+duration = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_s8875"]
+script = ExtResource("3_1avhh")
+followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_vy0r3"), SubResource("Resource_dudq7"), SubResource("Resource_swv4f")])
+id = ""
+text = "Let Josh use your laptop."
+outcomeText = Array[String](["Josh is able to submit his work on time thanks to you!", "He's very grateful for your help, but you worry that he may have seen some of your personal information."])
+meterChanges = {
+"CK": {
+"Reason": "Unsafe Choice",
+"Value": -10
+},
+"DH": {
+"Reason": "Risk of malware",
+"Value": -5
+},
+"DS": {
+"Reason": "risk of data exposure",
+"Value": -10
+},
+"S": {
+"Reason": "Easy choice",
+"Value": -10
+},
+"ST": {
+"Reason": "Helpful",
+"Value": 15
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_8h74t"]
+script = ExtResource("2_1avhh")
+sender = "{name}"
+message = "yeah sure"
+duration = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_2s2cy"]
+script = ExtResource("2_1avhh")
+sender = "{name}"
+message = "just let me make you a guest account real quick"
+duration = 1.0
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_n2ngd"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "appreciate it!"
+duration = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_rw040"]
+script = ExtResource("3_1avhh")
+followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_8h74t"), SubResource("Resource_2s2cy"), SubResource("Resource_n2ngd")])
+id = ""
+text = "Let Josh use your laptop, but make a guest account for him."
+outcomeText = Array[String](["Josh is able to submit his work on time thanks to you!", "He's grateful for your help, but feels as if you don't trust him completely.", "At the very least you know your account information is secure."])
+meterChanges = {
+"CK": {
+"Reason": "Used precaution",
+"Value": 5
+},
+"DH": {
+"Reason": "Risk of malware",
+"Value": -5
+},
+"DS": {
+"Reason": "protection of data",
+"Value": 5
+},
+"S": {
+"Reason": "Inconvenient choice",
+"Value": 5
+},
+"ST": {
+"Reason": "Helpful",
+"Value": 5
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_6n43d"]
+script = ExtResource("2_1avhh")
+sender = "{name}"
+message = "Sorry, but you'll have to use a department computer."
+duration = 2.0
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_qna0k"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "seriously? whatever"
+duration = 2.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_i4ll1"]
+script = ExtResource("3_1avhh")
+followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_6n43d"), SubResource("Resource_qna0k")])
+id = ""
+text = "Tell him to use a department computer. "
+outcomeText = Array[String](["You kept your device safe and secure, at the cost of creating tension between you and Josh.", "At least you know your device and data are completely safe!"])
+meterChanges = {
+"CK": {
+"Reason": "Safest Choice",
+"Value": 10
+},
+"DH": {
+"Reason": "Avoided risk of malware",
+"Value": 5
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Difficult choice",
+"Value": 10
+},
+"ST": {
+"Reason": "Unhelpful",
+"Value": -15
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_qe14p"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "hey {name}!"
+duration = 0.5
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_1avhh"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "i've gotta submit the coursework due tomorrow, but my laptop broke"
+duration = 2.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_8tfoq"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "Dropped it out the window lol"
+duration = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_2evxe"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "mind if i use your's real quick?"
+duration = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_qkq7k"]
+script = ExtResource("2_1avhh")
+sender = "Josh"
+message = "it'll only take a couple of minutes"
+duration = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[resource]
+script = ExtResource("3_8tfoq")
+chatName = "Josh"
+messages = Array[ExtResource("2_1avhh")]([SubResource("Resource_qe14p"), SubResource("Resource_1avhh"), SubResource("Resource_8tfoq"), SubResource("Resource_2evxe"), SubResource("Resource_qkq7k")])
+choices = Array[ExtResource("1_qe14p")]([SubResource("Resource_s8875"), SubResource("Resource_rw040"), SubResource("Resource_i4ll1")])
+prompt = ""
+tip = "Be careful when sharing devices with other people. There is always a risk of malware and data exposure."
+id = ""
+date = Vector2i(2, 4)
+metadata/_custom_type_script = "uid://w1srhofks2m6"

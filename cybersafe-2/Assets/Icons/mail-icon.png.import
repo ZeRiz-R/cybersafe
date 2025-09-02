@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c07ny0ad3xl28"
-path="res://.godot/imported/WiFi_whit.png-26421aa09167f3a439668b26cd432b19.ctex"
+uid="uid://cfkylkqiwml2u"
+path="res://.godot/imported/mail-icon.png-7877e27f7d9318ff8a87dc4244f7f895.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WiFi_whit.png"
-dest_files=["res://.godot/imported/WiFi_whit.png-26421aa09167f3a439668b26cd432b19.ctex"]
+source_file="res://Assets/Icons/mail-icon.png"
+dest_files=["res://.godot/imported/mail-icon.png-7877e27f7d9318ff8a87dc4244f7f895.ctex"]
 
 [params]
 

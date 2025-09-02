@@ -21,7 +21,7 @@ func initialise(_chat: Chat):
 	queue_messages()
 
 
-@onready var chatArea: VBoxContainer = $VBoxContainer/ScrollContainer/VBoxContainer
+@onready var chatArea: VBoxContainer = $VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
 func load_chats():
 	# Removes all buttons from the email inbox
 	for message in chatArea.get_children():
@@ -37,7 +37,13 @@ func load_chats():
 		#await(get_tree().create_timer(0.3).timeout)
 		#msg.queue_message()
 		#await(msg.message_sent)
+		
+func followUp(messages: Array[ChatMessage]):
+	for message in messages:
+		chat.queue_message(message)
+	await(queue_messages())
 
+@onready var scroll_container: ScrollContainer = $VBoxContainer/MarginContainer2/ScrollContainer
 func queue_messages():
 	while not chat.unsent.is_empty():
 		var message = chat.unsent[0]
@@ -46,9 +52,15 @@ func queue_messages():
 		if message.isPlayerMessage:
 			msg.size_flags_horizontal = SIZE_SHRINK_END
 		msg.connect_message(message)
-		await(get_tree().create_timer(0.3).timeout)
+		await(get_tree().create_timer(1.0).timeout)
+		scroll_down()
 		if is_instance_valid(msg):
-			msg.queue_message()
+			msg.queue_message(message.duration)
 			await(msg.message_sent)
 			chat.dequeue_message()
-		
+	await(get_tree().create_timer(1.5).timeout)
+
+func scroll_down():
+		await get_tree().process_frame
+		var tween = get_tree().create_tween()
+		tween.tween_property(scroll_container, "scroll_vertical", scroll_container.get_v_scroll_bar().max_value, 0.3)

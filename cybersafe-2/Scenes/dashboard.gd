@@ -15,12 +15,13 @@ func _ready():
 		
 		
 func load_meters():
-	var allMeters = Constants.Meters.values()
+	var allMeters = Constants.Meters.keys()
 	var index = 0;
 	print("Getting ready")
 	var meterBars = get_progress_bars(meterBox, [])
-	for bar in meterBars:
-		bar.tween_meter_value(Player.meters[allMeters[index]])
+	for stat in allMeters:
+		var bar = meterBars[index]
+		bar.tween_meter_value(Player.meters[stat])
 		index += 1
 
 @onready var week_label: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/WeekLabel
@@ -52,7 +53,7 @@ func check_ignores():
 		Stores.activeDecision = ignoreEvent.attachedDecision
 		await(anim_player.animation_finished)
 		await(Constants.display_outcome_text(get_tree().current_scene, ignoreEvent.outcomeText))# QueueOutcomeText()
-		SceneTransition.change_scene("res://Scenes/update_meters.tscn", "arrow")
+		SceneTransition.change_scene("res://Scenes/update_meters_2.tscn", "arrow")
 	else:
 		ignore_panel.visible = false
 		
