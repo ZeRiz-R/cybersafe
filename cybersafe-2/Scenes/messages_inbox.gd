@@ -40,6 +40,6 @@ func _on_choice_selected(choice: ChatChoice):
 		# DisplayVisual()
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 		# CompleteDecision()
-	SceneTransition.change_scene("res://Scenes/update_meters_2.tscn", "arrow")
+	SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
 	# Constants.overlay_scene(Constants.update_meters_scene)
 	# UpdateMetersVisual() Maybe different scene

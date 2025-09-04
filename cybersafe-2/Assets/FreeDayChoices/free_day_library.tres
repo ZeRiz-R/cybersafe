@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Choice" load_steps=6 format=3 uid="uid://ur6sa6goqgql"]
+
+[ext_resource type="Resource" uid="uid://bummkfxhusq7c" path="res://Assets/FreeDayChoices/FollowUpEvents/library_device.tres" id="1_st652"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="1_x83dc"]
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="2_st652"]
+
+[sub_resource type="Resource" id="Resource_x83dc"]
+script = ExtResource("1_x83dc")
+speaker = "Mysterious Voice"
+text = "Those grades won't improve themselves!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_st652"]
+script = ExtResource("1_x83dc")
+speaker = "Mysterious Voice"
+text = "You head to the campus library and begin working through your backlog of study material."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("2_st652")
+id = ""
+text = "Go to the library to catch up on some studying."
+outcomeText = Array[ExtResource("1_x83dc")]([SubResource("Resource_x83dc"), SubResource("Resource_st652")])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": -5
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+followUp = ExtResource("1_st652")
+metadata/_custom_type_script = "uid://h44bcugrvwau"

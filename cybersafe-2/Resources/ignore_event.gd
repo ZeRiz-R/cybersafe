@@ -2,10 +2,10 @@ extends GameEvent
 
 class_name IgnoreEvent
 
-@export var outcomeText: Array[String]
+@export var outcomeText: Array[TextBoxEntry]
 var attachedDecision: Decision
 
-func _init(_id = "", _date = Vector2i.ZERO, _meterChanges = {}, _outcomeText: Array[String] = [""]):
+func _init(_id = "", _date = Vector2i.ZERO, _meterChanges = {}, _outcomeText: Array[TextBoxEntry] = []):
 	super._init(_id, _date)
 	outcomeText = _outcomeText
 

@@ -13,8 +13,11 @@ var ignoredEventDates := []
 var activeDecision: Decision
 var activeMeterChange: Dictionary
 
+var activeFreeEvent: Decision = null
+
 func _init() -> void:
-	activeDecision = Constants.dummyDecision
+	pass
+	# activeDecision = Constants.dummyDecision
 
 func add_email(emailDecision: EmailDecision):
 	emailStore.insert(0, emailDecision)
@@ -52,6 +55,9 @@ func get_all_chat_names() -> Array:
 	
 func set_active_decision(decision: Decision):
 	activeDecision = decision
+	
+func set_free_event(event: Decision):
+	activeFreeEvent = event
 	
 func popUnreadEmail():
 	unreadEmails = min(unreadEmails - 1, 0)

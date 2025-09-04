@@ -2,7 +2,7 @@ extends Node
 
 class_name CalendarManager
 
-var currentDate := Vector2i(1, 0) # Week / Day
+var currentDate := Vector2i(3, 1) # Week / Day
 var calendar := {}
 var activeEvent := GameEvent
 
@@ -23,11 +23,11 @@ func progress_time():
 		currentDate.x += 1
 		
 func load_test_event(events):
-	var event = Constants.dummyDecision
-	add_event(event.date.x, event.date.y, event)
-	
-	event = Constants.dummyChatDecision
-	add_event(event.date.x, event.date.y, event)
+	#var event = Constants.dummyDecision
+	#add_event(event.date.x, event.date.y, event)
+	#
+	#event = Constants.dummyChatDecision
+	#add_event(event.date.x, event.date.y, event)
 	
 	#event = Constants.resourceTest
 	#add_event(event.date.x, event.date.y, event)
@@ -59,6 +59,14 @@ func print_event():
 		if event is IgnoreEvent:
 			Stores.popIgnoredEvent()
 			Stores.addIgnoredEvent(event)
+		if event is FreeDayEvent:
+			Stores.set_free_event(event)
 			
 func get_date():
 	return currentDate
+	
+func get_date_difference(otherDate: Vector2i):
+	var currentDateVal = 7 * currentDate.x + currentDate.y
+	var otherDateVal = 7 * otherDate.x + otherDate.y
+	
+	return otherDateVal - currentDateVal

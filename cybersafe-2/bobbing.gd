@@ -15,8 +15,8 @@ func _float_animate():
 	var tweenY = get_tree().create_tween().set_loops()
 	
 	# Horizontal
-	tweenX.tween_property(get_parent(), "position:x", centre.x + float_radius, float_speed * duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tweenX.tween_property(get_parent(), "position:x", centre.x - float_radius, float_speed * duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	# tweenX.tween_property(get_parent(), "position:x", centre.x + float_radius, float_speed * duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	# tweenX.tween_property(get_parent(), "position:x", centre.x - float_radius, float_speed * duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	# Vertical
 	# await(get_tree().create_timer(duration / 2).timeout)
 	tweenY.tween_property(get_parent(), "position:y", centre.y + float_radius, float_speed * duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

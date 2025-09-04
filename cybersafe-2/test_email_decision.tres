@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="EmailDecision" load_steps=8 format=3 uid="uid://2f842ktva7at"]
 
-[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_1875l"]
-[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://email.gd" id="2_durb3"]
-[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://email_decision.gd" id="3_40xvg"]
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_1875l"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_durb3"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://Resources/email_decision.gd" id="3_40xvg"]
 
 [sub_resource type="Resource" id="Resource_hgjqp"]
 script = ExtResource("1_1875l")

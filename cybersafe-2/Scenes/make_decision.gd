@@ -13,8 +13,11 @@ func load_choices(decision: Decision):
 	var buttons = choiceButtons.get_children()
 	var choices = decision.choices
 	for i in range(len(buttons)):
-		buttons[i].set_label_text(choices[i].text)
-		buttons[i].set_meta("choice", choices[i])
+		if i < len(choices):
+			buttons[i].set_label_text(choices[i].text)
+			buttons[i].set_meta("choice", choices[i])
+		else:
+			buttons[i].set_label_text("No choice. Please don't click.")
 		
 @onready var closeButton: Button = $MarginContainer/Button
 func connect_buttons():

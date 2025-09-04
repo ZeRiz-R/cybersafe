@@ -1,17 +1,36 @@
-[gd_resource type="Resource" script_class="EmailDecision" load_steps=11 format=3 uid="uid://31642yybouus"]
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=24 format=3 uid="uid://31642yybouus"]
 
-[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_xa37j"]
-[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://email.gd" id="2_llqw1"]
-[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://email_decision.gd" id="2_pdnsn"]
-[ext_resource type="Script" uid="uid://tfgm3dvhdk1j" path="res://ignore_event.gd" id="2_sncho"]
-[ext_resource type="Script" uid="uid://dsninvxrte1n7" path="res://ignore_choice.gd" id="3_hfvkh"]
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_xa37j"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_llqw1"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://Resources/email_decision.gd" id="2_pdnsn"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_sncho"]
+[ext_resource type="Script" uid="uid://tfgm3dvhdk1j" path="res://Resources/ignore_event.gd" id="3_er7r6"]
+[ext_resource type="Script" uid="uid://dsninvxrte1n7" path="res://Resources/ignore_choice.gd" id="3_hfvkh"]
 
-[sub_resource type="Resource" id="Resource_pdnsn"]
+[sub_resource type="Resource" id="Resource_er7r6"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Great choice!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_15kbn"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "That was a legitimate email from the administrations team!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8dgic"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "You're register for your modules on time, and are able to attend lectures without delay!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_33yr0"]
 resource_name = "Follow"
 script = ExtResource("1_xa37j")
-id = "Follow"
-text = "Follow instructions and register for your modules."
-outcomeText = Array[String](["Great choice!", "That was a legitimate email from the administrations team.", "You register for your modules and begin lectures on time, giving you a chance to meet your new classmates!"])
+id = ""
+text = "Follow the instructions and register for your modules."
+outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_er7r6"), SubResource("Resource_15kbn"), SubResource("Resource_8dgic")])
 meterChanges = {
 "CK": {
 "Reason": "Legitimate email",
@@ -22,29 +41,47 @@ meterChanges = {
 "Value": 0
 },
 "DS": {
-"Reason": "Login info secure ",
-"Value": 5
+"Reason": "personal details are secure",
+"Value": 10
 },
 "S": {
-"Reason": "on-time registration",
+"Reason": "on time registration",
 "Value": -5
 },
 "ST": {
-"Reason": "On-time registration",
+"Reason": "on time registration",
 "Value": 5
 }
 }
 metadata/_custom_type_script = "uid://h44bcugrvwau"
 
-[sub_resource type="Resource" id="Resource_llqw1"]
+[sub_resource type="Resource" id="Resource_lksi0"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Sending a report!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_w1fg1"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "IT gets back to you, letting you know the email is legitimate."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1sla7"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Better safe than sorry at least! You register for your modules on time and are able to begin lectures without delay."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0l0gv"]
 resource_name = "Report"
 script = ExtResource("1_xa37j")
 id = ""
 text = "Report the email. They'll never trick you!"
-outcomeText = Array[String](["Sending the report!", "IT has just gotten back!", "Turrns out the email was legitimate.", "At least you found out sooner rather than later!", "You still register for your modules on time."])
+outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_lksi0"), SubResource("Resource_w1fg1"), SubResource("Resource_1sla7")])
 meterChanges = {
 "CK": {
-"Reason": "False Positive",
+"Reason": "False positive",
 "Value": -5
 },
 "DH": {
@@ -56,33 +93,69 @@ meterChanges = {
 "Value": 0
 },
 "S": {
-"Reason": "False Positive",
-"Value": 10
+"Reason": "false positive",
+"Value": -5
 },
 "ST": {
-"Reason": "On-time registration",
+"Reason": "on time registration",
 "Value": 5
 }
 }
 metadata/_custom_type_script = "uid://h44bcugrvwau"
 
-[sub_resource type="Resource" id="Resource_er7r6"]
+[sub_resource type="Resource" id="Resource_dtadk"]
 script = ExtResource("2_sncho")
-outcomeText = Array[String](["I almost forgot! You chose to ignore the module registration email.", "You just got an email from administration stating they have not received registration information from you.", "It turns out the email was legitimate, so you are now facing delays.", "Looks like you'll be missing out on an opportunity to meet your new classmates."])
+speaker = "Mysterious Voice"
+text = "Oh yeah! That module registration email you ignored!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wxby8"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "You just received an email from IT notifying you that they have not received module registration information from you."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_b38on"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "It turns out the email was legitimate, so you are now facing delays."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_newrk"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "You are unable to begin lectures on time as a result of this."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_fxhm7"]
+script = ExtResource("3_er7r6")
+outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_dtadk"), SubResource("Resource_wxby8"), SubResource("Resource_b38on"), SubResource("Resource_newrk")])
 id = ""
 date = Vector2i(2, 1)
 metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
-[sub_resource type="Resource" id="Resource_15kbn"]
+[sub_resource type="Resource" id="Resource_a38ql"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Not even worth a response, huh?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_o078s"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Well, I'm sure we'll hear about this soon enough."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wyoww"]
 resource_name = "Ignore"
 script = ExtResource("3_hfvkh")
-followUp = SubResource("Resource_er7r6")
+followUp = SubResource("Resource_fxhm7")
 id = ""
-text = "Ignore the email.  It's not worth your time."
-outcomeText = Array[String](["Ignoring this one?", "I'm sure we'll hear about this soon enough."])
+text = "Ignore the email. You've got better things to do."
+outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_a38ql"), SubResource("Resource_o078s")])
 meterChanges = {
 "CK": {
-"Reason": "Legitimate email",
+"Reason": "Ignored legitimate email",
 "Value": -5
 },
 "DH": {
@@ -94,19 +167,19 @@ meterChanges = {
 "Value": 0
 },
 "S": {
-"Reason": "Delayed registration",
+"Reason": "delayed registration",
 "Value": 10
 },
 "ST": {
-"Reason": "Delayed registration",
-"Value": -15
+"Reason": "delayed registration",
+"Value": -10
 }
 }
 metadata/_custom_type_script = "uid://dsninvxrte1n7"
 
 [sub_resource type="Resource" id="Resource_sncho"]
 script = ExtResource("2_llqw1")
-sender = "administration@warwick.ac.ukwarwick.ac.uk"
+sender = "administration@warwick.ac.uk"
 title = "Module Registration"
 body = "Dear {name},
 
@@ -121,7 +194,7 @@ metadata/_custom_type_script = "uid://dy4cqea4brkbi"
 [resource]
 script = ExtResource("2_pdnsn")
 email = SubResource("Resource_sncho")
-choices = Array[ExtResource("1_xa37j")]([SubResource("Resource_pdnsn"), SubResource("Resource_llqw1"), SubResource("Resource_15kbn")])
+choices = Array[ExtResource("1_xa37j")]([SubResource("Resource_33yr0"), SubResource("Resource_0l0gv"), SubResource("Resource_wyoww")])
 prompt = ""
 tip = "Hover over embedded links to examine the URL!"
 id = ""

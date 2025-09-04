@@ -1,4 +1,5 @@
 extends Control
+class_name UpdateMeters
 
 @onready var meterBox: MarginContainer = $MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/MeterBox
 var meterBars: Array
@@ -8,10 +9,18 @@ var choice: Choice
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var tip_text: Label = $TopTipWrapper/TopTipBox/VBoxContainer/TipWrapper/PanelContainer/TipText
 
+signal complete
+
 func _ready():
 	choice = Stores.activeDecision.selection
 	load_meters()
 	set_tip()
+	# Update value
+	# Display reason
+	# anim_player.play("show_top_tip")
+	# await(anim_player.animation_finished)
+	
+func update_meters(show_tip: bool):
 	anim_player.play("slide_in")
 	anim_player.queue("zoom_in")
 	
@@ -22,13 +31,16 @@ func _ready():
 	await(anim_player.animation_finished)
 	anim_player.play_backwards("slide_in")
 	await(anim_player.animation_finished)
+	
+	if show_tip:
+		show_tip()
+		
+	emit_signal("complete")
+	queue_free()
+	
+func show_tip():
 	anim_player.play("show_cyber_tip")
 	await(anim_player.animation_finished)
-	# Update value
-	# Display reason
-	# anim_player.play("show_top_tip")
-	# await(anim_player.animation_finished)
-	SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
 	
 func iterate_meters():
 	var index = 0

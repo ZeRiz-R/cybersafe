@@ -12,6 +12,7 @@ func _ready():
 	set_player_avatar()
 	ready_alerts()
 	check_ignores()
+	check_free_events()
 		
 		
 func load_meters():
@@ -44,18 +45,44 @@ func ready_alerts():
 	else:
 		alertChat.disappear()
 		
+@onready var number_ignored: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer/VBoxContainer/NumberIgnored
+@onready var days_ignored: Label = $MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer/VBoxContainer/DaysIgnored
 func check_ignores():
 	if len(Stores.ignoredEventDates) > 0:
-		anim_player.play("OpenIgnorePanel")
+		open_ignore_panel()
 	elif len(Stores.ignoredStore) > 0:
 		anim_player.play("IgnoreEventActivate")
+		days_ignored.text = "Impact Timer: 0 Days"
 		var ignoreEvent = Stores.ignoredStore.pop_front()
 		Stores.activeDecision = ignoreEvent.attachedDecision
 		await(anim_player.animation_finished)
 		await(Constants.display_outcome_text(get_tree().current_scene, ignoreEvent.outcomeText))# QueueOutcomeText()
-		SceneTransition.change_scene("res://Scenes/update_meters_2.tscn", "arrow")
+		SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
 	else:
 		ignore_panel.visible = false
+		
+		
+func check_free_events():
+	if Stores.activeFreeEvent:
+		anim_player.play("FreeDayActivate")
+		await(anim_player.animation_finished)
+		Stores.set_active_decision(Stores.activeFreeEvent)
+		Stores.activeDecision.choice_selected.connect(_on_free_event_selected)
+		await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.prompt))# QueueOutcomeText()
+		Constants.overlay_scene(Constants.make_decision_scene)
+
+func _on_free_event_selected(choice):
+	await(Constants.display_outcome_text(get_tree().current_scene, choice.outcomeText))# QueueOutcomeText()
+	SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
+	
+	
+func open_ignore_panel():
+		anim_player.play("OpenIgnorePanel")
+		number_ignored.text = str(len(Stores.ignoredEventDates)) + " Ignored Email"
+		if len(Stores.ignoredEventDates) > 1:
+			number_ignored.text += "s"
+		var days = Calendar.get_date_difference(Stores.ignoredEventDates[0])
+		days_ignored.text = "Impact Timer: " + str(days) + " Days"
 		
 func set_player_avatar():
 	avatar.select_image(Player.playerIcon)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8pkagx0i3m5"]
+
+[ext_resource type="Script" uid="uid://dobxj2mls5tu0" path="res://free_day.gd" id="1_npupf"]
+[ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_88tbl"]
+
+[node name="FreeDay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npupf")
+
+[node name="Wastelands" parent="." instance=ExtResource("2_88tbl")]
+layout_mode = 1
+
+[node name="ColorRect" parent="Wastelands" index="0"]
+color = Color(0.452425, 0, 0.0728216, 1)
+
+[editable path="Wastelands"]

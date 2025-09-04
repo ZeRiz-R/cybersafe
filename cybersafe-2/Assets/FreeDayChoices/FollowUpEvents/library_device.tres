@@ -1,0 +1,243 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=24 format=3 uid="uid://bummkfxhusq7c"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_v5bt7"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_ddcj3"]
+[ext_resource type="Script" uid="uid://btvhiafqpklfc" path="res://Resources/random_outcome.gd" id="3_w5y7q"]
+[ext_resource type="Script" uid="uid://l85prer7ehr7" path="res://Resources/decision.gd" id="3_woxex"]
+[ext_resource type="Script" uid="uid://bjjiikxvqsl3t" path="res://Resources/random_choice.gd" id="4_m4mvi"]
+
+[sub_resource type="Resource" id="Resource_y3k2c"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Locking your laptop is a good idea!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_r7gry"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You leave your laptop and head off to fill your water bottle!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_e4exo"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_oy1ev"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "It's exacctly where you left it!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8cjti"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Except it seems to have moved ever so slightly. I wonder how that happened..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0b7qg"]
+resource_name = "PotentialDamage"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "damage",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_e4exo"), SubResource("Resource_oy1ev"), SubResource("Resource_8cjti")])
+update = false
+probability = 0.75
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_nucvf"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_i284q"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Or at least..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_i8h5o"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Where it used to be?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_tgs2n"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "It's no longer there! Someone must have stolen it while you were gone!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_syfww"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "This one is gonna hurt..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_w1s4s"]
+resource_name = "Theft"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "Theft",
+"Value": -15
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Theft",
+"Value": 15
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_nucvf"), SubResource("Resource_i284q"), SubResource("Resource_i8h5o"), SubResource("Resource_tgs2n"), SubResource("Resource_syfww")])
+update = true
+probability = 0.25
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_83hs4"]
+resource_name = "Lock"
+script = ExtResource("4_m4mvi")
+random_choices = Array[ExtResource("3_w5y7q")]([SubResource("Resource_0b7qg"), SubResource("Resource_w1s4s")])
+id = ""
+text = "Lock your laptop before leaving it there. You'll only be gone a minute!"
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_y3k2c"), SubResource("Resource_r7gry")])
+meterChanges = {
+"CK": {
+"Reason": "Good security habit",
+"Value": 5
+},
+"DH": {
+"Reason": "Risk of theft/damage",
+"Value": -15
+},
+"DS": {
+"Reason": "Locking prevents data exposure",
+"Value": 5
+},
+"S": {
+"Reason": "easy choice",
+"Value": -10
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
+
+[sub_resource type="Resource" id="Resource_rxb1a"]
+script = ExtResource("1_v5bt7")
+id = ""
+text = "dummy"
+outcomeText = Array[ExtResource("2_ddcj3")]([])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_8kqd4"]
+script = ExtResource("1_v5bt7")
+id = ""
+text = "dummy"
+outcomeText = Array[ExtResource("2_ddcj3")]([])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_v5bt7"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You've been studying for hours, with probably a hundred tabs open with your notes at this point!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ddcj3"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Naturally, your water bottle has become empty, so you decide to go fill it up."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_woxex"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You can't just leave your laptop alone at your table though, right?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("3_woxex")
+choices = Array[ExtResource("1_v5bt7")]([SubResource("Resource_83hs4"), SubResource("Resource_rxb1a"), SubResource("Resource_8kqd4")])
+prompt = Array[ExtResource("2_ddcj3")]([SubResource("Resource_v5bt7"), SubResource("Resource_ddcj3"), SubResource("Resource_woxex")])
+tip = ""
+id = ""
+date = Vector2i(0, 0)
+metadata/_custom_type_script = "uid://l85prer7ehr7"

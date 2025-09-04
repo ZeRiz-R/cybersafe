@@ -22,8 +22,9 @@ var GOLD_COLOUR := Color(0x00a8fdff) # This is gold, the other is blue Color(0xf
 func _ready():
 	sb = progress_bar.get_theme_stylebox("fill") as StyleBoxFlat
 	if stress:
-		var temp = LOW
+		var temp = HIGH
 		HIGH = LOW
+		LOW = temp
 		var sbp = panel_container.get_theme_stylebox("panel") as StyleBoxFlat
 		sbp.bg_color = Color(0xff4846ff)
 	

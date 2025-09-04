@@ -16,6 +16,8 @@ var skew = Vector2(-0.625, -0.07)
 @onready var end: Label = $TextBoxContainer/VBoxContainer/OuterPanelContainer/MarginContainer/HBoxContainer/End
 var text_tween: Tween
 
+@onready var speaker: Label = $TextBoxContainer/VBoxContainer/OuterPanelContainer/NameWrapper/Sender
+@onready var avatar: PanelContainer = $TextBoxContainer/VBoxContainer/AvatarWrapper/Avatar
 var textQueue = []
 
 enum state {
@@ -60,10 +62,10 @@ func open_textbox():
 	anim_player.play("slide_in")
 	await(anim_player.animation_finished)
 
-func queue_text(nextText: String):
+func queue_text(nextText: TextBoxEntry):
 	textQueue.push_back(nextText)
 
-func queue_array(allText: Array[String]):
+func queue_array(allText: Array[TextBoxEntry]):
 	for line in allText:
 		queue_text(line)
 
@@ -79,9 +81,19 @@ func display_text():
 	var nextText = textQueue.pop_front()
 	change_state(state.READING)
 	content.visible_ratio = 0.0
-	content.text = nextText
+	
+	content.text = nextText.text
+	if speaker.text != nextText.speaker:
+		speaker.text = nextText.speaker
+		avatar.select_image(speaker.text)
+		pass
+		
 	show_textbox()
-	text_tween.tween_property(content, "visible_ratio", 1.0, len(nextText) * CHAR_READ_RATE).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	text_tween.tween_property(content, "visible_ratio", 1.0, len(nextText.text) * CHAR_READ_RATE).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+@onready var color_rect: ColorRect = $ColorRect
+func hide_overlay():
+	color_rect.visible = false
 
 func _on_reading_finished():
 	end.text = " *"

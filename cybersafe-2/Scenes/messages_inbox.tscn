@@ -243,9 +243,6 @@ layout_mode = 1
 [node name="ColorRect" parent="Wastelands" index="0"]
 color = Color(0, 0.721569, 0.278431, 1)
 
-[node name="TextureRect" parent="Wastelands" index="1"]
-layout_mode = 0
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=58 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://q37ofqwrwb84" path="res://hover_button_style.tres" id="2_ly5nh"]
 [ext_resource type="StyleBox" uid="uid://b4v7tnml20sk0" path="res://base_button_style.tres" id="2_vyiww"]
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="4_3r00j"]
+[ext_resource type="Texture2D" uid="uid://dffy237w5y0kd" path="res://Assets/Icons/hour-glass_9824785.png" id="5_qoyim"]
 [ext_resource type="PackedScene" uid="uid://cike150wbqadn" path="res://meter_bar.tscn" id="6_kql8j"]
 [ext_resource type="PackedScene" uid="uid://davqlofgnkvuh" path="res://alert.tscn" id="6_nw0fu"]
 [ext_resource type="Texture2D" uid="uid://cfkylkqiwml2u" path="res://Assets/Icons/mail-icon.png" id="7_l6g1u"]
@@ -226,6 +227,12 @@ font = SubResource("FontVariation_048ak")
 font_size = 150
 font_color = Color(0.907342, 0, 0.174475, 1)
 outline_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_qoyim"]
+font = SubResource("FontVariation_048ak")
+font_size = 150
+outline_size = 11
+outline_color = Color(2.88785e-06, 0.767318, 0.997042, 1)
 
 [sub_resource type="Animation" id="Animation_oeawy"]
 resource_name = "IgnoreEventActivate"
@@ -453,9 +460,62 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Overlays/FreeDayContainer:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1204, 465)]
+}
+
+[sub_resource type="Animation" id="Animation_f5qqs"]
+resource_name = "FreeDayActivate"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlays/ScreenDarken:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.736061, 1.03334, 2.86565, 3.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Overlays:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlays/FreeDayContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.26667, 1.46667, 2.73333, 2.93333),
+"transitions": PackedFloat32Array(0.277392, 1, 1, 2.07053),
+"update": 0,
+"values": [Vector2(-1204, 465), Vector2(123, 465), Vector2(675, 465), Vector2(2400, 465)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oeawy"]
 _data = {
+&"FreeDayActivate": SubResource("Animation_f5qqs"),
 &"IgnoreEventActivate": SubResource("Animation_oeawy"),
 &"OpenIgnorePanel": SubResource("Animation_048ak"),
 &"RESET": SubResource("Animation_3r00j")
@@ -475,9 +535,6 @@ layout_mode = 1
 
 [node name="ColorRect" parent="Wastelands" index="0"]
 color = Color(0.668706, 0.739421, 0.914087, 1)
-
-[node name="TextureRect" parent="Wastelands" index="1"]
-layout_mode = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -576,7 +633,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_048ak")
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_qoyim")
+expand_mode = 3
+
 [node name="Panel" type="Panel" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oeawy")
@@ -1214,9 +1279,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1440.0
+offset_left = -2164.0
 offset_top = -75.0
-offset_right = 2609.0
+offset_right = -995.0
 offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1238,13 +1303,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1169.0
-offset_bottom = 150.0
+offset_left = -581.62
+offset_top = -110.57
+offset_right = 587.38
+offset_bottom = 39.43
 grow_horizontal = 2
 grow_vertical = 2
 text = "1 Day"
 label_settings = SubResource("LabelSettings_048ak")
 horizontal_alignment = 1
+
+[node name="FreeDayContainer" type="MarginContainer" parent="Overlays"]
+layout_mode = 0
+offset_left = -1204.0
+offset_top = 465.0
+offset_right = -354.0
+offset_bottom = 615.0
+
+[node name="FreeDayText" type="Label" parent="Overlays/FreeDayContainer"]
+layout_mode = 2
+text = "FREE DAY"
+label_settings = SubResource("LabelSettings_qoyim")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

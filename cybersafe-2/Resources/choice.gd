@@ -4,7 +4,7 @@ class_name Choice
 
 @export var id: String	# Correct, Incorrect, Ignore for emails
 @export var text: String
-@export var outcomeText: Array[String]
+@export var outcomeText: Array[TextBoxEntry]
 
 # map name to change in meter e.g. "social_trust", -5
 @export var meterChanges: Dictionary = {
@@ -15,7 +15,9 @@ class_name Choice
 	"S": {"Value": 0, "Reason": ""},
 }
 
-func _init(_id = "", _text = "", _meterChanges = {}, _outcomeText: Array[String] = []):
+@export var followUp: GameEvent
+
+func _init(_id = "", _text = "", _meterChanges = {}, _outcomeText: Array[TextBoxEntry] = []):
 	id = _id
 	text = _text
 	meterChanges = _meterChanges

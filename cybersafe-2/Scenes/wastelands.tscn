@@ -26,6 +26,7 @@ color = Color(0.103001, 4.47375e-05, 0.368267, 1)
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.196078)
 material = SubResource("ShaderMaterial_whppa")
+layout_mode = 0
 offset_right = 8000.0
 offset_bottom = 5331.0
 scale = Vector2(0.25, 0.25)

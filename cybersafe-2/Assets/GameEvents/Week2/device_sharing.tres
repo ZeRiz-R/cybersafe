@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="ChatDecision" load_steps=21 format=3 uid="uid://bobf7tn0vw5h1"]
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=32 format=3 uid="uid://bobf7tn0vw5h1"]
 
-[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://choice.gd" id="1_qe14p"]
-[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://chat_message.gd" id="2_1avhh"]
-[ext_resource type="Script" uid="uid://dsobpwkok5jeb" path="res://chat_choice.gd" id="3_1avhh"]
-[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://chat_decision.gd" id="3_8tfoq"]
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_qe14p"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_1avhh"]
+[ext_resource type="Script" uid="uid://dsobpwkok5jeb" path="res://Resources/chat_choice.gd" id="3_1avhh"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="3_2evxe"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="3_8tfoq"]
 
 [sub_resource type="Resource" id="Resource_vy0r3"]
 script = ExtResource("2_1avhh")
 sender = "{name}"
-message = "yeah sure"
+message = "Yeah sure!"
 duration = 0.8
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
@@ -29,12 +30,30 @@ duration = 1.0
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
+[sub_resource type="Resource" id="Resource_8u4io"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "You let Josh use your laptop, allowing him to submit his work on time."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_u6k66"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "He is very grateful for your help!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_rfv8e"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "However, you worry that he may have seen some of your personal information while he was using your laptop..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
 [sub_resource type="Resource" id="Resource_s8875"]
 script = ExtResource("3_1avhh")
 followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_vy0r3"), SubResource("Resource_dudq7"), SubResource("Resource_swv4f")])
 id = ""
 text = "Let Josh use your laptop."
-outcomeText = Array[String](["Josh is able to submit his work on time thanks to you!", "He's very grateful for your help, but you worry that he may have seen some of your personal information."])
+outcomeText = Array[ExtResource("3_2evxe")]([SubResource("Resource_8u4io"), SubResource("Resource_u6k66"), SubResource("Resource_rfv8e")])
 meterChanges = {
 "CK": {
 "Reason": "Unsafe Choice",
@@ -83,12 +102,36 @@ duration = 1.0
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
+[sub_resource type="Resource" id="Resource_n5gn2"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "You create a guest account for Josh before letting him use your laptop."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_fn7aj"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "He is able to submit his work on time thanks to you!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_4jlps"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "Although grateful for your help, Josh feels as if you don't trust him completely."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_srvwh"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "At least you know your own account and information was protected!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
 [sub_resource type="Resource" id="Resource_rw040"]
 script = ExtResource("3_1avhh")
 followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_8h74t"), SubResource("Resource_2s2cy"), SubResource("Resource_n2ngd")])
 id = ""
 text = "Let Josh use your laptop, but make a guest account for him."
-outcomeText = Array[String](["Josh is able to submit his work on time thanks to you!", "He's grateful for your help, but feels as if you don't trust him completely.", "At the very least you know your account information is secure."])
+outcomeText = Array[ExtResource("3_2evxe")]([SubResource("Resource_n5gn2"), SubResource("Resource_fn7aj"), SubResource("Resource_4jlps"), SubResource("Resource_srvwh")])
 meterChanges = {
 "CK": {
 "Reason": "Used precaution",
@@ -129,12 +172,30 @@ duration = 2.0
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
+[sub_resource type="Resource" id="Resource_xfoyd"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "You kept your device as safe and secure as possible."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1pfrr"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "However, this created tension between you and Josh."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_3rao6"]
+script = ExtResource("3_2evxe")
+speaker = "Mysterious Voice"
+text = "Better safe than sorry!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
 [sub_resource type="Resource" id="Resource_i4ll1"]
 script = ExtResource("3_1avhh")
 followUpMessages = Array[ExtResource("2_1avhh")]([SubResource("Resource_6n43d"), SubResource("Resource_qna0k")])
 id = ""
 text = "Tell him to use a department computer. "
-outcomeText = Array[String](["You kept your device safe and secure, at the cost of creating tension between you and Josh.", "At least you know your device and data are completely safe!"])
+outcomeText = Array[ExtResource("3_2evxe")]([SubResource("Resource_xfoyd"), SubResource("Resource_1pfrr"), SubResource("Resource_3rao6")])
 meterChanges = {
 "CK": {
 "Reason": "Safest Choice",

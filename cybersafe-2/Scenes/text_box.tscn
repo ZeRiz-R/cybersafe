@@ -134,8 +134,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -411.0
-offset_bottom = 400.0
+offset_top = -811.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 100
@@ -176,10 +175,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
 
-[node name="Name" type="Control" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer"]
+[node name="NameWrapper" type="Control" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/Name"]
+[node name="Sender" type="Label" parent="TextBoxContainer/VBoxContainer/OuterPanelContainer/NameWrapper"]
 layout_mode = 2
 anchor_left = 0.0147727
 anchor_top = -0.105727
