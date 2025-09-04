@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 [sub_resource type="Resource" id="Resource_oy1ev"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
-text = "It's exacctly where you left it!"
+text = "It's exactly where you left it!"
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8cjti"]
@@ -237,7 +237,7 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 script = ExtResource("3_woxex")
 choices = Array[ExtResource("1_v5bt7")]([SubResource("Resource_83hs4"), SubResource("Resource_rxb1a"), SubResource("Resource_8kqd4")])
 prompt = Array[ExtResource("2_ddcj3")]([SubResource("Resource_v5bt7"), SubResource("Resource_ddcj3"), SubResource("Resource_woxex")])
-tip = ""
+tip = "Always lock your laptop if you leave it for any reason. "
 id = ""
 date = Vector2i(0, 0)
 metadata/_custom_type_script = "uid://l85prer7ehr7"

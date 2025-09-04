@@ -9,12 +9,6 @@
 font = ExtResource("2_qvr0r")
 font_size = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sac4d"]
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x63xj"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 1, 1)
@@ -42,6 +36,12 @@ font_size = 23
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvr0r"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sac4d"]
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
@@ -502,22 +502,14 @@ grow_vertical = 1
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(0, 0)
 
-[node name="Icon" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer"]
-visible = false
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_sac4d")
-
 [node name="MessageBoxWrapper" type="MarginContainer" parent="Wrapper/VBoxContainer/IconMessageContainer"]
 custom_minimum_size = Vector2(445, 108)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 
 [node name="MessageWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper"]
 custom_minimum_size = Vector2(445, 108)
 layout_mode = 2
-size_flags_vertical = 0
 
 [node name="BigMessageContainer" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper"]
 modulate = Color(1, 1, 1, 0)
@@ -541,12 +533,14 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
 [node name="Message" type="Label" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/MessageWrapper/BigMessageContainer/MessageContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "THIS IS A TEST MESSAGE! I've heard..."
 label_settings = SubResource("LabelSettings_lbbu2")
 autowrap_mode = 2
 
 [node name="TypingWrapper" type="Control" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper"]
+custom_minimum_size = Vector2(200, 108)
 layout_mode = 2
 
 [node name="Typing" type="PanelContainer" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper"]
@@ -583,9 +577,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
+offset_top = -44.0
 offset_right = 40.0
-offset_bottom = 20.0
+offset_bottom = -4.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
@@ -599,9 +593,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
+offset_top = -44.0
 offset_right = 40.0
-offset_bottom = 20.0
+offset_bottom = -4.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
@@ -615,9 +609,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
+offset_top = -44.0
 offset_right = 40.0
-offset_bottom = 20.0
+offset_bottom = -4.0
 grow_vertical = 2
 scale = Vector2(0.85, 0.85)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qvr0r")
@@ -630,6 +624,13 @@ theme_override_constants/margin_right = 20
 [node name="Message" type="Label" parent="Wrapper/VBoxContainer/IconMessageContainer/MessageBoxWrapper/TypingWrapper/Typing/MessageContainer"]
 layout_mode = 2
 autowrap_mode = 2
+
+[node name="Icon" type="Panel" parent="Wrapper/VBoxContainer/IconMessageContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_sac4d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

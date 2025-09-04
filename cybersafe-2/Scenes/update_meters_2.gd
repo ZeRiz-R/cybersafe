@@ -20,7 +20,7 @@ func _ready():
 	# anim_player.play("show_top_tip")
 	# await(anim_player.animation_finished)
 	
-func update_meters(show_tip: bool):
+func update_meters(show_tip2: bool):
 	anim_player.play("slide_in")
 	anim_player.queue("zoom_in")
 	
@@ -32,11 +32,10 @@ func update_meters(show_tip: bool):
 	anim_player.play_backwards("slide_in")
 	await(anim_player.animation_finished)
 	
-	if show_tip:
-		show_tip()
+	if show_tip2:
+		await(show_tip())
 		
 	emit_signal("complete")
-	queue_free()
 	
 func show_tip():
 	anim_player.play("show_cyber_tip")

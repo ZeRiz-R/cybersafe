@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://n8pkagx0i3m5"]
+[gd_scene load_steps=8 format=3 uid="uid://n8pkagx0i3m5"]
 
 [ext_resource type="Script" uid="uid://dobxj2mls5tu0" path="res://free_day.gd" id="1_npupf"]
 [ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_88tbl"]
+[ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="3_88tbl"]
+
+[sub_resource type="FontVariation" id="FontVariation_048ak"]
+base_font = ExtResource("3_88tbl")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjc80"]
+font = SubResource("FontVariation_048ak")
+font_size = 150
+outline_size = 41
+outline_color = Color(0.654969, 0.000900141, 0.752855, 1)
+shadow_size = 10
+
+[sub_resource type="Animation" id="Animation_xyfmc"]
+resource_name = "Chance"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChanceContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.63334, 0.83334, 2.1, 2.3),
+"transitions": PackedFloat32Array(0.277392, 1, 1, 2.07053),
+"update": 0,
+"values": [Vector2(-1204, 465), Vector2(123, 465), Vector2(675, 465), Vector2(2400, 465)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d5amt"]
+_data = {
+&"Chance": SubResource("Animation_xyfmc")
+}
 
 [node name="FreeDay" type="Control"]
 layout_mode = 3
@@ -17,5 +49,23 @@ layout_mode = 1
 
 [node name="ColorRect" parent="Wastelands" index="0"]
 color = Color(0.452425, 0, 0.0728216, 1)
+
+[node name="ChanceContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -1204.0
+offset_top = 465.0
+offset_right = -257.0
+offset_bottom = 615.0
+
+[node name="ChanceText" type="Label" parent="ChanceContainer"]
+layout_mode = 2
+text = "?% Chance"
+label_settings = SubResource("LabelSettings_wjc80")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d5amt")
+}
 
 [editable path="Wastelands"]

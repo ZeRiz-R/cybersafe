@@ -20,24 +20,40 @@ func initialise(_chat: Chat):
 	load_chats()
 	queue_messages()
 
-
+var prev_sender = ""
+var current_vb = null
 @onready var chatArea: VBoxContainer = $VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
 func load_chats():
 	# Removes all buttons from the email inbox
 	for message in chatArea.get_children():
 		message.queue_free()
 	# Adds buttons for each email to the inbox
+	var msg = null
 	for message in chat.messages:
-		var msg = chat_message.instantiate()
-		chatArea.add_child(msg)
-		if message.isPlayerMessage:
-			msg.size_flags_horizontal = SIZE_SHRINK_END
-		msg.connect_message(message)
+		if message.sender != prev_sender:
+			add_sender_vbox()
+			prev_sender = message.sender
+			msg = instantiate_message(message, current_vb)
+		else:
+			msg = instantiate_message(message, current_vb)
+			msg.hide_sender_info()
 		msg.display_message()
-		#await(get_tree().create_timer(0.3).timeout)
-		#msg.queue_message()
-		#await(msg.message_sent)
-		
+
+func add_sender_vbox():
+	var vb = VBoxContainer.new()
+	vb.set_anchors_and_offsets_preset(PRESET_FULL_RECT)
+	vb.add_theme_constant_override("separation", -50)
+	current_vb = vb
+	chatArea.add_child(vb)
+
+func instantiate_message(message, area):
+	var msg = chat_message.instantiate()
+	area.add_child(msg)
+	if message.isPlayerMessage:
+		msg.size_flags_horizontal = SIZE_SHRINK_END
+	msg.connect_message(message)
+	return msg
+
 func followUp(messages: Array[ChatMessage]):
 	for message in messages:
 		chat.queue_message(message)
@@ -45,14 +61,22 @@ func followUp(messages: Array[ChatMessage]):
 
 @onready var scroll_container: ScrollContainer = $VBoxContainer/MarginContainer2/ScrollContainer
 func queue_messages():
+	prev_sender = ""
 	while not chat.unsent.is_empty():
 		var message = chat.unsent[0]
-		var msg = chat_message.instantiate()
-		chatArea.add_child(msg)
-		if message.isPlayerMessage:
-			msg.size_flags_horizontal = SIZE_SHRINK_END
-		msg.connect_message(message)
+		var msg = null
+		
+		if message.sender != prev_sender:
+			print("different guy")
+			prev_sender = message.sender
+			add_sender_vbox()
+			msg = instantiate_message(message, current_vb)
+		else:
+			print("same guy")
+			msg = instantiate_message(message, current_vb)
+			msg.hide_sender_info()
 		await(get_tree().create_timer(1.0).timeout)
+		
 		scroll_down()
 		if is_instance_valid(msg):
 			msg.queue_message(message.duration)

@@ -1,7 +1,9 @@
 extends Control
 
 var activeD: Decision
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
+@onready var chance_text: Label = $ChanceContainer/ChanceText
 func _ready():
 	Stores.activeDecision.choice_selected.connect(_on_choice_selected)
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_prompt(), false))# QueueOutcomeText()
@@ -15,6 +17,9 @@ func _on_choice_selected(choice: Choice):
 	
 	if choice is RandomChoice:
 		choice.set_outcome()
+		chance_text.text = str(choice.chance) + "% CHANCE"
+		anim_player.play("Chance")
+		await(anim_player.animation_finished)
 
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text(), false))# QueueOutcomeText()
 	um = Constants.overlay_scene(Constants.update_meters_overlay) as UpdateMeters

@@ -51,4 +51,5 @@ grow_vertical = 2
 rotation = -0.261799
 text = "DEFAULT CHOICE. THIS IS A GOOD CHOICE!"
 label_settings = SubResource("LabelSettings_3lc5u")
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true

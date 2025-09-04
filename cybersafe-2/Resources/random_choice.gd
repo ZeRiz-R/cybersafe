@@ -2,6 +2,7 @@ extends Choice
 class_name RandomChoice
 
 @export var random_choices: Array[RandomOutcome]
+var chance : int = 0
 
 func set_outcome():
 	randomise_outcome()
@@ -17,7 +18,8 @@ func randomise_outcome():
 	# FIX PROBABILITY DISTRIBUTION PLS
 	for rchoice in random_choices:
 		current += rchoice.probability
-		if randNum >= rchoice.probability:
+		if randNum <= current:
 			outcomeText = rchoice.outcomeText
 			meterChanges = rchoice.meterChanges
+			chance = rchoice.probability * 100
 			break

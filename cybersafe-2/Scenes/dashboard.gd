@@ -72,8 +72,10 @@ func check_free_events():
 		Constants.overlay_scene(Constants.make_decision_scene)
 
 func _on_free_event_selected(choice):
-	await(Constants.display_outcome_text(get_tree().current_scene, choice.outcomeText))# QueueOutcomeText()
-	SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
+	if choice:
+		await(Constants.display_outcome_text(get_tree().current_scene, choice.outcomeText))# QueueOutcomeText()
+		SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
+	
 	
 	
 func open_ignore_panel():

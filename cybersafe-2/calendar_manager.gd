@@ -2,7 +2,7 @@ extends Node
 
 class_name CalendarManager
 
-var currentDate := Vector2i(3, 1) # Week / Day
+var currentDate := Vector2i(1, 0) # Week / Day
 var calendar := {}
 var activeEvent := GameEvent
 
