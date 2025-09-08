@@ -19,7 +19,7 @@ func _on_chat_pressed(chat: Chat):
 	chat_screen_wrapper.visible = true
 	Stores.activeDecision.choice_selected.connect(_on_choice_selected)
 	
-	if not Stores.activeDecision.complete:
+	if not Stores.activeDecision.complete or not Stores.activeDecision.noDecision:
 		decision_button.disabled = false
 	else:
 		decision_button.disabled = true

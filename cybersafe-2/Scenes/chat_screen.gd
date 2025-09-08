@@ -61,11 +61,11 @@ func followUp(messages: Array[ChatMessage]):
 
 @onready var scroll_container: ScrollContainer = $VBoxContainer/MarginContainer2/ScrollContainer
 func queue_messages():
-	prev_sender = ""
 	while not chat.unsent.is_empty():
 		var message = chat.unsent[0]
 		var msg = null
 		
+		print("Prev: " + prev_sender + " New: " + message.sender)
 		if message.sender != prev_sender:
 			print("different guy")
 			prev_sender = message.sender
@@ -75,13 +75,16 @@ func queue_messages():
 			print("same guy")
 			msg = instantiate_message(message, current_vb)
 			msg.hide_sender_info()
-		await(get_tree().create_timer(1.0).timeout)
+		await(get_tree().create_timer(message.cooldown).timeout)
 		
 		scroll_down()
 		if is_instance_valid(msg):
 			msg.queue_message(message.duration)
 			await(msg.message_sent)
 			chat.dequeue_message()
+			
+	if Stores.activeDecision.noDecision:
+		Stores.activeDecision.complete_decision()
 	await(get_tree().create_timer(1.5).timeout)
 
 func scroll_down():

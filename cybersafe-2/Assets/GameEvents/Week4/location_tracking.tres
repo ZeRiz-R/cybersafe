@@ -1,0 +1,340 @@
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=38 format=3 uid="uid://b72v3rjsag7xl"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_wmemy"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_wecbq"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="3_7sdsf"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="4_1w1u4"]
+[ext_resource type="Script" uid="uid://dsobpwkok5jeb" path="res://Resources/chat_choice.gd" id="4_wecbq"]
+
+[sub_resource type="Resource" id="Resource_7sdsf"]
+script = ExtResource("2_wecbq")
+sender = ""
+message = "Nah, let's meet up at the clock tower instead."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_1w1u4"]
+script = ExtResource("2_wecbq")
+sender = ""
+message = "It's only 7 minutes from the stadium."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_mm3fh"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Would've been easier to just meet up here tbh"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_d00w8"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "but I guess that's not a bad option either!"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_vtb4m"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "You meet up with Amy at the clock tower."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_o6y76"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "It's a little inconvenient, but you've stayed in full control of your privacy!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_lulw7"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Not the worst choice you could make!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_y3oim"]
+resource_name = "Don't Share"
+script = ExtResource("4_wecbq")
+followUpMessages = Array[ExtResource("2_wecbq")]([SubResource("Resource_7sdsf"), SubResource("Resource_1w1u4"), SubResource("Resource_mm3fh"), SubResource("Resource_d00w8")])
+id = ""
+text = "Don't share your location. Offer to meet up at a different landmark instead."
+outcomeText = Array[ExtResource("3_7sdsf")]([SubResource("Resource_vtb4m"), SubResource("Resource_o6y76"), SubResource("Resource_lulw7")])
+meterChanges = {
+"CK": {
+"Reason": "Protection of privacy",
+"Value": 5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "No exposure of location",
+"Value": 15
+},
+"S": {
+"Reason": "Inconvenient choice",
+"Value": 10
+},
+"ST": {
+"Reason": "Unhelpful",
+"Value": -5
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_k4abv"]
+script = ExtResource("2_wecbq")
+sender = ""
+message = "Say no more."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_dmt11"]
+script = ExtResource("2_wecbq")
+sender = ""
+message = "I should be sharing my location now!"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_d0w5p"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Cool, stay where you are."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_gn254"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "I'll be there in 2 minutes."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_et5lp"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Great! Amy is able to easily find you in the crowd."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_6qenx"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "In fact, she'll be able to meet up with you whenever she wants."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ltoto"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Your location will continue updating long after the match has ended."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_aonwo"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Better sleep with one eye open..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hdh7k"]
+resource_name = "Share Indefinitely"
+script = ExtResource("4_wecbq")
+followUpMessages = Array[ExtResource("2_wecbq")]([SubResource("Resource_k4abv"), SubResource("Resource_dmt11"), SubResource("Resource_d0w5p"), SubResource("Resource_gn254")])
+id = ""
+text = "Share your location indefinitely."
+outcomeText = Array[ExtResource("3_7sdsf")]([SubResource("Resource_et5lp"), SubResource("Resource_6qenx"), SubResource("Resource_ltoto"), SubResource("Resource_aonwo")])
+meterChanges = {
+"CK": {
+"Reason": "No regard for privacy",
+"Value": -10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Overexposure of location",
+"Value": -15
+},
+"S": {
+"Reason": "Easy choice",
+"Value": -10
+},
+"ST": {
+"Reason": "Helpful",
+"Value": 10
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_a27ur"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Say no more."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_mogh6"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "I've shared my location with you temporarily."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_6ke7e"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Cool, stay where you are."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_8rlcj"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "I'll be there in 2 minutes."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_ewf73"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Great! You manage to quickly meet up with Amy outside the stadium."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_up3bk"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Maybe you'll have time to grab some food before the game begins too!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_w3ye1"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "Soon after the game begins, your location stops updating."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_68at0"]
+script = ExtResource("3_7sdsf")
+speaker = "Mysterious Voice"
+text = "You've managed to strike a balance between convenience and safety!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_s5vjq"]
+resource_name = "Temporary Share"
+script = ExtResource("4_wecbq")
+followUpMessages = Array[ExtResource("2_wecbq")]([SubResource("Resource_a27ur"), SubResource("Resource_mogh6"), SubResource("Resource_6ke7e"), SubResource("Resource_8rlcj")])
+id = ""
+text = "Share your location for the next 30 minutes."
+outcomeText = Array[ExtResource("3_7sdsf")]([SubResource("Resource_ewf73"), SubResource("Resource_up3bk"), SubResource("Resource_w3ye1"), SubResource("Resource_68at0")])
+meterChanges = {
+"CK": {
+"Reason": "Good Compromise",
+"Value": 10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Limited exposure of location",
+"Value": 10
+},
+"S": {
+"Reason": "Extra work",
+"Value": 5
+},
+"ST": {
+"Reason": "helpful",
+"Value": 10
+}
+}
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_xd0p7"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Are you on your way to the stadium now?"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_h74hj"]
+script = ExtResource("2_wecbq")
+sender = ""
+message = "Yep, almost there."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_j851m"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Cool, I'm already there."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_wl8q8"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Crowd is crazy tho!"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_pjh4p"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Gonna be difficult to find each other."
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_1mvlv"]
+script = ExtResource("2_wecbq")
+sender = "Amy"
+message = "Share your live location with me, it'll make things much easier!"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[resource]
+script = ExtResource("4_1w1u4")
+chatName = "Amy R."
+messages = Array[ExtResource("2_wecbq")]([SubResource("Resource_xd0p7"), SubResource("Resource_h74hj"), SubResource("Resource_j851m"), SubResource("Resource_wl8q8"), SubResource("Resource_pjh4p"), SubResource("Resource_1mvlv")])
+noDecision = false
+choices = Array[ExtResource("1_wmemy")]([SubResource("Resource_y3oim"), SubResource("Resource_hdh7k"), SubResource("Resource_s5vjq")])
+prompt = Array[ExtResource("3_7sdsf")]([])
+tip = "Avoid sharing your location unnecessarily. Some apps don't need that information."
+id = ""
+date = Vector2i(4, 6)
+metadata/_custom_type_script = "uid://w1srhofks2m6"

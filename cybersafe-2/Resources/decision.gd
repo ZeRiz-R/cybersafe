@@ -24,6 +24,7 @@ func select_choice(choice):
 	selection = choice
 	if choice is IgnoreChoice:
 		choice.attach_decision(self)
+		print("attached decision to ignore")
 	emit_signal("choice_selected", choice)
 	
 func get_outcome_text():

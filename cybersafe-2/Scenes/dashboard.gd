@@ -1,11 +1,11 @@
 extends Control
 
 
-@onready var meterBox: VBoxContainer = $MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer
+@onready var meterBox: VBoxContainer = $MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer2/VBoxContainer
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var avatar: PanelContainer = $MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer/Control/AvatarContainer
-@onready var player_name: Label = $MarginContainer3/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer2/VBoxContainer2/PlayerName
+@onready var avatar: PanelContainer = $MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer/Control/AvatarContainer
+@onready var player_name: Label = $MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/PlayerName
 func _ready():
 	load_meters()
 	set_date()

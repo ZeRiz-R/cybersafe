@@ -39,6 +39,7 @@ func add_message(chatName: String, message: ChatMessage):
 
 func add_chat_event(chatDecision: ChatDecision):
 	var chatName = chatDecision.chatName
+	chatStore[chatName] = []
 	for message in chatDecision.messages:
 		add_message(chatName, message)
 	chatStore[chatName].currentDecision = chatDecision

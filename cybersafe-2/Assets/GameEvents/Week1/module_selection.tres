@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EmailDecision" load_steps=24 format=3 uid="uid://31642yybouus"]
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=30 format=3 uid="uid://31642yybouus"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_xa37j"]
 [ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_llqw1"]
@@ -134,6 +134,43 @@ id = ""
 date = Vector2i(2, 1)
 metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
+[sub_resource type="Resource" id="Resource_hfvkh"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "I've just remembered! You ignored a module selection email earlier."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_qmf1t"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "You've just received an email from the administrations team."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_js4ui"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "They say... they've not received module registration information from you!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_s8ldo"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Oh no! That was a legitimate email."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8l18j"]
+script = ExtResource("2_sncho")
+speaker = "Mysterious Voice"
+text = "Looks like you won't be starting lectures on time..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_6v4h3"]
+script = ExtResource("3_er7r6")
+outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_hfvkh"), SubResource("Resource_qmf1t"), SubResource("Resource_js4ui"), SubResource("Resource_s8ldo"), SubResource("Resource_8l18j")])
+id = ""
+date = Vector2i(2, 1)
+metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
+
 [sub_resource type="Resource" id="Resource_a38ql"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
@@ -149,6 +186,7 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 [sub_resource type="Resource" id="Resource_wyoww"]
 resource_name = "Ignore"
 script = ExtResource("3_hfvkh")
+followUpIgnore = SubResource("Resource_6v4h3")
 id = ""
 text = "Ignore the email. You've got better things to do."
 outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_a38ql"), SubResource("Resource_o078s")])

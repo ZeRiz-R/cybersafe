@@ -262,10 +262,11 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
 [resource]
 script = ExtResource("3_8tfoq")
-chatName = "Josh"
+chatName = "Josh C."
 messages = Array[ExtResource("2_1avhh")]([SubResource("Resource_qe14p"), SubResource("Resource_1avhh"), SubResource("Resource_8tfoq"), SubResource("Resource_2evxe"), SubResource("Resource_qkq7k")])
+noDecision = false
 choices = Array[ExtResource("1_qe14p")]([SubResource("Resource_s8875"), SubResource("Resource_rw040"), SubResource("Resource_i4ll1")])
-prompt = ""
+prompt = Array[ExtResource("3_2evxe")]([])
 tip = "Be careful when sharing devices with other people. There is always a risk of malware and data exposure."
 id = ""
 date = Vector2i(2, 4)

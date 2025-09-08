@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EmailDecision" load_steps=25 format=3 uid="uid://cxo46nxn4amoo"]
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=31 format=3 uid="uid://cxo46nxn4amoo"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_5eojm"]
 [ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_l1d2h"]
@@ -140,6 +140,43 @@ id = ""
 date = Vector2i(1, 3)
 metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
+[sub_resource type="Resource" id="Resource_88qby"]
+script = ExtResource("2_l1d2h")
+speaker = "Mysterious Voice"
+text = "Following up on that registration email you ignored!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_dltym"]
+script = ExtResource("2_l1d2h")
+speaker = "Mysterious Voice"
+text = "According to IT, it was actually a phishing email."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2l1nr"]
+script = ExtResource("2_l1d2h")
+speaker = "Mysterious Voice"
+text = "Great job avoiding it!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_jyt4j"]
+script = ExtResource("2_l1d2h")
+speaker = "Mysterious Voice"
+text = "Although it seems some other students weren't quite so lucky."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hxldw"]
+script = ExtResource("2_l1d2h")
+speaker = "Mysterious Voice"
+text = "Perhaps you could have helped?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_y3ffl"]
+script = ExtResource("3_ss8fv")
+outcomeText = Array[ExtResource("2_l1d2h")]([SubResource("Resource_88qby"), SubResource("Resource_dltym"), SubResource("Resource_2l1nr"), SubResource("Resource_jyt4j"), SubResource("Resource_hxldw")])
+id = ""
+date = Vector2i(1, 3)
+metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
+
 [sub_resource type="Resource" id="Resource_lasxp"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
@@ -154,11 +191,10 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_favt7"]
 script = ExtResource("4_8ljnv")
-followUp = SubResource("Resource_cxq2w")
-id = null
+followUpIgnore = SubResource("Resource_y3ffl")
+id = ""
 text = "Ignore the email. It's not worth your time."
 outcomeText = Array[ExtResource("2_l1d2h")]([SubResource("Resource_lasxp"), SubResource("Resource_f50nu")])
-followUp = SubResource("Resource_cxq2w")
 meterChanges = {
 "CK": {
 "Reason": "Avoided phishing email",
@@ -181,6 +217,7 @@ meterChanges = {
 "Value": -5
 }
 }
+followUp = SubResource("Resource_cxq2w")
 metadata/_custom_type_script = "uid://dsninvxrte1n7"
 
 [sub_resource type="Resource" id="Resource_5eojm"]
@@ -200,7 +237,7 @@ metadata/_custom_type_script = "uid://dy4cqea4brkbi"
 script = ExtResource("6_cvsvo")
 email = SubResource("Resource_5eojm")
 choices = Array[ExtResource("1_5eojm")]([SubResource("Resource_p42w7"), SubResource("Resource_kii5i"), SubResource("Resource_favt7")])
-prompt = "Looks like you've received an email!"
+prompt = Array[ExtResource("2_l1d2h")]([])
 tip = "Always check email addresses and URLs for slight differences!"
 id = ""
 date = Vector2i(1, 1)

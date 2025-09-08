@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=10 format=3 uid="uid://bxkj4tm3tv4um"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_cxlqi"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_ww1kx"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="3_e7fmj"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="4_ywyie"]
+
+[sub_resource type="Resource" id="Resource_wmemy"]
+script = ExtResource("2_ww1kx")
+sender = "Amy"
+message = "Hey hey! We're still on for the match on Saturday, right?"
+duration = 1.5
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_wecbq"]
+script = ExtResource("2_ww1kx")
+sender = ""
+message = "Of course! How could I miss an opportunity to see United lose again?"
+duration = 1.5
+cooldown = 1.5
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_7sdsf"]
+script = ExtResource("2_ww1kx")
+sender = "Amy"
+message = "Not this time. We're winning this one!"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_1w1u4"]
+script = ExtResource("2_ww1kx")
+sender = ""
+message = "Sure. Whatever you say:)"
+duration = 1.0
+cooldown = 0.8
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_mm3fh"]
+script = ExtResource("2_ww1kx")
+sender = "Amy"
+message = "Catch you on Saturday then!"
+duration = 1.5
+cooldown = 0.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[resource]
+script = ExtResource("4_ywyie")
+chatName = "Amy R."
+messages = Array[ExtResource("2_ww1kx")]([SubResource("Resource_wmemy"), SubResource("Resource_wecbq"), SubResource("Resource_7sdsf"), SubResource("Resource_1w1u4"), SubResource("Resource_mm3fh")])
+noDecision = true
+choices = Array[ExtResource("1_cxlqi")]([])
+prompt = Array[ExtResource("3_e7fmj")]([])
+tip = ""
+id = ""
+date = Vector2i(4, 1)
+metadata/_custom_type_script = "uid://w1srhofks2m6"

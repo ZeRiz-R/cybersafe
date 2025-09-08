@@ -1,0 +1,246 @@
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=30 format=3 uid="uid://8jnoiomj4h06"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_vshld"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_cdhxr"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_oavbg"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://Resources/email_decision.gd" id="3_oavbg"]
+[ext_resource type="Script" uid="uid://tfgm3dvhdk1j" path="res://Resources/ignore_event.gd" id="3_pv6sv"]
+[ext_resource type="Script" uid="uid://dsninvxrte1n7" path="res://Resources/ignore_choice.gd" id="4_mcjyk"]
+
+[sub_resource type="Resource" id="Resource_3hamj"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Hold on a second..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_jvnny"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "That email is littered with spelling errors and grammatical mistakes."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_3vgrh"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "In fact, the name used to sign off is completely different from the one in the address."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_aurtq"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Not to mention, the company name changes half way through the email."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wyapy"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Emails like this are always too good to be true..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ghyga"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "I wonder what they will do with your personal data?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_gba7a"]
+resource_name = "Apply"
+script = ExtResource("1_vshld")
+id = ""
+text = "Apply for the job. You could use the extra money!"
+outcomeText = Array[ExtResource("2_cdhxr")]([SubResource("Resource_3hamj"), SubResource("Resource_jvnny"), SubResource("Resource_3vgrh"), SubResource("Resource_aurtq"), SubResource("Resource_wyapy"), SubResource("Resource_ghyga")])
+meterChanges = {
+"CK": {
+"Reason": "Failed to identify phishing email",
+"Value": -15
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Loss of personal data",
+"Value": -15
+},
+"S": {
+"Reason": "Stressful",
+"Value": 10
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_0fyxc"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Nice catch! That email was littered with spelling and grammatical mistakes."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_t1f8u"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "There's no way a real company would be this careless, right?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_4xgb4"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Thanks to your report, IT is able to deal with the scam quickly."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_nfor8"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = " They say the scammers were targeting struggling students. How sad!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1h2tw"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Thanks to your quick report, no other students even had a chance to fall for this scam!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_bfs46"]
+resource_name = "Report"
+script = ExtResource("1_vshld")
+id = ""
+text = "Report the email. It seems suspicious."
+outcomeText = Array[ExtResource("2_cdhxr")]([SubResource("Resource_0fyxc"), SubResource("Resource_t1f8u"), SubResource("Resource_4xgb4"), SubResource("Resource_nfor8"), SubResource("Resource_1h2tw")])
+meterChanges = {
+"CK": {
+"Reason": "Avoided phishing email",
+"Value": 10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Protected personal data",
+"Value": 15
+},
+"S": {
+"Reason": "Awareness",
+"Value": 5
+},
+"ST": {
+"Reason": "Helpful report",
+"Value": 10
+}
+}
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_mcjyk"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Remember that job offer email you ignored?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_jrhak"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "As it turns out, that email was actually a scam!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_6nfi7"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "IT have dealt with it, but it seems a fair few students fell for it before IT were able to intervene."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ogxqf"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Perhaps you could have helped?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_5f8tc"]
+script = ExtResource("3_pv6sv")
+outcomeText = Array[ExtResource("2_cdhxr")]([SubResource("Resource_mcjyk"), SubResource("Resource_jrhak"), SubResource("Resource_6nfi7"), SubResource("Resource_ogxqf")])
+id = ""
+date = Vector2i(4, 4)
+metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
+
+[sub_resource type="Resource" id="Resource_g86mc"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Only a rich person could ignore this EXCLUSIVE job offer!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ymjxl"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "That, or someone who may have seen a few questionable aspects of the terms and conditions!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_643r1"]
+script = ExtResource("2_cdhxr")
+speaker = "Mysterious Voice"
+text = "Well, I'm sure we'll hear about this again sooner or later."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_f67i7"]
+script = ExtResource("4_mcjyk")
+followUpIgnore = SubResource("Resource_5f8tc")
+id = ""
+text = "Ignore the email. You've got all the money you need!"
+outcomeText = Array[ExtResource("2_cdhxr")]([SubResource("Resource_g86mc"), SubResource("Resource_ymjxl"), SubResource("Resource_643r1")])
+meterChanges = {
+"CK": {
+"Reason": "Avoided phishing email",
+"Value": 5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Avoided personal data loss",
+"Value": 5
+},
+"S": {
+"Reason": "Easy choice",
+"Value": -10
+},
+"ST": {
+"Reason": "Unhelpful",
+"Value": -5
+}
+}
+metadata/_custom_type_script = "uid://dsninvxrte1n7"
+
+[sub_resource type="Resource" id="Resource_pv6sv"]
+script = ExtResource("2_oavbg")
+sender = "alyssadell1998@gmail.com"
+title = "Exclusive Job Offer - Now Hiring!"
+body = "Dear student,
+
+We are pleased to inform you our prestigious company, StudentCareers, is offering exclusive job offers to students at your university. This is a great oportunity to make upwards of £200 a day, all from the comfort of your own home. 
+Our recruiters are urgently searching responsible individuals who are able to begin working immediatly. Have no experience? Thats ok! We provide all necessary training.
+
+To apply, please reply to this email with the following information:
+-	Full Name
+-	Date of Birth
+-	Home Address
+-	Phone Number
+
+We urge you to apply quickly, as places are limitted!
+
+Yours sincerely,
+Michael Clarkson
+StudentOffers Recruitment Team
+"
+metadata/_custom_type_script = "uid://dy4cqea4brkbi"
+
+[resource]
+script = ExtResource("3_oavbg")
+email = SubResource("Resource_pv6sv")
+choices = Array[ExtResource("1_vshld")]([SubResource("Resource_gba7a"), SubResource("Resource_bfs46"), SubResource("Resource_f67i7")])
+prompt = Array[ExtResource("2_cdhxr")]([])
+tip = "Look out for inconsistencies and grammatical mistakes in emails!"
+id = ""
+date = Vector2i(4, 1)
+metadata/_custom_type_script = "uid://dy6myhclbmobp"

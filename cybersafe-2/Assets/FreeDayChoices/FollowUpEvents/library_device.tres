@@ -101,12 +101,12 @@ resource_name = "Theft"
 script = ExtResource("3_w5y7q")
 meterChanges = {
 "CK": {
-"Reason": "Theft",
-"Value": -15
-},
-"DH": {
 "Reason": "",
 "Value": 0
+},
+"DH": {
+"Reason": "Theft",
+"Value": -20
 },
 "DS": {
 "Reason": "",
