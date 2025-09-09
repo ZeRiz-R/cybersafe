@@ -15,7 +15,7 @@ class_name Choice
 	"S": {"Value": 0, "Reason": ""},
 }
 
-@export var followUp: GameEvent
+@export var followUp: Array[GameEvent] = []
 
 func _init(_id = "", _text = "", _meterChanges = {}, _outcomeText: Array[TextBoxEntry] = []):
 	id = _id

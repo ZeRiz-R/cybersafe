@@ -16,8 +16,8 @@ func test_inbox():
 		Stores.add_email(email)
 
 func switch_to_dashboard():
-	# get_tree().change_scene_to_file("res://Scenes/dashboard.tscn")
-	get_tree().change_scene_to_file("res://Scenes/avatar_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/dashboard.tscn")
+	# get_tree().change_scene_to_file("res://Scenes/avatar_select.tscn")
 
 var events = []
 func load_events(filePath: String):

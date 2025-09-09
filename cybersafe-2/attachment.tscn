@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://mdlsmvgmv6wn"]
+
+[ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="1_m4r8r"]
+[ext_resource type="Texture2D" uid="uid://cup5tdi0kp6et" path="res://Assets/Icons/paper-clip_12391270.png" id="2_iormh"]
+
+[sub_resource type="FontVariation" id="FontVariation_gxcha"]
+base_font = ExtResource("1_m4r8r")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dedsg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7t5m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4r8r"]
+font = ExtResource("1_m4r8r")
+font_size = 24
+font_color = Color(0.184094, 0.40925, 1, 1)
+
+[node name="Attachment" type="Button"]
+custom_minimum_size = Vector2(250, 50)
+offset_right = 266.0
+offset_bottom = 51.0
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.460077, 0.563787, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_gxcha")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dedsg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r7t5m")
+alignment = 0
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 45.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_iormh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Attachment.exe"
+label_settings = SubResource("LabelSettings_m4r8r")
+vertical_alignment = 1

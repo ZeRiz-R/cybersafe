@@ -8,7 +8,7 @@ func _ready():
 
 func _on_complete():
 	if Stores.activeDecision is FreeDayEvent:
-		Stores.set_active_decision(Stores.activeDecision.selection.followUp)
+		Stores.set_active_decision(Stores.activeDecision.selection.followUp[0])
 		SceneTransition.change_scene("res://Scenes/free_day.tscn", "arrow")
 	else:
 		SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")

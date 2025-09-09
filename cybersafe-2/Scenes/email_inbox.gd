@@ -27,16 +27,33 @@ func connect_buttons():
 		btn.pressed.connect(_on_inbox_pressed.bind(emailDecision))
 
 	decisionButton.disabled = true
+	
+@onready var attachment_box: HBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/ScrollContainer/VBoxContainer/AttachmentBox
+func add_attachments(attachments: Array):
+	var attachment_button = preload("res://attachment.tscn")
+	
+	if attachments:
+		attachment_box.visible = true
+		for child in attachment_box.get_children():
+			child.queue_free()
+	else:
+		attachment_box.visible = false
 		
+	for attachment in attachments:
+		var ab = attachment_button.instantiate()
+		ab.get_node("HBoxContainer/Label").text = attachment
+		attachment_box.add_child(ab)
 
 @onready var titleLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/TitleWrapper/Title
 @onready var senderLabel: Label = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/SenderWrapper/Sender
-@onready var bodyLabel: RichTextLabel = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/Body
+@onready var bodyLabel: RichTextLabel = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/ScrollContainer/VBoxContainer/Body
 func _on_inbox_pressed(emailDecision: EmailDecision):
 	var email = emailDecision.email
 	titleLabel.text = email.title
 	senderLabel.text = email.sender
 	bodyLabel.parse_bbcode(email.body.format(Constants.placeholders))
+	
+	add_attachments(email.attachments)
 	
 	anim_player.play("slide_in")
 	

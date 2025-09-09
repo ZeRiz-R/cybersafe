@@ -22,9 +22,13 @@ func _init(_id = "", _date = Vector2i.ZERO, _prompt: Array[TextBoxEntry] = [], _
 func select_choice(choice):
 	print("Selected choice for " + id)
 	selection = choice
+	
 	if choice is IgnoreChoice:
 		choice.attach_decision(self)
 		print("attached decision to ignore")
+	
+	for followUpEvent in choice.followUp:
+		Calendar.add_event(followUpEvent.date.x, followUpEvent.date.y, followUpEvent)
 	emit_signal("choice_selected", choice)
 	
 func get_outcome_text():

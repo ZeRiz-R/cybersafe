@@ -1,0 +1,304 @@
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=39 format=3 uid="uid://v4bjupkpk4j2"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_slgb6"]
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="2_ff4ui"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_iw5tx"]
+[ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_yg3rq"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="3_kdaja"]
+[ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://Resources/email_decision.gd" id="3_yg3rq"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="4_ff4ui"]
+[ext_resource type="Script" uid="uid://tfgm3dvhdk1j" path="res://Resources/ignore_event.gd" id="5_ns4k1"]
+[ext_resource type="Script" uid="uid://dsninvxrte1n7" path="res://Resources/ignore_choice.gd" id="6_p5tw6"]
+
+[sub_resource type="Resource" id="Resource_ikyyx"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Great choice! This was a legitimate email!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0olks"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "You open the attachment and find the revised schedule."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0xuo1"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Seems like the test has been pushed forward by one day."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_cu3c2"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "One day less to revise I suppose..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_cg8nj"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Time to lock in!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8d52y"]
+resource_name = "Open"
+script = ExtResource("1_slgb6")
+id = ""
+text = "Open the attachment and review details."
+outcomeText = Array[ExtResource("2_iw5tx")]([SubResource("Resource_ikyyx"), SubResource("Resource_0olks"), SubResource("Resource_0xuo1"), SubResource("Resource_cu3c2"), SubResource("Resource_cg8nj")])
+meterChanges = {
+"CK": {
+"Reason": "Identified Legitimate Email",
+"Value": 5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "ready for test",
+"Value": -10
+},
+"ST": {
+"Reason": "Better Grades",
+"Value": 10
+}
+}
+followUp = Array[ExtResource("2_ff4ui")]([])
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_ouiuh"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Suspicious? In what way?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_7w6d4"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Well, we'll send a report anyway!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_xkqnn"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "IT gets back and informs you that the email was indeed from Prof. J. Griffith."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_sdo21"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "You may have been wrong in reporting the email, but at least you know the new schedule of the test."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_tqgdu"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Time to start revising!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_owjyv"]
+script = ExtResource("1_slgb6")
+id = ""
+text = "Report the email. It seems suspicious."
+outcomeText = Array[ExtResource("2_iw5tx")]([SubResource("Resource_ouiuh"), SubResource("Resource_7w6d4"), SubResource("Resource_xkqnn"), SubResource("Resource_sdo21"), SubResource("Resource_tqgdu")])
+meterChanges = {
+"CK": {
+"Reason": "False Positive",
+"Value": -10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Ready for test",
+"Value": -5
+},
+"ST": {
+"Reason": "False positive",
+"Value": -5
+}
+}
+followUp = Array[ExtResource("2_ff4ui")]([])
+metadata/_custom_type_script = "uid://h44bcugrvwau"
+
+[sub_resource type="Resource" id="Resource_2ojgr"]
+script = ExtResource("3_kdaja")
+sender = "Sarah"
+message = "{name} where on earth were you!!"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_xhc44"]
+script = ExtResource("3_kdaja")
+sender = "Sarah"
+message = "were you even at the test yesterday?"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_m1quo"]
+script = ExtResource("3_kdaja")
+sender = ""
+message = "No"
+duration = 4.0
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_sfvfh"]
+script = ExtResource("3_kdaja")
+sender = ""
+message = "I didn't check the new schedule"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_f142h"]
+script = ExtResource("3_kdaja")
+sender = "Sarah"
+message = "thats 20% of the module just gone..."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_epkyk"]
+script = ExtResource("3_kdaja")
+sender = "Sarah"
+message = "just ask if you're not sure about something next time"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_ns4k1"]
+script = ExtResource("4_ff4ui")
+chatName = "Sarah J."
+messages = Array[ExtResource("3_kdaja")]([SubResource("Resource_2ojgr"), SubResource("Resource_xhc44"), SubResource("Resource_m1quo"), SubResource("Resource_sfvfh"), SubResource("Resource_f142h"), SubResource("Resource_epkyk")])
+noDecision = true
+choices = Array[ExtResource("1_slgb6")]([])
+prompt = Array[ExtResource("2_iw5tx")]([])
+tip = ""
+id = ""
+date = Vector2i(6, 4)
+metadata/_custom_type_script = "uid://w1srhofks2m6"
+
+[sub_resource type="Resource" id="Resource_abv5r"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Wasn't there supposed to be a class test at some point?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_x7m3m"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Maybe Prof. Griffith cancelled it?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hxk7n"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Or maybe..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_mymd1"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "You missed the test!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_y5aiy"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "You're gonna have to work really hard to make up for those lost marks..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_16h82"]
+script = ExtResource("5_ns4k1")
+outcomeText = Array[ExtResource("2_iw5tx")]([SubResource("Resource_abv5r"), SubResource("Resource_x7m3m"), SubResource("Resource_hxk7n"), SubResource("Resource_mymd1"), SubResource("Resource_y5aiy")])
+id = ""
+date = Vector2i(6, 4)
+metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
+
+[sub_resource type="Resource" id="Resource_hjwxt"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "Ignoring this one?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_7hdnj"]
+script = ExtResource("2_iw5tx")
+speaker = "Mysterious Voice"
+text = "I hope you know what you're doing."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1l0ey"]
+script = ExtResource("6_p5tw6")
+followUpIgnore = SubResource("Resource_16h82")
+id = ""
+text = "Ignore the email. It's not worth your time."
+outcomeText = Array[ExtResource("2_iw5tx")]([SubResource("Resource_hjwxt"), SubResource("Resource_7hdnj")])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Missed test",
+"Value": 15
+},
+"ST": {
+"Reason": "Grades Drop",
+"Value": -10
+}
+}
+followUp = Array[ExtResource("2_ff4ui")]([SubResource("Resource_ns4k1")])
+metadata/_custom_type_script = "uid://dsninvxrte1n7"
+
+[sub_resource type="Resource" id="Resource_ndkc1"]
+script = ExtResource("2_yg3rq")
+sender = "J.Griffith@warwick.ac.uk"
+title = "Updated Schedule for MA107 Class Test"
+body = "Dear all,
+
+Please note that there have been changes to the upcoming MA107 class test schedule due to unforeseen circumstances. The updated time and location are provided in the attached PDF.
+
+Make sure to review the changes carefully so that you are aware of the new schedule. If you have any conflicts with the new schedule, let me know as soon as possible.
+
+Best,
+Prof. J. Griffith
+University of Warwick"
+attachments = Array[String](["revised_schedule_MA107.pdf"])
+metadata/_custom_type_script = "uid://dy4cqea4brkbi"
+
+[resource]
+script = ExtResource("3_yg3rq")
+email = SubResource("Resource_ndkc1")
+choices = Array[ExtResource("1_slgb6")]([SubResource("Resource_8d52y"), SubResource("Resource_owjyv"), SubResource("Resource_1l0ey")])
+prompt = Array[ExtResource("2_iw5tx")]([])
+tip = "Check that the file type of attachments match what you expect!"
+id = ""
+date = Vector2i(5, 2)
+metadata/_custom_type_script = "uid://dy6myhclbmobp"
