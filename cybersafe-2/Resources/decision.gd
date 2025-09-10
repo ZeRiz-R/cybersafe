@@ -22,6 +22,8 @@ func _init(_id = "", _date = Vector2i.ZERO, _prompt: Array[TextBoxEntry] = [], _
 func select_choice(choice):
 	print("Selected choice for " + id)
 	selection = choice
+	meterChanges = selection.meterChanges
+	outcomeTextMain = selection.outcomeText
 	
 	if choice is IgnoreChoice:
 		choice.attach_decision(self)
@@ -29,10 +31,12 @@ func select_choice(choice):
 	
 	for followUpEvent in choice.followUp:
 		Calendar.add_event(followUpEvent.date.x, followUpEvent.date.y, followUpEvent)
+		if followUpEvent is PendingEvent:
+			Stores.queueIgnoredEvent(followUpEvent.date)
 	emit_signal("choice_selected", choice)
 	
 func get_outcome_text():
-	return selection.outcomeText
+	return outcomeTextMain
 
 func get_prompt():
 	return prompt

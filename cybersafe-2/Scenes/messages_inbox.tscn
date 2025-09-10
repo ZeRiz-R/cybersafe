@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dfhr410vu6ta7"]
+[gd_scene load_steps=24 format=3 uid="uid://dfhr410vu6ta7"]
 
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
 [ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
@@ -211,10 +211,27 @@ tracks/3/keys = {
 "values": [Vector2(0, 1410), Vector2(0, -25), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bcmw0"]
+resource_name = "queue_finished"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0349066, 0.0, -0.0349066, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x1i7j"]
 _data = {
 &"RESET": SubResource("Animation_iicym"),
 &"open_chat": SubResource("Animation_x1i7j"),
+&"queue_finished": SubResource("Animation_bcmw0"),
 &"slide_in": SubResource("Animation_mkrng")
 }
 
@@ -272,9 +289,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -420.0
-offset_top = 890.0
+offset_top = -520.0
 offset_right = 420.0
-offset_bottom = 1930.0
+offset_bottom = 520.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(409, 572)

@@ -54,9 +54,13 @@ func check_ignores():
 		anim_player.play("IgnoreEventActivate")
 		days_ignored.text = "Impact Timer: 0 Days"
 		var ignoreEvent = Stores.ignoredStore.pop_front()
-		Stores.activeDecision = ignoreEvent.attachedDecision
+		if ignoreEvent is IgnoreEvent:
+			Stores.activeDecision = ignoreEvent.attachedDecision
+			Stores.activeDecision.outcomeTextMain = ignoreEvent.outcomeText
+		else:
+			Stores.activeDecision = ignoreEvent
 		await(anim_player.animation_finished)
-		await(Constants.display_outcome_text(get_tree().current_scene, ignoreEvent.outcomeText))# QueueOutcomeText()
+		await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 		SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
 	else:
 		ignore_panel.visible = false
@@ -80,7 +84,7 @@ func _on_free_event_selected(choice):
 	
 func open_ignore_panel():
 		anim_player.play("OpenIgnorePanel")
-		number_ignored.text = str(len(Stores.ignoredEventDates)) + " Ignored Email"
+		number_ignored.text = str(len(Stores.ignoredEventDates)) + " Pending Outcome"
 		if len(Stores.ignoredEventDates) > 1:
 			number_ignored.text += "s"
 		var days = Calendar.get_date_difference(Stores.ignoredEventDates[0])

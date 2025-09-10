@@ -195,6 +195,30 @@ prompt = Array[ExtResource("2_iw5tx")]([])
 tip = ""
 id = ""
 date = Vector2i(6, 4)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_iw5tx")]([])
 metadata/_custom_type_script = "uid://w1srhofks2m6"
 
 [sub_resource type="Resource" id="Resource_abv5r"]
@@ -232,6 +256,30 @@ script = ExtResource("5_ns4k1")
 outcomeText = Array[ExtResource("2_iw5tx")]([SubResource("Resource_abv5r"), SubResource("Resource_x7m3m"), SubResource("Resource_hxk7n"), SubResource("Resource_mymd1"), SubResource("Resource_y5aiy")])
 id = ""
 date = Vector2i(6, 4)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_iw5tx")]([])
 metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
 [sub_resource type="Resource" id="Resource_hjwxt"]
@@ -297,8 +345,11 @@ metadata/_custom_type_script = "uid://dy4cqea4brkbi"
 script = ExtResource("3_yg3rq")
 email = SubResource("Resource_ndkc1")
 choices = Array[ExtResource("1_slgb6")]([SubResource("Resource_8d52y"), SubResource("Resource_owjyv"), SubResource("Resource_1l0ey")])
-prompt = Array[ExtResource("2_iw5tx")]([])
+prompt = null
 tip = "Check that the file type of attachments match what you expect!"
-id = ""
+id = null
 date = Vector2i(5, 2)
+changes = null
+meterChanges = null
+outcomeTextMain = null
 metadata/_custom_type_script = "uid://dy6myhclbmobp"

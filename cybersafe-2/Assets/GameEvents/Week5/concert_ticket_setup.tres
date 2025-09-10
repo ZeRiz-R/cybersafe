@@ -141,4 +141,26 @@ prompt = Array[ExtResource("3_kttuq")]([])
 tip = ""
 id = ""
 date = Vector2i(5, 7)
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
 metadata/_custom_type_script = "uid://w1srhofks2m6"

@@ -4,7 +4,7 @@ class_name UpdateMeters
 @onready var meterBox: MarginContainer = $MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/MeterBox
 var meterBars: Array
 var allMeters = Constants.Meters.keys()
-var choice: Choice
+var meterChanges
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var tip_text: Label = $TopTipWrapper/TopTipBox/VBoxContainer/TipWrapper/PanelContainer/TipText
@@ -12,7 +12,7 @@ var choice: Choice
 signal complete
 
 func _ready():
-	choice = Stores.activeDecision.selection
+	meterChanges = Stores.activeDecision.meterChanges
 	load_meters()
 	set_tip()
 	# Update value
@@ -44,7 +44,7 @@ func show_tip():
 func iterate_meters():
 	var index = 0
 	print("Iterating meters")
-	Player.update_meters(choice.meterChanges)
+	Player.update_meters(meterChanges)
 	for stat in allMeters:
 		var player_meter_value = Player.meters[stat]
 		var bar = meterBars[index]
@@ -53,13 +53,13 @@ func iterate_meters():
 			
 			var reason = bar.get_node("../ReasonText")
 			await(get_tree().create_timer(0.6).timeout)
-			var reason_colour = sign(choice.meterChanges[stat]["Value"]) != -1
+			var reason_colour = sign(meterChanges[stat]["Value"]) != -1
 			print(bar.stress)
 			print("rah")
 			if bar.stress:
 				print("stressin")
 				reason_colour = !reason_colour
-			reason.assign_text(choice.meterChanges[stat]["Reason"], reason_colour)
+			reason.assign_text(meterChanges[stat]["Reason"], reason_colour)
 			await(get_tree().create_timer(1).timeout)
 		index += 1
 		
@@ -82,4 +82,7 @@ func get_progress_bars(node: Node, arr: Array):
 	return arr
 	
 func set_tip():
-	tip_text.text = Stores.activeDecision.tip
+	if "tip" in Stores.activeDecision:
+		tip_text.text = Stores.activeDecision.tip
+	else:
+		tip_text.text = "You really thought you were getting a Cyber Tip!"

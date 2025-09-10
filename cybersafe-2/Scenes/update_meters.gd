@@ -45,4 +45,7 @@ func get_progress_bars(node: Node, arr: Array):
 	
 @onready var tip_text: Label = $MarginContainer2/TopTipWrapper/TopTipBox/PanelContainer/VBoxContainer/TipText
 func set_tip():
-	tip_text.text = Stores.activeDecision.tip
+	if Stores.activeDecision.has_variable("tip"):
+		tip_text.text = Stores.activeDecision.tip
+	else:
+		tip_text.text = "You really thought you were getting a Cyber Tip!"

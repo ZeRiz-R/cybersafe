@@ -13,7 +13,16 @@ func _ready():
 	chat_screen = chat_screen_wrapper.get_child(0)
 	chat_list.open_chat.connect(_on_chat_pressed)
 	chat_screen.close_chat.connect(_on_chat_closed)
+	chat_screen.finished_queueing.connect(_on_queue_finished)
 	decision_button.disabled = true
+
+func _on_queue_finished():
+	if Stores.activeDecision.noDecision:
+		anim_player.play("queue_finished")
+		if Stores.activeDecision.changes:
+			await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
+			# CompleteDecision()
+			SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
 
 func _on_chat_pressed(chat: Chat):
 	chat_screen_wrapper.visible = true

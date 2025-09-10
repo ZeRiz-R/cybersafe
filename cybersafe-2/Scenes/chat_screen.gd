@@ -3,6 +3,7 @@ extends MarginContainer
 var chat: Chat
 var chat_message := preload("res://chat_message.tscn")
 signal close_chat
+signal finished_queueing
 
 @onready var chat_name: Label = $VBoxContainer/MarginContainer/HBoxContainer/ChatName
 @onready var back_button: TextureButton = $VBoxContainer/MarginContainer/HBoxContainer/BackButton
@@ -86,6 +87,7 @@ func queue_messages():
 	if Stores.activeDecision.noDecision:
 		Stores.activeDecision.complete_decision()
 	await(get_tree().create_timer(1.5).timeout)
+	emit_signal("finished_queueing")
 
 func scroll_down():
 		await get_tree().process_frame

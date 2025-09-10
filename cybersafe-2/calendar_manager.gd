@@ -2,7 +2,7 @@ extends Node
 
 class_name CalendarManager
 
-var currentDate := Vector2i(5, 0) # Week / Day
+var currentDate := Vector2i(6, 0) # Week / Day
 var calendar := {}
 var activeEvent := GameEvent
 
@@ -56,7 +56,7 @@ func print_event():
 			Stores.add_email(event)
 		if event is ChatDecision:
 			Stores.add_chat_event(event)
-		if event is IgnoreEvent:
+		if event is IgnoreEvent or event is PendingEvent:
 			Stores.popIgnoredEvent()
 			Stores.addIgnoredEvent(event)
 		if event is FreeDayEvent:

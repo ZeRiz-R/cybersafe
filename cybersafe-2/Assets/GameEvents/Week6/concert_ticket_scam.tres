@@ -1,0 +1,682 @@
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=72 format=3 uid="uid://83b51kdan6ta"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_tonlx"]
+[ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_xxpq4"]
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="2_ykhc6"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="3_ykhc6"]
+[ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="4_1tprd"]
+[ext_resource type="Script" uid="uid://bd2pniv3rutth" path="res://pending_event.gd" id="4_ouf3m"]
+[ext_resource type="Script" uid="uid://dsobpwkok5jeb" path="res://Resources/chat_choice.gd" id="5_1tprd"]
+
+[sub_resource type="Resource" id="Resource_ykhc6"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Hey! Maybe Sam has sent you the tickets now!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1tprd"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You check your messages only to find..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_4w28e"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Sam has blocked you!?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_gu0u7"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "He never had the tickets to begin with! It was all just a scam..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q8rnh"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You've lost a big sum of money, and even shared your student ID with him."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_nhv8g"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You need to be more careful in situations like these!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_tjy0p"]
+script = ExtResource("4_ouf3m")
+id = ""
+date = Vector2i(6, 6)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Lost personal information",
+"Value": -10
+},
+"S": {
+"Reason": "Stressful situation",
+"Value": 10
+},
+"ST": {
+"Reason": "Easy to trick",
+"Value": -5
+}
+}
+outcomeTextMain = Array[ExtResource("3_ykhc6")]([SubResource("Resource_ykhc6"), SubResource("Resource_1tprd"), SubResource("Resource_4w28e"), SubResource("Resource_gu0u7"), SubResource("Resource_q8rnh"), SubResource("Resource_nhv8g")])
+metadata/_custom_type_script = "uid://bd2pniv3rutth"
+
+[sub_resource type="Resource" id="Resource_ouf3m"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "Let me buy one of those tickets, Sam."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_ynqqc"]
+script = ExtResource("2_xxpq4")
+sender = "Mei"
+message = "YAY!! I can't wait to go to the concert with EVERYONE!!"
+duration = 1.7
+cooldown = 1.4
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_3smry"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "dm me {name}"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_jo1gx"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You DM Sam your student ID and send over the payment."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_aiiuo"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "He tells you that he has to wait for the money to come through, but he'll send you the tickets tomorrow."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1f4i4"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Your friends are excited that you'll be able to go to the concert with them!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_oww0h"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "However, you feel that something is not quite right..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q2lci"]
+resource_name = "Buy"
+script = ExtResource("5_1tprd")
+followUpMessages = Array[ExtResource("2_xxpq4")]([SubResource("Resource_ouf3m"), SubResource("Resource_ynqqc"), SubResource("Resource_3smry")])
+id = ""
+text = "Buy the tickets immediately. This is your only chance!"
+outcomeText = Array[ExtResource("3_ykhc6")]([SubResource("Resource_jo1gx"), SubResource("Resource_aiiuo"), SubResource("Resource_1f4i4"), SubResource("Resource_oww0h")])
+meterChanges = {
+"CK": {
+"Reason": "Unsafe decision",
+"Value": -10
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Sharing personal information",
+"Value": -10
+},
+"S": {
+"Reason": "Anxious Wait",
+"Value": 10
+},
+"ST": {
+"Reason": "Social event",
+"Value": 10
+}
+}
+followUp = Array[ExtResource("2_ykhc6")]([SubResource("Resource_tjy0p")])
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_wc3wo"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "Can you give us some proof of the tickets Sam?"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_yrtew"]
+script = ExtResource("2_xxpq4")
+sender = "Sarah"
+message = "good idea {name}"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_unk4n"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "oh I hadn't even thought to ask..."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_5u6vk"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "trust me, i have the tickets"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_rg6dd"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "Then send a picture of them or something."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_rlro2"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "no way you dont trust me"
+duration = 1.3
+cooldown = 1.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_edrnh"]
+script = ExtResource("2_xxpq4")
+sender = "Sarah"
+message = "why are you being so shifty just send some proof"
+duration = 1.9
+cooldown = 1.9
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_4yqg2"]
+script = ExtResource("2_xxpq4")
+sender = "Amy"
+message = "He clearly doesn't have any lol."
+duration = 1.3
+cooldown = 1.7
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_la4bs"]
+script = ExtResource("2_xxpq4")
+sender = "Amy"
+message = "I'm kicking him from the group."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_n1xl2"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "THIS USER HAS BEEN REMOVED FROM THE GROUP."
+duration = 2.5
+cooldown = 2.5
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_qkmwq"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "i owe you one {name}"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_c2f0j"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "i was totally gonna fall for it..."
+duration = 1.3
+cooldown = 2.5
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_iylfp"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Great idea!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_dqr4d"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Sam had no proof, so you were able to identify and deal with his scam."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_l7rr7"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You also saved Josh and other potential victims by speaking up!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_k8r84"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Just know that even \"proof\" can be faked."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_nc8ji"]
+resource_name = "Proof"
+script = ExtResource("5_1tprd")
+followUpMessages = Array[ExtResource("2_xxpq4")]([SubResource("Resource_wc3wo"), SubResource("Resource_yrtew"), SubResource("Resource_unk4n"), SubResource("Resource_5u6vk"), SubResource("Resource_rg6dd"), SubResource("Resource_rlro2"), SubResource("Resource_edrnh"), SubResource("Resource_4yqg2"), SubResource("Resource_la4bs"), SubResource("Resource_n1xl2"), SubResource("Resource_qkmwq"), SubResource("Resource_c2f0j")])
+id = ""
+text = "Ask for proof of the tickets. Others may buy them while you wait though!"
+outcomeText = Array[ExtResource("3_ykhc6")]([SubResource("Resource_iylfp"), SubResource("Resource_dqr4d"), SubResource("Resource_l7rr7"), SubResource("Resource_k8r84")])
+meterChanges = {
+"CK": {
+"Reason": "Good caution",
+"Value": 15
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Protected personal data",
+"Value": 10
+},
+"S": {
+"Reason": "Confrontation",
+"Value": 5
+},
+"ST": {
+"Reason": "Hero",
+"Value": 10
+}
+}
+followUp = Array[ExtResource("2_ykhc6")]([])
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_aommy"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "you were right to not buy any tickets..."
+duration = 2.0
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_211yh"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "sam blocked me right after i sent the money"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_dkpi8"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "i'm such a fool..."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_craqr"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Turns out Sam didn't even have the tickets."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_cj0xa"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You may have avoided the scam, but looks like Josh was not so lucky."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_05oxt"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "If you had said something, maybe things would be different?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_rpyqk"]
+resource_name = "Poor Josh"
+script = ExtResource("4_1tprd")
+chatName = "Josh C."
+messages = Array[ExtResource("2_xxpq4")]([SubResource("Resource_aommy"), SubResource("Resource_211yh"), SubResource("Resource_dkpi8")])
+noDecision = true
+choices = Array[ExtResource("1_tonlx")]([])
+prompt = Array[ExtResource("3_ykhc6")]([])
+tip = ""
+id = ""
+date = Vector2i(6, 6)
+changes = true
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Protected personal data",
+"Value": 5
+},
+"S": {
+"Reason": "Avoided scam",
+"Value": -5
+},
+"ST": {
+"Reason": "Poor Josh:(",
+"Value": -5
+}
+}
+outcomeTextMain = Array[ExtResource("3_ykhc6")]([SubResource("Resource_craqr"), SubResource("Resource_cj0xa"), SubResource("Resource_05oxt")])
+metadata/_custom_type_script = "uid://w1srhofks2m6"
+
+[sub_resource type="Resource" id="Resource_0ndy5"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "It's fine Mei, I'll just go next year."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_17t1x"]
+script = ExtResource("2_xxpq4")
+sender = "Mei"
+message = "Aww:("
+duration = 2.5
+cooldown = 1.5
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_shgw0"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "yo sam i'll buy a ticket"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_0l245"]
+script = ExtResource("2_xxpq4")
+sender = "Sarah"
+message = "i'm good too tbh"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_ewnqj"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "dm me josh"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_3xea2"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "You may not be going to any concerts this time around, but at least you know you made a safe choice!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ep18k"]
+script = ExtResource("3_ykhc6")
+speaker = "Mysterious Voice"
+text = "Looks like Josh is buying a ticket from Sam though."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_bpgaa"]
+resource_name = "Ignore"
+script = ExtResource("5_1tprd")
+followUpMessages = Array[ExtResource("2_xxpq4")]([SubResource("Resource_0ndy5"), SubResource("Resource_17t1x"), SubResource("Resource_shgw0"), SubResource("Resource_0l245"), SubResource("Resource_ewnqj")])
+id = ""
+text = "Ignore the offer. There's always next year."
+outcomeText = Array[ExtResource("3_ykhc6")]([SubResource("Resource_3xea2"), SubResource("Resource_ep18k")])
+meterChanges = {
+"CK": {
+"Reason": "Safe choice",
+"Value": 5
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "retained personal data",
+"Value": 5
+},
+"S": {
+"Reason": "Acceptance",
+"Value": -10
+},
+"ST": {
+"Reason": "Disappointing",
+"Value": -5
+}
+}
+followUp = Array[ExtResource("2_ykhc6")]([SubResource("Resource_rpyqk")])
+metadata/_custom_type_script = "uid://dsobpwkok5jeb"
+
+[sub_resource type="Resource" id="Resource_k2fmk"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "how are the hana song tickets already sold out."
+duration = 1.3
+cooldown = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_3o8a5"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "its only been a minut..."
+duration = 1.3
+cooldown = 1.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_uh0tx"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "minute*"
+duration = 1.0
+cooldown = 2.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_ici7q"]
+script = ExtResource("2_xxpq4")
+sender = "Amy"
+message = "That's how it usually goes haha!"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_k3a3e"]
+script = ExtResource("2_xxpq4")
+sender = "Amy"
+message = "Better luck next time Josh!"
+duration = 1.3
+cooldown = 1.7
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_lt4n7"]
+script = ExtResource("2_xxpq4")
+sender = "Mei"
+message = "Winston and I were LUCKY!!"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_f3054"]
+script = ExtResource("2_xxpq4")
+sender = "Winston"
+message = "Truly! It was a miracle to have received these tickets."
+duration = 1.3
+cooldown = 1.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_4etgc"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "And I was not so lucky..."
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_0kakt"]
+script = ExtResource("2_xxpq4")
+sender = ""
+message = "Hope you guys have a good time at least."
+duration = 1.3
+cooldown = 2.0
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_0k0ws"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "hey everyone, dont worry, i've got two spare tickets"
+duration = 1.8
+cooldown = 1.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_3esqi"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "selling em for £120 each"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_iw23a"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "dm me your student id"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_1h3h3"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "and bank transfer the payment to the account i send you"
+duration = 1.3
+cooldown = 1.8
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_2n0ge"]
+script = ExtResource("2_xxpq4")
+sender = "Sam"
+message = "and i'll send the qr codes asap"
+duration = 1.3
+cooldown = 2.0
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_7trfc"]
+script = ExtResource("2_xxpq4")
+sender = "Josh"
+message = "bro thank you so much this is a life saver"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_q0okn"]
+script = ExtResource("2_xxpq4")
+sender = "Sarah"
+message = "seems a little sketch tbh"
+duration = 1.3
+cooldown = 1.7
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_imvim"]
+script = ExtResource("2_xxpq4")
+sender = "Mei"
+message = "{name} this is your CHANCE!!"
+duration = 1.3
+cooldown = 1.2
+isPlayerMessage = false
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[resource]
+script = ExtResource("4_1tprd")
+chatName = "Legends25"
+messages = Array[ExtResource("2_xxpq4")]([SubResource("Resource_k2fmk"), SubResource("Resource_3o8a5"), SubResource("Resource_uh0tx"), SubResource("Resource_ici7q"), SubResource("Resource_k3a3e"), SubResource("Resource_lt4n7"), SubResource("Resource_f3054"), SubResource("Resource_4etgc"), SubResource("Resource_0kakt"), SubResource("Resource_0k0ws"), SubResource("Resource_3esqi"), SubResource("Resource_iw23a"), SubResource("Resource_1h3h3"), SubResource("Resource_2n0ge"), SubResource("Resource_7trfc"), SubResource("Resource_q0okn"), SubResource("Resource_imvim")])
+noDecision = false
+choices = Array[ExtResource("1_tonlx")]([SubResource("Resource_q2lci"), SubResource("Resource_nc8ji"), SubResource("Resource_bpgaa")])
+prompt = Array[ExtResource("3_ykhc6")]([])
+tip = "Be suspicious of resellers!"
+id = ""
+date = Vector2i(6, 5)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("3_ykhc6")]([])
+metadata/_custom_type_script = "uid://w1srhofks2m6"

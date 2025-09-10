@@ -656,7 +656,7 @@ size_flags_vertical = 4
 
 [node name="NumberIgnored" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "10 Ignored Decisions"
+text = "0 Pending Outcomes"
 label_settings = ExtResource("4_3r00j")
 
 [node name="DaysIgnored" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper/IgnorePanel/HBoxContainer/VBoxContainer"]

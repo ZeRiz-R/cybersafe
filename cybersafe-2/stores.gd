@@ -10,7 +10,7 @@ var chatsInOrder := []
 var ignoredStore := []
 var ignoredEventDates := []
 
-var activeDecision: Decision
+var activeDecision: GameEvent
 var activeMeterChange: Dictionary
 
 var activeFreeEvent: Decision = null
@@ -66,8 +66,11 @@ func popUnreadEmail():
 func popUnreadChat():
 	unreadChats = min(unreadChats - 1, 0)
 	
-func addIgnoredEvent(event: IgnoreEvent):
-	ignoredStore.insert(0, event)
+func addIgnoredEvent(event):
+	if event is IgnoreEvent or event is PendingEvent:
+		ignoredStore.insert(0, event)
+	else:
+		print("Can't add event that is not pending.")
 	
 func queueIgnoredEvent(date: Vector2i):
 	for i in range(len(ignoredEventDates)):
