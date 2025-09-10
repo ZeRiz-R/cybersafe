@@ -6,7 +6,7 @@ extends Control
 @onready var chat_screen_wrapper: Control = $MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/ChatScreenWrapper
 @onready var chat_screen: MarginContainer
 @onready var displayArea: PanelContainer = $MarginContainer/HBoxContainer/PhoneWrapper/PhoneContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer
-@onready var decision_button: Button = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/DecisionButton
+@onready var decision_button: Button = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/DecisionButton
 func _ready():
 	anim_player.play("slide_in")
 	chat_screen_wrapper.visible = false
@@ -19,6 +19,7 @@ func _ready():
 func _on_queue_finished():
 	if Stores.activeDecision.noDecision:
 		anim_player.play("queue_finished")
+		Stores.activeDecision.complete_decision()
 		if Stores.activeDecision.changes:
 			await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
 			# CompleteDecision()

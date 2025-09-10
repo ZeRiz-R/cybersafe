@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://drknxxvjs3bug"]
+
+[ext_resource type="Texture2D" uid="uid://cmxpu583o0lrr" path="res://Assets/Icons/barrow2.png" id="1_5ywf1"]
+[ext_resource type="Script" uid="uid://cdselh7lgm6ym" path="res://texture_button.gd" id="2_y1sll"]
+
+[node name="BackButton" type="TextureButton"]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 139.0
+offset_bottom = 100.0
+pivot_offset = Vector2(66, 48)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("1_5ywf1")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_y1sll")

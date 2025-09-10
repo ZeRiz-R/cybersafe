@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Choice" load_steps=6 format=3 uid="uid://ur6sa6goqgql"]
+[gd_resource type="Resource" script_class="Choice" load_steps=7 format=3 uid="uid://ur6sa6goqgql"]
 
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="1_n8mpx"]
 [ext_resource type="Resource" uid="uid://bummkfxhusq7c" path="res://Assets/FreeDayChoices/FollowUpEvents/library_device.tres" id="1_st652"]
 [ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="1_x83dc"]
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="2_st652"]
@@ -43,5 +44,5 @@ meterChanges = {
 "Value": 0
 }
 }
-followUp = ExtResource("1_st652")
+followUp = Array[ExtResource("1_n8mpx")]([ExtResource("1_st652")])
 metadata/_custom_type_script = "uid://h44bcugrvwau"

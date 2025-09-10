@@ -24,4 +24,28 @@ prompt = Array[ExtResource("2_hueqe")]([SubResource("Resource_4hl3p"), SubResour
 tip = "University can be stressful. Don't forget to take time for yourself!"
 id = ""
 date = Vector2i(3, 3)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_hueqe")]([])
 metadata/_custom_type_script = "uid://bxs4o3a51ol8"

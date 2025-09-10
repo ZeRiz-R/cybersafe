@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="EmailDecision" load_steps=30 format=3 uid="uid://31642yybouus"]
+[gd_resource type="Resource" script_class="EmailDecision" load_steps=26 format=3 uid="uid://31642yybouus"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_xa37j"]
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="2_er7r6"]
 [ext_resource type="Script" uid="uid://dy4cqea4brkbi" path="res://Resources/email.gd" id="2_llqw1"]
 [ext_resource type="Script" uid="uid://dy6myhclbmobp" path="res://Resources/email_decision.gd" id="2_pdnsn"]
 [ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_sncho"]
@@ -22,7 +23,7 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 [sub_resource type="Resource" id="Resource_8dgic"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
-text = "You're register for your modules on time, and are able to attend lectures without delay!"
+text = "You register for your modules on time, and are able to attend lectures without delay!"
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_33yr0"]
@@ -53,6 +54,7 @@ meterChanges = {
 "Value": 5
 }
 }
+followUp = Array[ExtResource("2_er7r6")]([])
 metadata/_custom_type_script = "uid://h44bcugrvwau"
 
 [sub_resource type="Resource" id="Resource_lksi0"]
@@ -101,38 +103,8 @@ meterChanges = {
 "Value": 5
 }
 }
+followUp = Array[ExtResource("2_er7r6")]([])
 metadata/_custom_type_script = "uid://h44bcugrvwau"
-
-[sub_resource type="Resource" id="Resource_dtadk"]
-script = ExtResource("2_sncho")
-speaker = "Mysterious Voice"
-text = "Oh yeah! That module registration email you ignored!"
-metadata/_custom_type_script = "uid://ctuklgpecqpfe"
-
-[sub_resource type="Resource" id="Resource_wxby8"]
-script = ExtResource("2_sncho")
-speaker = "Mysterious Voice"
-text = "You just received an email from IT notifying you that they have not received module registration information from you."
-metadata/_custom_type_script = "uid://ctuklgpecqpfe"
-
-[sub_resource type="Resource" id="Resource_b38on"]
-script = ExtResource("2_sncho")
-speaker = "Mysterious Voice"
-text = "It turns out the email was legitimate, so you are now facing delays."
-metadata/_custom_type_script = "uid://ctuklgpecqpfe"
-
-[sub_resource type="Resource" id="Resource_newrk"]
-script = ExtResource("2_sncho")
-speaker = "Mysterious Voice"
-text = "You are unable to begin lectures on time as a result of this."
-metadata/_custom_type_script = "uid://ctuklgpecqpfe"
-
-[sub_resource type="Resource" id="Resource_fxhm7"]
-script = ExtResource("3_er7r6")
-outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_dtadk"), SubResource("Resource_wxby8"), SubResource("Resource_b38on"), SubResource("Resource_newrk")])
-id = ""
-date = Vector2i(2, 1)
-metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
 [sub_resource type="Resource" id="Resource_hfvkh"]
 script = ExtResource("2_sncho")
@@ -169,6 +141,30 @@ script = ExtResource("3_er7r6")
 outcomeText = Array[ExtResource("2_sncho")]([SubResource("Resource_hfvkh"), SubResource("Resource_qmf1t"), SubResource("Resource_js4ui"), SubResource("Resource_s8ldo"), SubResource("Resource_8l18j")])
 id = ""
 date = Vector2i(2, 1)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_sncho")]([])
 metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 
 [sub_resource type="Resource" id="Resource_a38ql"]
@@ -212,7 +208,7 @@ meterChanges = {
 "Value": -10
 }
 }
-followUp = SubResource("Resource_fxhm7")
+followUp = Array[ExtResource("2_er7r6")]([])
 metadata/_custom_type_script = "uid://dsninvxrte1n7"
 
 [sub_resource type="Resource" id="Resource_sncho"]
@@ -238,4 +234,28 @@ prompt = Array[ExtResource("2_sncho")]([])
 tip = "Hover over embedded links to examine the URL!"
 id = ""
 date = Vector2i(1, 5)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_sncho")]([])
 metadata/_custom_type_script = "uid://dy6myhclbmobp"
