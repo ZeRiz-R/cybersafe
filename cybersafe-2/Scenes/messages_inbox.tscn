@@ -1,17 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfhr410vu6ta7"]
+[gd_scene load_steps=23 format=3 uid="uid://dfhr410vu6ta7"]
 
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="1_88lbi"]
 [ext_resource type="Script" uid="uid://bi7g1aw1a83ol" path="res://Scenes/messages_inbox.gd" id="1_mkrng"]
 [ext_resource type="PackedScene" uid="uid://d3ptlu5bkxn4p" path="res://chat_list.tscn" id="2_88lbi"]
 [ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_bcmw0"]
-[ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_x1i7j"]
 [ext_resource type="PackedScene" uid="uid://48lrcbch5nyx" path="res://Scenes/chat_screen.tscn" id="3_iicym"]
 [ext_resource type="PackedScene" uid="uid://drknxxvjs3bug" path="res://back_button.tscn" id="3_qcpml"]
 [ext_resource type="PackedScene" uid="uid://ct0lqd441l27g" path="res://small_meter_box.tscn" id="4_00fjs"]
 [ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/Icons/WiFi_whit.png" id="4_p3ju4"]
 [ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/data_signal.png" id="5_00fjs"]
 [ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/battery_icon.png" id="6_bcmw0"]
-[ext_resource type="Theme" uid="uid://bu0ar07ugyrp6" path="res://button_theme.tres" id="6_kqqou"]
+[ext_resource type="PackedScene" uid="uid://dxd62i1fq4hy4" path="res://decision_button.tscn" id="9_bcmw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88lbi"]
 bg_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
@@ -386,13 +385,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -1
 
-[node name="DecisionButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="DecisionButtonWrapper" type="Control" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DecisionButton" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/DecisionButtonWrapper" instance=ExtResource("9_bcmw0")]
+layout_mode = 2
+offset_left = 225.0
+offset_top = 290.0
+offset_right = 525.0
+offset_bottom = 390.0
+scale = Vector2(1.57, 1.57)
+pivot_offset = Vector2(150, 45)
+size_flags_horizontal = 6
 size_flags_vertical = 6
-theme = ExtResource("6_kqqou")
-text = "MAKE DECISION"
-script = ExtResource("2_x1i7j")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 visible = false

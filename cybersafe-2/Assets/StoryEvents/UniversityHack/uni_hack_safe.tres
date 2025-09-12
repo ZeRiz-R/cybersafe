@@ -1,0 +1,106 @@
+[gd_resource type="Resource" script_class="StoryEvent" load_steps=15 format=3 uid="uid://bxba41v7r4w2y"]
+
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="1_q8c3c"]
+[ext_resource type="Script" uid="uid://cqabs4i5aiu08" path="res://story_event.gd" id="2_sy1s4"]
+
+[sub_resource type="Resource" id="Resource_yx4le"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "Sound the alarm!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_xx01l"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "IT has just sent out an alert to all students!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8hx0n"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "The university has just been the target of a serious cyber attack."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8qwvf"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "Hackers have been able to compromise a huge number of student accounts."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q8c3c"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "They've been using them to distribute malware across the university network!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wnnux"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "This is a serious blow to the university. Has your account been compromised?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_tyrs8"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wf0se"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_djmkb"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "SAFE! The measures you took last week kept your account protected from the hackers!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_rjmcb"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "It's a good thing you listened to that email, huh?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_gbytk"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "Could've turned out much, much worse for you..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_euix3"]
+script = ExtResource("1_q8c3c")
+speaker = "Mysterious Voice"
+text = "Great job!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("2_sy1s4")
+id = ""
+date = Vector2i(8, 3)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "Defended Cyber Attack",
+"Value": 10
+},
+"DS": {
+"Reason": "Defended Cyber Attack",
+"Value": 10
+},
+"S": {
+"Reason": "Stresssful Event",
+"Value": 15
+},
+"ST": {
+"Reason": "Unaffected by attack",
+"Value": 10
+}
+}
+outcomeTextMain = Array[ExtResource("1_q8c3c")]([SubResource("Resource_yx4le"), SubResource("Resource_xx01l"), SubResource("Resource_8hx0n"), SubResource("Resource_8qwvf"), SubResource("Resource_q8c3c"), SubResource("Resource_wnnux"), SubResource("Resource_tyrs8"), SubResource("Resource_wf0se"), SubResource("Resource_djmkb"), SubResource("Resource_rjmcb"), SubResource("Resource_gbytk"), SubResource("Resource_euix3")])
+metadata/_custom_type_script = "uid://cqabs4i5aiu08"

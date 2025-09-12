@@ -233,7 +233,7 @@ choices = Array[ExtResource("1_xa37j")]([SubResource("Resource_33yr0"), SubResou
 prompt = Array[ExtResource("2_sncho")]([])
 tip = "Hover over embedded links to examine the URL!"
 id = ""
-date = Vector2i(1, 5)
+date = Vector2i(1, 4)
 changes = false
 meterChanges = {
 "CK": {

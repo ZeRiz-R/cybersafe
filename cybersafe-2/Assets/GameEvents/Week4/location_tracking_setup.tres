@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 [sub_resource type="Resource" id="Resource_wecbq"]
 script = ExtResource("2_ww1kx")
 sender = ""
-message = "Of course! How could I miss an opportunity to see United lose again?"
+message = "Of course! How could I miss an opportunity to watch United lose again?"
 duration = 1.5
 cooldown = 1.5
 isPlayerMessage = true
@@ -60,4 +60,28 @@ prompt = Array[ExtResource("3_e7fmj")]([])
 tip = ""
 id = ""
 date = Vector2i(4, 1)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("3_e7fmj")]([])
 metadata/_custom_type_script = "uid://w1srhofks2m6"

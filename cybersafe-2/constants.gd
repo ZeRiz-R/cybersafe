@@ -8,6 +8,12 @@ var Meters = {
 	"S": "Stress"
 }
 
+var MeterThresholds = {
+	"LOW": 0,
+	"MEDIUM": 35,
+	"HIGH": 70
+}
+
 var placeholders := {
 	"name": "placeholder",
 	"link": "#00cef2"

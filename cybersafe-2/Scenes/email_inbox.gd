@@ -1,7 +1,7 @@
 extends Node
 
 @onready var inbox: VBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/LeftBoxWrapper/VBoxContainer/PanelContainer2/MarginContainer/ScrollContainer/VBoxContainer
-@onready var decisionButton: Button = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/DecisionButton
+@onready var decisionButton: MarginContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer/DecisionButton
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 var emailButton = preload("res://email_button.tscn")
 func _ready():
@@ -26,7 +26,7 @@ func connect_buttons():
 		var emailDecision = btn.get_meta("email_decision") as EmailDecision
 		btn.pressed.connect(_on_inbox_pressed.bind(emailDecision))
 
-	decisionButton.disabled = true
+	decisionButton.hide_instant()
 	
 @onready var attachment_box: HBoxContainer = $MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/RightBoxWrapper/VBoxContainer/MarginContainer2/PanelContainer/BodyWrapper/ScrollContainer/VBoxContainer/AttachmentBox
 func add_attachments(attachments: Array):
@@ -60,9 +60,9 @@ func _on_inbox_pressed(emailDecision: EmailDecision):
 	if not (emailDecision.complete):
 		Stores.set_active_decision(emailDecision)
 		Stores.activeDecision.choice_selected.connect(_on_choice_selected)
-		decisionButton.disabled = false
+		decisionButton.show_animate()
 	else:
-		decisionButton.disabled = true	
+		decisionButton.hide_animate()
 	
 func _on_choice_selected(choice):
 	print("Choice selected")

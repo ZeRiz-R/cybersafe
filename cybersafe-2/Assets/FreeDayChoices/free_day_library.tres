@@ -24,7 +24,7 @@ text = "Go to the library to catch up on some studying."
 outcomeText = Array[ExtResource("1_x83dc")]([SubResource("Resource_x83dc"), SubResource("Resource_st652")])
 meterChanges = {
 "CK": {
-"Reason": "",
+"Reason": "Studious!",
 "Value": 10
 },
 "DH": {
@@ -36,7 +36,7 @@ meterChanges = {
 "Value": 0
 },
 "S": {
-"Reason": "",
+"Reason": "free will is nice",
 "Value": -5
 },
 "ST": {

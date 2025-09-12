@@ -1,6 +1,6 @@
 extends TextureButton
 
-var hover_scale: Vector2 = Vector2(1.15, 1.15)
+var hover_scale: Vector2 = Vector2(1.1, 1.1)
 var tween_duration := 0.05
 
 # Buttons
@@ -37,3 +37,12 @@ func _on_pressed():
 	match self.name:
 		"BackButton":
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
+		"DecisionButton":
+			decision_button_pressed()
+			
+func decision_button_pressed():
+	print("making a decision")
+	var decisionScreen = preload("res://Scenes/make_decision.tscn").instantiate()
+	var uiLayer = get_tree().current_scene
+	uiLayer.add_child(decisionScreen)
+	self.disabled = true

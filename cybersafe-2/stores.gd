@@ -10,6 +10,8 @@ var chatsInOrder := []
 var ignoredStore := []
 var ignoredEventDates := []
 
+var eventStore := []
+
 var activeDecision: GameEvent
 var activeMeterChange: Dictionary
 
@@ -61,10 +63,10 @@ func set_free_event(event: Decision):
 	activeFreeEvent = event
 	
 func popUnreadEmail():
-	unreadEmails = min(unreadEmails - 1, 0)
+	unreadEmails = max(unreadEmails - 1, 0)
 
 func popUnreadChat():
-	unreadChats = min(unreadChats - 1, 0)
+	unreadChats = max(unreadChats - 1, 0)
 	
 func addIgnoredEvent(event):
 	if event is IgnoreEvent or event is PendingEvent:
@@ -81,4 +83,7 @@ func queueIgnoredEvent(date: Vector2i):
 
 func popIgnoredEvent():
 	return ignoredEventDates.pop_front()
+	
+func add_generic_event(event):
+	eventStore.append(event)
 	

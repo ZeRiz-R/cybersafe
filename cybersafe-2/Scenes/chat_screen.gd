@@ -25,20 +25,23 @@ var prev_sender = ""
 var current_vb = null
 @onready var chatArea: VBoxContainer = $VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
 func load_chats():
+	prev_sender = ""
+	current_vb = null
 	# Removes all buttons from the email inbox
 	for message in chatArea.get_children():
 		message.queue_free()
 	# Adds buttons for each email to the inbox
 	var msg = null
 	for message in chat.messages:
-		if message.sender != prev_sender:
-			add_sender_vbox()
-			prev_sender = message.sender
-			msg = instantiate_message(message, current_vb)
-		else:
-			msg = instantiate_message(message, current_vb)
-			msg.hide_sender_info()
-		msg.display_message()
+		if is_instance_valid(message):
+			if message.sender != prev_sender:
+				add_sender_vbox()
+				prev_sender = message.sender
+				msg = instantiate_message(message, current_vb)
+			else:
+				msg = instantiate_message(message, current_vb)
+				msg.hide_sender_info()
+			msg.display_message()
 
 func add_sender_vbox():
 	var vb = VBoxContainer.new()
@@ -84,7 +87,7 @@ func queue_messages():
 			await(msg.message_sent)
 			chat.dequeue_message()
 			
-	if Stores.activeDecision.noDecision:
+	if Stores.activeDecision.noDecision and not Stores.activeDecision.changes and not Stores.activeDecision.complete:
 		Stores.activeDecision.complete_decision()
 	await(get_tree().create_timer(1.5).timeout)
 	emit_signal("finished_queueing")

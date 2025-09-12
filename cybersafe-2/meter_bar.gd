@@ -10,21 +10,21 @@ var duration := 1.5
 var prevColour := Color.WHITE
 var newColour := Color.WHITE
 
-const RED_COLOUR := Color(0xb60002ff)
-var LOW := 0
-const ORANGE_COLOUR := Color(0xe7a900ff)
-var MID := 31
-const GREEN_COLOUR := Color(0x42b600ff)
-var HIGH := 66
+var RED_COLOUR := Color(0xb60002ff)
+var LOW = Constants.MeterThresholds["LOW"]
+var ORANGE_COLOUR := Color(0xe7a900ff)
+var MID = Constants.MeterThresholds["MEDIUM"]
+var GREEN_COLOUR := Color(0x42b600ff)
+var HIGH = Constants.MeterThresholds["HIGH"]
 var GOLD_COLOUR := Color(0x00a8fdff) # This is gold, the other is blue Color(0xf1c900ff)
 
 @onready var panel_container: PanelContainer = $PanelContainer
 func _ready():
 	sb = progress_bar.get_theme_stylebox("fill") as StyleBoxFlat
 	if stress:
-		var temp = HIGH
-		HIGH = LOW
-		LOW = temp
+		var temp = GREEN_COLOUR
+		GREEN_COLOUR = RED_COLOUR
+		RED_COLOUR = GREEN_COLOUR
 		var sbp = panel_container.get_theme_stylebox("panel") as StyleBoxFlat
 		sbp.bg_color = Color(0xff4846ff)
 	

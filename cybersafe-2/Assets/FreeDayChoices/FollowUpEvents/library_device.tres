@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Decision" load_steps=25 format=3 uid="uid://bummkfxhusq7c"]
+[gd_resource type="Resource" script_class="Decision" load_steps=66 format=3 uid="uid://bummkfxhusq7c"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_v5bt7"]
 [ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_ddcj3"]
@@ -46,8 +46,8 @@ meterChanges = {
 "Value": 0
 },
 "DH": {
-"Reason": "damage",
-"Value": 0
+"Reason": "Potential damage",
+"Value": -5
 },
 "DS": {
 "Reason": "",
@@ -107,15 +107,15 @@ meterChanges = {
 },
 "DH": {
 "Reason": "Theft",
-"Value": -20
+"Value": -25
 },
 "DS": {
 "Reason": "",
 "Value": 0
 },
 "S": {
-"Reason": "Theft",
-"Value": 15
+"Reason": "Stressful event",
+"Value": 25
 },
 "ST": {
 "Reason": "",
@@ -160,10 +160,176 @@ followUp = Array[ExtResource("2_w5y7q")]([])
 metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
 
 [sub_resource type="Resource" id="Resource_rxb1a"]
-script = ExtResource("1_v5bt7")
-id = ""
-text = "dummy"
-outcomeText = Array[ExtResource("2_ddcj3")]([])
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Trusting in the good of other people?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0mbuy"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "We can only hope for the best."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_112lp"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You ask a nearby student to watch your laptop for you."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_brs72"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "They agree to help, and you leave to fill your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_k8fhd"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_f4s2k"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Oh no!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ohsoh"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "The student you asked to watch it is gone... and so is your laptop!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_vrln6"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "People can be so cruel..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ktc4a"]
+resource_name = "Theft"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "device Theft",
+"Value": -25
+},
+"DS": {
+"Reason": "data theft",
+"Value": -25
+},
+"S": {
+"Reason": "Stressful event",
+"Value": 25
+},
+"ST": {
+"Reason": "broken trust",
+"Value": -10
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_k8fhd"), SubResource("Resource_f4s2k"), SubResource("Resource_ohsoh"), SubResource("Resource_vrln6")])
+update = true
+probability = 0.33
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_5ntdk"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_x704a"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Your laptop is still being watched by the student fortunately!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_iqurf"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You thank them for keeping it safe and get back to studying!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ropdh"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "That's strange... you didn't open your coursework solution."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_xcepk"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "How did that document end up opening?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_seshg"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Must've just been the wind."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_u5sct"]
+resource_name = "Coursework"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "Exposure of data",
+"Value": -10
+},
+"S": {
+"Reason": "Must've been the wind",
+"Value": 5
+},
+"ST": {
+"Reason": "Broken trust",
+"Value": -10
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_5ntdk"), SubResource("Resource_x704a"), SubResource("Resource_iqurf"), SubResource("Resource_ropdh"), SubResource("Resource_xcepk"), SubResource("Resource_seshg")])
+update = true
+probability = 0.33
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_cfr4w"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_h6tbg"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Your laptop is still being watched by the student fortunately."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_7bulg"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You thank the student for keeping it safe, and even exchange contact details!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_d1nci"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Looks like you made a new friend!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_f6ig3"]
+resource_name = "Normal"
+script = ExtResource("3_w5y7q")
 meterChanges = {
 "CK": {
 "Reason": "",
@@ -178,26 +344,154 @@ meterChanges = {
 "Value": 0
 },
 "S": {
+"Reason": "New friend",
+"Value": -10
+},
+"ST": {
+"Reason": "New friend",
+"Value": 10
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_cfr4w"), SubResource("Resource_h6tbg"), SubResource("Resource_7bulg"), SubResource("Resource_d1nci")])
+update = true
+probability = 0.33
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_r5iqf"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your laptop after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_14ytd"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Wait what's going on here!?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_dra44"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You find the student fighting off a horde of other students who came for your laptop!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_dahrg"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "They've succeeded at protecting your laptop... but at the cost of their own life."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ohah3"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "They will be remembered for all of eternity after such a heroic deed."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_rtytl"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Forever known as \"The Nameless Hero\"."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_es70q"]
+resource_name = "Brawl"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Survivor's guilt",
+"Value": 10
+},
+"ST": {
+"Reason": "One for the history books",
+"Value": 15
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_r5iqf"), SubResource("Resource_14ytd"), SubResource("Resource_dra44"), SubResource("Resource_dahrg"), SubResource("Resource_ohah3"), SubResource("Resource_rtytl")])
+update = true
+probability = 0.05
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_ojmdf"]
+resource_name = "StudentWatch"
+script = ExtResource("4_m4mvi")
+random_choices = Array[ExtResource("3_w5y7q")]([SubResource("Resource_ktc4a"), SubResource("Resource_u5sct"), SubResource("Resource_f6ig3"), SubResource("Resource_es70q")])
+id = ""
+text = "Ask a fellow student to watch your laptop while you're gone."
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_rxb1a"), SubResource("Resource_0mbuy"), SubResource("Resource_112lp"), SubResource("Resource_brs72")])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "risk of theft/damage",
+"Value": -5
+},
+"DS": {
+"Reason": "risk of data exposure",
+"Value": -5
+},
+"S": {
 "Reason": "",
 "Value": 0
 },
 "ST": {
-"Reason": "",
-"Value": 0
+"Reason": "Making connections",
+"Value": 10
 }
 }
 followUp = Array[ExtResource("2_w5y7q")]([])
-metadata/_custom_type_script = "uid://h44bcugrvwau"
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
+
+[sub_resource type="Resource" id="Resource_w5y7q"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "No safer place than with you!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_m4mvi"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You pack your things and leave to fill your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8kqd4"]
-script = ExtResource("1_v5bt7")
-id = ""
-text = "dummy"
-outcomeText = Array[ExtResource("2_ddcj3")]([])
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your table after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_bmsu5"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "It's like you never left!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1nh8h"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You sit back down and get right back to studying."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_stw7w"]
+resource_name = "ReturnSeat"
+script = ExtResource("3_w5y7q")
 meterChanges = {
 "CK": {
-"Reason": "",
-"Value": 0
+"Reason": "Study Merchant",
+"Value": 5
 },
 "DH": {
 "Reason": "",
@@ -216,13 +510,113 @@ meterChanges = {
 "Value": 0
 }
 }
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_8kqd4"), SubResource("Resource_bmsu5"), SubResource("Resource_1nh8h")])
+update = true
+probability = 0.6
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_lm2vh"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "You return to your table after filling your water bottle."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_yskil"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "Wait, maybe you took a wrong turn? Why is someone sitting there!?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_m52n0"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "No, this is definitely the right table."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_n6xps"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "It's only been a minute, yet someone has managed to take your table!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_iw6jc"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "At least your laptop is safe..."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_auhyh"]
+resource_name = "TableTaken"
+script = ExtResource("3_w5y7q")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Speedy Table Thief",
+"Value": 10
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_lm2vh"), SubResource("Resource_yskil"), SubResource("Resource_m52n0"), SubResource("Resource_n6xps"), SubResource("Resource_iw6jc")])
+update = true
+probability = 0.4
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_q7icu"]
+resource_name = "Take Laptop"
+script = ExtResource("4_m4mvi")
+random_choices = Array[ExtResource("3_w5y7q")]([SubResource("Resource_stw7w"), SubResource("Resource_auhyh")])
+id = ""
+text = "Pack your things and take your laptop with you."
+outcomeText = Array[ExtResource("2_ddcj3")]([SubResource("Resource_w5y7q"), SubResource("Resource_m4mvi")])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "Reduced risk of theft",
+"Value": 10
+},
+"DS": {
+"Reason": "Prevented exposure of data",
+"Value": 5
+},
+"S": {
+"Reason": "Inconvenient choice",
+"Value": 5
+},
+"ST": {
+"Reason": "Untrusting",
+"Value": -5
+}
+}
 followUp = Array[ExtResource("2_w5y7q")]([])
-metadata/_custom_type_script = "uid://h44bcugrvwau"
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
 
 [sub_resource type="Resource" id="Resource_v5bt7"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
-text = "You've been studying for hours, with probably a hundred tabs open with your notes at this point!"
+text = "You've been studying for hours."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_p4fgc"]
+script = ExtResource("2_ddcj3")
+speaker = "Mysterious Voice"
+text = "At this point, you've probably got 100 tabs worth of your notes open."
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ddcj3"]
@@ -239,8 +633,8 @@ metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [resource]
 script = ExtResource("3_woxex")
-choices = Array[ExtResource("1_v5bt7")]([SubResource("Resource_83hs4"), SubResource("Resource_rxb1a"), SubResource("Resource_8kqd4")])
-prompt = Array[ExtResource("2_ddcj3")]([SubResource("Resource_v5bt7"), SubResource("Resource_ddcj3"), SubResource("Resource_woxex")])
+choices = Array[ExtResource("1_v5bt7")]([SubResource("Resource_83hs4"), SubResource("Resource_ojmdf"), SubResource("Resource_q7icu")])
+prompt = Array[ExtResource("2_ddcj3")]([SubResource("Resource_v5bt7"), SubResource("Resource_p4fgc"), SubResource("Resource_ddcj3"), SubResource("Resource_woxex")])
 tip = "Always lock your laptop if you leave it for any reason. "
 id = ""
 date = Vector2i(0, 0)

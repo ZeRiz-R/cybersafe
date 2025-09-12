@@ -2,26 +2,27 @@ extends CanvasLayer
 @onready var color_rect: ColorRect = $ColorRect
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var arrow: Polygon2D = $Arrow
+@onready var mouse_block: MarginContainer = $MouseBlock
 signal transition_finished
 signal transitioning
 
 func _ready():
 	print("Loaded Animation Player")
-	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mouse_block.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func change_scene(new_scene: String, transition: String):
 	emit_signal("transitioning")
-	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP
+	mouse_block.mouse_filter = Control.MOUSE_FILTER_STOP
 	match transition:
 		"fade":
-			fade_transition(new_scene)
+			await(fade_transition(new_scene))
 		"tiles":
-			tile_transition(new_scene)
+			await(tile_transition(new_scene))
 		"arrow":
-			arrow_transition(new_scene)
+			await(arrow_transition(new_scene))
 		"arrow_time":
-			arrow_time_transition(new_scene)
-	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			await(arrow_time_transition(new_scene))
+	mouse_block.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("transition_finished")
 	
 func fade_transition(new_scene: String):

@@ -1,14 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://djuwux12exaw4"]
+[gd_scene load_steps=21 format=3 uid="uid://djuwux12exaw4"]
 
 [ext_resource type="Script" uid="uid://dr8elkr6jvmp3" path="res://Scenes/email_inbox.gd" id="1_qvx8x"]
 [ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="2_17dwe"]
-[ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_csn0o"]
 [ext_resource type="LabelSettings" uid="uid://dadmt8w3f3k58" path="res://temp_label.tres" id="2_kv40u"]
 [ext_resource type="PackedScene" uid="uid://drknxxvjs3bug" path="res://back_button.tscn" id="3_rr4t8"]
 [ext_resource type="PackedScene" uid="uid://ct0lqd441l27g" path="res://small_meter_box.tscn" id="4_vm8io"]
 [ext_resource type="StyleBox" uid="uid://c14ev8bwqt333" path="res://email_style.tres" id="5_vm8io"]
 [ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="6_3gf2e"]
 [ext_resource type="PackedScene" uid="uid://mdlsmvgmv6wn" path="res://attachment.tscn" id="7_t2pqh"]
+[ext_resource type="PackedScene" uid="uid://dxd62i1fq4hy4" path="res://decision_button.tscn" id="9_rr4t8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm8io"]
 content_margin_left = 40.0
@@ -72,15 +72,6 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_17dwe"]
 base_font = ExtResource("6_3gf2e")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4efyq"]
-bg_color = Color(0.745159, 0, 0.0716315, 1)
-skew = Vector2(0.8, 0.1)
-border_width_left = 20
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_qvx8x"]
 resource_name = "RESET"
@@ -549,14 +540,10 @@ size_flags_vertical = 3
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_bottom = 20
 
-[node name="DecisionButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer"]
+[node name="DecisionButton" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/MarginContainer/VBoxContainer2/MarginContainer" instance=ExtResource("9_rr4t8")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.83
-theme_override_styles/normal = SubResource("StyleBoxFlat_4efyq")
-text = "                 MAKE DECISION                         "
-script = ExtResource("2_csn0o")
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

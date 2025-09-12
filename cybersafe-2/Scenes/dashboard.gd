@@ -10,9 +10,10 @@ func _ready():
 	load_meters()
 	set_date()
 	set_player_avatar()
-	ready_alerts()
+	check_story_events()
 	check_ignores()
 	check_free_events()
+	ready_alerts()
 		
 		
 func load_meters():
@@ -50,7 +51,7 @@ func ready_alerts():
 func check_ignores():
 	if len(Stores.ignoredEventDates) > 0:
 		open_ignore_panel()
-	elif len(Stores.ignoredStore) > 0:
+	if len(Stores.ignoredStore) > 0:
 		anim_player.play("IgnoreEventActivate")
 		days_ignored.text = "Impact Timer: 0 Days"
 		var ignoreEvent = Stores.ignoredStore.pop_front()
@@ -65,9 +66,19 @@ func check_ignores():
 	else:
 		ignore_panel.visible = false
 		
-		
+@onready var free_day_text: Label = $Overlays/FreeDayContainer/FreeDayText
+func check_story_events():
+	if len(Stores.eventStore) > 0:
+		free_day_text.text = "EVENT!"
+		anim_player.play("FreeDayActivate")
+		await(anim_player.animation_finished)
+		Stores.activeDecision = Stores.eventStore.pop_front()
+		await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
+		SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
+
 func check_free_events():
 	if Stores.activeFreeEvent:
+		free_day_text.text = "FREE DAY"
 		anim_player.play("FreeDayActivate")
 		await(anim_player.animation_finished)
 		Stores.set_active_decision(Stores.activeFreeEvent)

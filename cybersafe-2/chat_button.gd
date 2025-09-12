@@ -22,3 +22,6 @@ func connect_chat(chat: Chat, incomplete: bool):
 
 func _on_button_pressed():
 	emit_signal("pressed")
+	
+func hide_unread_icon():
+	blue_icon.visible = false

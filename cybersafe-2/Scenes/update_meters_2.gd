@@ -48,7 +48,7 @@ func iterate_meters():
 	for stat in allMeters:
 		var player_meter_value = Player.meters[stat]
 		var bar = meterBars[index]
-		if bar.get_meter_value() != player_meter_value:
+		if bar.get_meter_value() != player_meter_value or meterChanges[stat]["Reason"] != "":
 			bar.tween_meter_value(player_meter_value)
 			
 			var reason = bar.get_node("../ReasonText")

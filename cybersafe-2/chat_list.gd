@@ -29,3 +29,10 @@ func _on_chatbtn_pressed(chat: Chat):
 	print("Opening chat: " + chat.chatName)
 	Stores.set_active_decision(chat.currentDecision)
 	emit_signal("open_chat", chat)
+	
+func refresh_unread():
+	var buttons = inbox.get_children()
+	for btn in buttons:
+		var chat = btn.get_meta("chat_obj") as Chat
+		if chat.currentDecision.complete:
+			btn.hide_unread_icon()

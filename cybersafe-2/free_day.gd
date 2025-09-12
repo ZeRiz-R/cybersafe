@@ -22,9 +22,10 @@ func _on_choice_selected(choice: Choice):
 		await(anim_player.animation_finished)
 
 	await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text(), false))# QueueOutcomeText()
-	um = Constants.overlay_scene(Constants.update_meters_overlay) as UpdateMeters
-	um.update_meters(true)
-	await(um.complete)
+	if choice is RandomChoice and choice.update:
+		um = Constants.overlay_scene(Constants.update_meters_overlay) as UpdateMeters
+		um.update_meters(true)
+		await(um.complete)
 	
 	Stores.set_free_event(null)
 	SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")

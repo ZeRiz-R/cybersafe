@@ -3,9 +3,11 @@ class_name RandomChoice
 
 @export var random_choices: Array[RandomOutcome]
 var chance : int = 0
+var update = false
 
 func set_outcome():
 	randomise_outcome()
+	Stores.activeDecision.set_outcome_and_meters()
 	
 func randomise_outcome():
 	var total_prob = 0.0
@@ -22,4 +24,5 @@ func randomise_outcome():
 			outcomeText = rchoice.outcomeText
 			meterChanges = rchoice.meterChanges
 			chance = rchoice.probability * 100
+			update = rchoice.update
 			break
