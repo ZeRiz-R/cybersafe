@@ -13,5 +13,6 @@ func _ready():
 	
 func _on_button_pressed():
 	Player.playerIcon = avatar_name
+	Constants.distribute_avatars(avatar_name)
 	emit_signal("avatar_selected")
 	SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow")

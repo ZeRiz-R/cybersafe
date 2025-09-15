@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ChatDecision" load_steps=38 format=3 uid="uid://b72v3rjsag7xl"]
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=39 format=3 uid="uid://b72v3rjsag7xl"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_wmemy"]
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="2_7sdsf"]
 [ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_wecbq"]
 [ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="3_7sdsf"]
 [ext_resource type="Script" uid="uid://w1srhofks2m6" path="res://Resources/chat_decision.gd" id="4_1w1u4"]
@@ -11,7 +12,7 @@ script = ExtResource("2_wecbq")
 sender = ""
 message = "Nah, let's meet up at the clock tower instead."
 duration = 1.0
-cooldown = 0.8
+cooldown = 1.4
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -20,7 +21,7 @@ script = ExtResource("2_wecbq")
 sender = ""
 message = "It's only 7 minutes from the stadium."
 duration = 1.0
-cooldown = 0.8
+cooldown = 1.5
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -28,8 +29,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "Would've been easier to just meet up here tbh"
-duration = 1.0
-cooldown = 0.8
+duration = 1.5
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -37,8 +38,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "but I guess that's not a bad option either!"
-duration = 1.0
-cooldown = 0.8
+duration = 1.5
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -89,6 +90,7 @@ meterChanges = {
 "Value": -5
 }
 }
+followUp = Array[ExtResource("2_7sdsf")]([])
 metadata/_custom_type_script = "uid://dsobpwkok5jeb"
 
 [sub_resource type="Resource" id="Resource_k4abv"]
@@ -96,7 +98,7 @@ script = ExtResource("2_wecbq")
 sender = ""
 message = "Say no more."
 duration = 1.0
-cooldown = 0.8
+cooldown = 1.4
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -104,8 +106,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = ""
 message = "I should be sharing my location now!"
-duration = 1.0
-cooldown = 0.8
+duration = 1.3
+cooldown = 1.5
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -113,8 +115,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "Cool, stay where you are."
-duration = 1.0
-cooldown = 0.8
+duration = 1.3
+cooldown = 1.4
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -122,8 +124,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "I'll be there in 2 minutes."
-duration = 1.0
-cooldown = 0.8
+duration = 1.4
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -180,23 +182,24 @@ meterChanges = {
 "Value": 10
 }
 }
+followUp = Array[ExtResource("2_7sdsf")]([])
 metadata/_custom_type_script = "uid://dsobpwkok5jeb"
 
 [sub_resource type="Resource" id="Resource_a27ur"]
 script = ExtResource("2_wecbq")
-sender = "Amy"
+sender = ""
 message = "Say no more."
-duration = 1.0
-cooldown = 0.8
+duration = 1.3
+cooldown = 1.3
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
 [sub_resource type="Resource" id="Resource_mogh6"]
 script = ExtResource("2_wecbq")
-sender = "Amy"
+sender = ""
 message = "I've shared my location with you temporarily."
-duration = 1.0
-cooldown = 0.8
+duration = 1.3
+cooldown = 1.5
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -204,8 +207,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "Cool, stay where you are."
-duration = 1.0
-cooldown = 0.8
+duration = 1.4
+cooldown = 1.6
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -213,8 +216,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "I'll be there in 2 minutes."
-duration = 1.0
-cooldown = 0.8
+duration = 1.5
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -271,6 +274,7 @@ meterChanges = {
 "Value": 10
 }
 }
+followUp = Array[ExtResource("2_7sdsf")]([])
 metadata/_custom_type_script = "uid://dsobpwkok5jeb"
 
 [sub_resource type="Resource" id="Resource_xd0p7"]
@@ -314,7 +318,7 @@ script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "Gonna be difficult to find each other."
 duration = 1.0
-cooldown = 0.8
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -322,8 +326,8 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_wecbq")
 sender = "Amy"
 message = "Share your live location with me, it'll make things much easier!"
-duration = 1.0
-cooldown = 0.8
+duration = 2.0
+cooldown = 1.5
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -337,4 +341,28 @@ prompt = Array[ExtResource("3_7sdsf")]([])
 tip = "Avoid sharing your location unnecessarily. Some apps don't need that information."
 id = ""
 date = Vector2i(4, 6)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("3_7sdsf")]([])
 metadata/_custom_type_script = "uid://w1srhofks2m6"

@@ -2,7 +2,7 @@ extends Node
 
 class_name CalendarManager
 
-var currentDate := Vector2i(3, 0) # Week / Day
+var currentDate := Vector2i(10,-1) # Week / Day
 var calendar := {}
 var activeEvent := GameEvent
 
@@ -61,6 +61,7 @@ func print_event():
 			Stores.addIgnoredEvent(event)
 		if event is FreeDayEvent:
 			Stores.set_free_event(event)
+			event.get_events()
 		if event is StoryEvent:
 			Stores.add_generic_event(event)
 			

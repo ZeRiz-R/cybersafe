@@ -11,30 +11,35 @@
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Locking your laptop is a good idea!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_r7gry"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You leave your laptop and head off to fill your water bottle!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_e4exo"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_oy1ev"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "It's exactly where you left it!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8cjti"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Except it seems to have moved ever so slightly. I wonder how that happened..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_0b7qg"]
@@ -71,30 +76,35 @@ metadata/_custom_type_script = "uid://btvhiafqpklfc"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_i284q"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Or at least..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_i8h5o"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Where it used to be?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_tgs2n"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "It's no longer there! Someone must have stolen it while you were gone!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_syfww"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "This one is gonna hurt..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_w1s4s"]
@@ -163,48 +173,56 @@ metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Trusting in the good of other people?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_0mbuy"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "We can only hope for the best."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_112lp"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You ask a nearby student to watch your laptop for you."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_brs72"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "They agree to help, and you leave to fill your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_k8fhd"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_f4s2k"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Oh no!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ohsoh"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "The student you asked to watch it is gone... and so is your laptop!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_vrln6"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "People can be so cruel..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ktc4a"]
@@ -241,36 +259,42 @@ metadata/_custom_type_script = "uid://btvhiafqpklfc"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_x704a"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Your laptop is still being watched by the student fortunately!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_iqurf"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You thank them for keeping it safe and get back to studying!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ropdh"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "That's strange... you didn't open your coursework solution."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_xcepk"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "How did that document end up opening?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_seshg"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Must've just been the wind."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_u5sct"]
@@ -307,24 +331,28 @@ metadata/_custom_type_script = "uid://btvhiafqpklfc"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_h6tbg"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Your laptop is still being watched by the student fortunately."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_7bulg"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You thank the student for keeping it safe, and even exchange contact details!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_d1nci"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Looks like you made a new friend!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_f6ig3"]
@@ -361,36 +389,42 @@ metadata/_custom_type_script = "uid://btvhiafqpklfc"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your laptop after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_14ytd"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Wait what's going on here!?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_dra44"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You find the student fighting off a horde of other students who came for your laptop!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_dahrg"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "They've succeeded at protecting your laptop... but at the cost of their own life."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ohah3"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "They will be remembered for all of eternity after such a heroic deed."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_rtytl"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Forever known as \"The Nameless Hero\"."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_es70q"]
@@ -459,30 +493,35 @@ metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "No safer place than with you!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_m4mvi"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You pack your things and leave to fill your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8kqd4"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your table after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_bmsu5"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "It's like you never left!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_1nh8h"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You sit back down and get right back to studying."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_stw7w"]
@@ -519,30 +558,35 @@ metadata/_custom_type_script = "uid://btvhiafqpklfc"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You return to your table after filling your water bottle."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_yskil"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Wait, maybe you took a wrong turn? Why is someone sitting there!?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_m52n0"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "No, this is definitely the right table."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_n6xps"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "It's only been a minute, yet someone has managed to take your table!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_iw6jc"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "At least your laptop is safe..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_auhyh"]
@@ -611,24 +655,28 @@ metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You've been studying for hours."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_p4fgc"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "At this point, you've probably got 100 tabs worth of your notes open."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ddcj3"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "Naturally, your water bottle has become empty, so you decide to go fill it up."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_woxex"]
 script = ExtResource("2_ddcj3")
 speaker = "Mysterious Voice"
 text = "You can't just leave your laptop alone at your table though, right?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [resource]

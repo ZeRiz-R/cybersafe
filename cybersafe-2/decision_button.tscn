@@ -1,12 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxd62i1fq4hy4"]
+[gd_scene load_steps=14 format=3 uid="uid://dxd62i1fq4hy4"]
 
 [ext_resource type="Script" uid="uid://bs3d0joeyb7al" path="res://decision_button.gd" id="1_4f1vd"]
 [ext_resource type="Texture2D" uid="uid://23vvi8bwketw" path="res://Assets/qMark2.png" id="1_nho4q"]
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_e8vv7"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f1vd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8vv7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8vv7"]
+bg_color = Color(0.999927, 0.458751, 0.411941, 1)
+skew = Vector2(0.8, 0.1)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4f1vd"]
 bg_color = Color(0.425084, 0, 0.203162, 1)
 skew = Vector2(0.925, -0.1)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6ejq"]
+bg_color = Color(0.999927, 0.458751, 0.411941, 1)
+skew = Vector2(0.8, 0.1)
 border_width_left = 20
 border_width_top = 10
 border_width_right = 10
@@ -180,7 +202,11 @@ pivot_offset = Vector2(154, 53)
 size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.83
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4f1vd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e8vv7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_e8vv7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4f1vd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c6ejq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8oab7")
 script = ExtResource("2_e8vv7")
 

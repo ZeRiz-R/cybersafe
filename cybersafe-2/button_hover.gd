@@ -44,4 +44,5 @@ func decision_button_pressed():
 	var decisionScreen = preload("res://Scenes/make_decision.tscn").instantiate()
 	var uiLayer = get_tree().current_scene
 	uiLayer.add_child(decisionScreen)
-	self.disabled = true
+	var main = get_parent().get_parent()
+	main.hide_animate()

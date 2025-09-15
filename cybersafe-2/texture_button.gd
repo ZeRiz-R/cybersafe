@@ -37,6 +37,9 @@ func _on_pressed():
 	match self.name:
 		"BackButton":
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
+		"TimeButton":
+			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow_time")
+			Calendar.print_event()
 		"DecisionButton":
 			decision_button_pressed()
 			

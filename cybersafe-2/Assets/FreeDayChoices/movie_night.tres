@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Choice" load_steps=7 format=3 uid="uid://cysuo8pjfcejb"]
+
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="1_2in7n"]
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_ucgxg"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_2in7n"]
+[ext_resource type="Resource" uid="uid://do76e8n4b0ap" path="res://Assets/FreeDayChoices/FollowUpEvents/usb_device.tres" id="2_bccbr"]
+
+[sub_resource type="Resource" id="Resource_ucgxg"]
+script = ExtResource("2_2in7n")
+speaker = "Mysterious Voice"
+text = "Time to kick back and get some popcorn!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2in7n"]
+script = ExtResource("2_2in7n")
+speaker = "Mysterious Voice"
+text = "You message Josh, Amy, and Winston before heading over to the campus cinema room."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("1_ucgxg")
+id = ""
+text = "Meet up with your friends for movie night."
+outcomeText = Array[ExtResource("2_2in7n")]([SubResource("Resource_ucgxg"), SubResource("Resource_2in7n")])
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Leisure Activity",
+"Value": -5
+},
+"ST": {
+"Reason": "Social Event",
+"Value": 5
+}
+}
+followUp = Array[ExtResource("1_2in7n")]([ExtResource("2_bccbr")])
+metadata/_custom_type_script = "uid://h44bcugrvwau"

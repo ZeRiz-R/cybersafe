@@ -9,12 +9,14 @@
 script = ExtResource("1_x83dc")
 speaker = "Mysterious Voice"
 text = "Those grades won't improve themselves!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_st652"]
 script = ExtResource("1_x83dc")
 speaker = "Mysterious Voice"
 text = "You head to the campus library and begin working through your backlog of study material."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [resource]

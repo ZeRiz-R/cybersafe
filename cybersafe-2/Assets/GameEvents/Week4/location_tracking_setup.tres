@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ChatDecision" load_steps=10 format=3 uid="uid://bxkj4tm3tv4um"]
+[gd_resource type="Resource" script_class="ChatDecision" load_steps=11 format=3 uid="uid://bxkj4tm3tv4um"]
 
 [ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_cxlqi"]
 [ext_resource type="Script" uid="uid://c0geb3ij15nfi" path="res://Resources/chat_message.gd" id="2_ww1kx"]
@@ -17,9 +17,18 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 [sub_resource type="Resource" id="Resource_wecbq"]
 script = ExtResource("2_ww1kx")
 sender = ""
-message = "Of course! How could I miss an opportunity to watch United lose again?"
+message = "Of course!"
 duration = 1.5
 cooldown = 1.5
+isPlayerMessage = true
+metadata/_custom_type_script = "uid://c0geb3ij15nfi"
+
+[sub_resource type="Resource" id="Resource_cxlqi"]
+script = ExtResource("2_ww1kx")
+sender = ""
+message = "How could I miss an opportunity to watch United lose again?"
+duration = 1.5
+cooldown = 1.8
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -27,17 +36,17 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("2_ww1kx")
 sender = "Amy"
 message = "Not this time. We're winning this one!"
-duration = 1.0
-cooldown = 0.8
+duration = 1.4
+cooldown = 1.4
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
 [sub_resource type="Resource" id="Resource_1w1u4"]
 script = ExtResource("2_ww1kx")
 sender = ""
-message = "Sure. Whatever you say:)"
-duration = 1.0
-cooldown = 0.8
+message = "Sure. Whatever you say."
+duration = 1.3
+cooldown = 1.2
 isPlayerMessage = true
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
@@ -46,14 +55,14 @@ script = ExtResource("2_ww1kx")
 sender = "Amy"
 message = "Catch you on Saturday then!"
 duration = 1.5
-cooldown = 0.8
+cooldown = 1.3
 isPlayerMessage = false
 metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 
 [resource]
 script = ExtResource("4_ywyie")
 chatName = "Amy R."
-messages = Array[ExtResource("2_ww1kx")]([SubResource("Resource_wmemy"), SubResource("Resource_wecbq"), SubResource("Resource_7sdsf"), SubResource("Resource_1w1u4"), SubResource("Resource_mm3fh")])
+messages = Array[ExtResource("2_ww1kx")]([SubResource("Resource_wmemy"), SubResource("Resource_wecbq"), SubResource("Resource_cxlqi"), SubResource("Resource_7sdsf"), SubResource("Resource_1w1u4"), SubResource("Resource_mm3fh")])
 noDecision = true
 choices = Array[ExtResource("1_cxlqi")]([])
 prompt = Array[ExtResource("3_e7fmj")]([])

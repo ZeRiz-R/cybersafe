@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cjail0e0m4pxq"]
+[gd_scene load_steps=73 format=3 uid="uid://cjail0e0m4pxq"]
 
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="1_23vhs"]
 [ext_resource type="Script" uid="uid://bqgyy27yfaeo8" path="res://Scenes/dashboard.gd" id="1_42qyo"]
@@ -20,9 +20,20 @@
 [ext_resource type="Texture2D" uid="uid://12cht766te20" path="res://Assets/Icons/paper.png" id="12_f5qqs"]
 [ext_resource type="Texture2D" uid="uid://bvyhps2xio05j" path="res://Assets/Meters/Gradient/laptop_10369150.png" id="14_3563c"]
 [ext_resource type="Texture2D" uid="uid://dqfkvsh0x1xj7" path="res://Assets/Meters/Gradient/padlock_14259448.png" id="15_a0omq"]
+[ext_resource type="PackedScene" uid="uid://drknxxvjs3bug" path="res://back_button.tscn" id="15_tlfg5"]
 [ext_resource type="Texture2D" uid="uid://devx6duv3mqjj" path="res://Assets/Meters/Gradient/target-audience_11966590.png" id="16_wldas"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="17_fbmmw"]
 [ext_resource type="Texture2D" uid="uid://ces5thovsxcuj" path="res://Assets/Meters/Gradient/storm_10130043.png" id="17_l6g1u"]
 [ext_resource type="PackedScene" uid="uid://cn7dyqqvvl6yb" path="res://bobbing.tscn" id="23_f5qqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnqf6"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.295, 0)
+border_color = Color(0, 0.665264, 0.796664, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="FontVariation" id="FontVariation_oeawy"]
 base_font = ExtResource("9_mt3ts")
@@ -75,7 +86,34 @@ shadow_size = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3563c"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlfg5"]
+bg_color = Color(0.329185, 0.633696, 0.999985, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbmmw"]
+bg_color = Color(0.329185, 0.633696, 0.999985, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0omq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8sh0"]
+bg_color = Color(0.578457, 1, 0.641207, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 20
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76h3o"]
 bg_color = Color(0.612186, 9.14484e-07, 0.356579, 1)
@@ -86,6 +124,15 @@ border_width_right = 20
 border_width_bottom = 10
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ync8i"]
+bg_color = Color(0.578457, 1, 0.641207, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 20
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23vhs"]
 bg_color = Color(2.40654e-06, 0.722637, 0.27887, 1)
 skew = Vector2(0.1, 0)
@@ -93,6 +140,17 @@ border_width_left = 10
 border_width_top = 10
 border_width_right = 20
 border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnqf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnuib"]
+bg_color = Color(0.999964, 0.528719, 0.506701, 1)
+skew = Vector2(-0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 20
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyiww"]
@@ -104,12 +162,32 @@ border_width_right = 5
 border_width_bottom = 10
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_serri"]
+bg_color = Color(0.999964, 0.528719, 0.506701, 1)
+skew = Vector2(-0.1, 0)
+border_width_left = 20
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw4wq"]
 bg_color = Color(0.678431, 0, 0.117647, 1)
 skew = Vector2(-0.1, 0)
 border_width_left = 20
 border_width_top = 10
 border_width_right = 10
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6fq7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32dww"]
+bg_color = Color(1, 0.866207, 0.574047, 1)
+skew = Vector2(-0.1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 20
 border_width_bottom = 20
 border_color = Color(1, 1, 1, 1)
 
@@ -121,6 +199,15 @@ border_width_top = 10
 border_width_right = 20
 border_width_bottom = 10
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiset"]
+bg_color = Color(1, 0.866207, 0.574047, 1)
+skew = Vector2(-0.1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhl8p"]
 bg_color = Color(0.905882, 0.690196, 0, 1)
@@ -153,29 +240,13 @@ shadow_size = 10
 bg_color = Color(1, 0.606852, 0.945164, 1)
 skew = Vector2(0.285, 0.61)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cli1"]
-bg_color = Color(0.612186, 9.14484e-07, 0.356579, 1)
-skew = Vector2(-0.15, -0.14)
-border_width_left = 20
-border_width_top = 10
-border_width_right = 5
-border_width_bottom = 10
-shadow_size = 5
+[sub_resource type="FontVariation" id="FontVariation_lm8nu"]
+base_font = ExtResource("17_fbmmw")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5lni"]
-bg_color = Color(0, 0.364488, 0.70416, 1)
-skew = Vector2(0.045, 0.095)
-border_width_left = 20
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w0xl"]
-corner_radius_top_left = 10000
-corner_radius_top_right = 10000
-corner_radius_bottom_right = 10000
-corner_radius_bottom_left = 10000
+[sub_resource type="LabelSettings" id="LabelSettings_o8sh0"]
+font = SubResource("FontVariation_lm8nu")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3563c"]
 bg_color = Color(1, 1, 1, 1)
@@ -430,7 +501,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -516,13 +587,114 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(-1204, 465)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0959931]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/EmailButton/Alert:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MessagesButton/Alert:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tlfg5"]
+resource_name = "open_time"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.416667, 0.666667),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.416667, 0.666667),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [3.05433, -0.0959931]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper/TimeButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.41, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oeawy"]
 _data = {
 &"FreeDayActivate": SubResource("Animation_f5qqs"),
 &"IgnoreEventActivate": SubResource("Animation_oeawy"),
 &"OpenIgnorePanel": SubResource("Animation_048ak"),
-&"RESET": SubResource("Animation_3r00j")
+&"RESET": SubResource("Animation_3r00j"),
+&"open_time": SubResource("Animation_tlfg5")
 }
 
 [node name="Control" type="Control"]
@@ -575,8 +747,15 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_pnqf6")
+
+[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 text = "WELCOME TO THE DASHBOARD"
@@ -626,6 +805,7 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 
 [node name="IgnorePanel" type="PanelContainer" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/IgnorePanelWrapper"]
+visible = false
 layout_mode = 2
 offset_right = 496.0
 offset_bottom = 151.0
@@ -675,13 +855,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_bc6a6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3563c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_tlfg5")
 theme_override_styles/hover = ExtResource("2_ly5nh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fbmmw")
 theme_override_styles/normal = ExtResource("2_vyiww")
 icon = ExtResource("7_l6g1u")
 icon_alignment = 1
 script = ExtResource("1_23vhs")
 
 [node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/EmailButton" instance=ExtResource("6_nw0fu")]
+visible = false
 top_level = false
 z_index = 1
 layout_mode = 1
@@ -699,13 +882,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a0omq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_o8sh0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_76h3o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ync8i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_23vhs")
 icon = ExtResource("10_cu835")
 icon_alignment = 1
 script = ExtResource("1_23vhs")
 
 [node name="Alert" parent="MarginContainer3/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/MessagesButton" instance=ExtResource("6_nw0fu")]
+visible = false
 top_level = false
 layout_mode = 1
 anchors_preset = -1
@@ -727,7 +913,10 @@ theme_override_constants/separation = -1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_bc6a6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pnqf6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dnuib")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vyiww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_serri")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bw4wq")
 icon = ExtResource("11_qoyim")
 icon_alignment = 1
@@ -739,7 +928,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme = ExtResource("1_bc6a6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b6fq7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_32dww")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k1kl5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jiset")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lhl8p")
 icon = ExtResource("12_f5qqs")
 icon_alignment = 1
@@ -779,44 +971,42 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TimeButton" type="Button" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2"]
+[node name="TimeWrapper" type="Control" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.29
-theme_override_styles/hover = SubResource("StyleBoxFlat_1cli1")
-theme_override_styles/normal = SubResource("StyleBoxFlat_p5lni")
-text = "ADVANCE TIME"
-script = ExtResource("1_23vhs")
+
+[node name="TimeButton" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/TimeWrapper" instance=ExtResource("15_tlfg5")]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = -29.0
+offset_right = 0.0
+offset_bottom = 71.0
+grow_horizontal = 0
+rotation = -0.0959931
+scale = Vector2(1e-05, 1e-05)
+flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.68
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Panel" type="Panel" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
-visible = false
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_1w0xl")
-
-[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "PLAYER ICON"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Control" type="Control" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="AvatarContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2/MarginContainer/Control" instance=ExtResource("9_3r00j")]
 layout_mode = 1
@@ -824,8 +1014,11 @@ scale = Vector2(0.77, 0.77)
 
 [node name="PlayerName" type="Label" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.25
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "PLAYER NAME"
+label_settings = SubResource("LabelSettings_o8sh0")
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer3/HBoxContainer/MarginContainer2/PlayerPanelWrapper/PanelContainer/MarginContainer2/VBoxContainer2"]
@@ -1315,8 +1508,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1169.0
-offset_bottom = 150.0
+offset_left = -584.5
+offset_top = -75.0
+offset_right = 584.5
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "1 Day"

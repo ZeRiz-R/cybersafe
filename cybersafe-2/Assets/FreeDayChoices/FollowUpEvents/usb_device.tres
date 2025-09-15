@@ -1,0 +1,765 @@
+[gd_resource type="Resource" script_class="Decision" load_steps=80 format=3 uid="uid://do76e8n4b0ap"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_q73ys"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_l60l4"]
+[ext_resource type="Script" uid="uid://8muv1ercaqrx" path="res://game_event.gd" id="2_y2p2p"]
+[ext_resource type="Script" uid="uid://l85prer7ehr7" path="res://Resources/decision.gd" id="3_01auv"]
+[ext_resource type="Script" uid="uid://btvhiafqpklfc" path="res://Resources/random_outcome.gd" id="4_en04f"]
+[ext_resource type="Script" uid="uid://bjjiikxvqsl3t" path="res://Resources/random_choice.gd" id="5_ux7d7"]
+
+[sub_resource type="Resource" id="Resource_b1jtm"]
+script = ExtResource("2_l60l4")
+speaker = ""
+text = "Sorry Josh, I'm gonna have to pass on that."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2co53"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "Wait why? Josh makes a very compelling argument!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hlt3p"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "That USB might have malware, given the \"magic\" you used to download all those movies."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0hpkt"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "What magic is he talking about Josh?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_m5t2f"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "You're just being paranoid {name}, it's totally safe."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_gcv5a"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "Please {name}, you know how atrocious eduroam can be!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2il8e"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Sorry, not gonna do it."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_b4n5x"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Have it your way."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_h677n"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Just know that if the stream drops, it's on you."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_yq62h"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You've kept your device safe, but you can feel everyone judging you."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_w70qe"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You begin streaming the movie, and through some miracle the Wi-Fi is stable!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_p6g5l"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Things turned out OK in the end, so everyone forgot why they were judging you to begin with!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_d5754"]
+resource_name = "Normal"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "They forgot",
+"Value": -5
+},
+"ST": {
+"Reason": "They forgot",
+"Value": 5
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_w70qe"), SubResource("Resource_p6g5l")])
+update = true
+probability = 0.5
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_ux7d7"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You begin streaming the movie, and as expected, the stream quality is unstable."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q8kcs"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Movie night turns into movie fight, as the everyone blames you for not taking the USB."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8a20x"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "At least you know your device is safe!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_amlft"]
+resource_name = "WiFi"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_ux7d7"), SubResource("Resource_q8kcs"), SubResource("Resource_8a20x")])
+update = true
+probability = 0.5
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_auc33"]
+resource_name = "Refuse"
+script = ExtResource("5_ux7d7")
+random_choices = Array[ExtResource("4_en04f")]([SubResource("Resource_d5754"), SubResource("Resource_amlft")])
+id = ""
+text = "Refuse the USB. It could be dangerous."
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_b1jtm"), SubResource("Resource_2co53"), SubResource("Resource_hlt3p"), SubResource("Resource_0hpkt"), SubResource("Resource_m5t2f"), SubResource("Resource_gcv5a"), SubResource("Resource_2il8e"), SubResource("Resource_b4n5x"), SubResource("Resource_h677n"), SubResource("Resource_yq62h")])
+meterChanges = {
+"CK": {
+"Reason": "Safe choice",
+"Value": 10
+},
+"DH": {
+"Reason": "no risk of malware",
+"Value": 10
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Difficult choice",
+"Value": 10
+},
+"ST": {
+"Reason": "Kills atmosphere",
+"Value": -15
+}
+}
+followUp = Array[ExtResource("2_y2p2p")]([])
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
+
+[sub_resource type="Resource" id="Resource_y8pkb"]
+script = ExtResource("2_l60l4")
+speaker = ""
+text = "That's a great idea Josh!"
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_debe7"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "What a wonderful day it is!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_nustr"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "Cool! I hope this movie is as good as they say!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ptt0v"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You plug the USB in to your laptop."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hthwp"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "It's exactly as Josh said, the quality really is that good!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_l64dg"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Everyone enjoys a viewing of Revengers: Endless Conflict and movie night is a success!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q8atd"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "I wonder where Josh downloaded all of these movies from though..."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_74oo1"]
+resource_name = "No Malware"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Successful movie night",
+"Value": -5
+},
+"ST": {
+"Reason": "Successful Movie night",
+"Value": 5
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_ptt0v"), SubResource("Resource_hthwp"), SubResource("Resource_l64dg"), SubResource("Resource_q8atd")])
+update = true
+probability = 0.6
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_vqw4b"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You plug the USB into your laptop."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_iiv34"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "It's exactly as Josh said! The quality really is that good!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_dtrcu"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Halfway through the movie, your laptop goes to sleep."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_384kk"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "And it doesn't wake back up."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_6ehre"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Turns out wherever Josh downloaded those movies from added an extra package of malware."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_eajoo"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Plugging the USB in allowed it to attack your system."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8f2p3"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Josh is apologetic for his oversight, but the damage is already done."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_lvv1h"]
+resource_name = "Malware"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "Malware infection",
+"Value": -15
+},
+"DS": {
+"Reason": "Risk of data theft",
+"Value": -10
+},
+"S": {
+"Reason": "Stressful situation",
+"Value": 15
+},
+"ST": {
+"Reason": "Tense Situation",
+"Value": -10
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_vqw4b"), SubResource("Resource_iiv34"), SubResource("Resource_dtrcu"), SubResource("Resource_384kk"), SubResource("Resource_6ehre"), SubResource("Resource_eajoo"), SubResource("Resource_8f2p3")])
+update = true
+probability = 0.4
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_iaj5i"]
+resource_name = "Insert"
+script = ExtResource("5_ux7d7")
+random_choices = Array[ExtResource("4_en04f")]([SubResource("Resource_74oo1"), SubResource("Resource_lvv1h")])
+id = ""
+text = "Insert the USB. You don't want to keep everyone waiting!"
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_y8pkb"), SubResource("Resource_debe7"), SubResource("Resource_nustr")])
+meterChanges = {
+"CK": {
+"Reason": "Unsafe choice",
+"Value": -10
+},
+"DH": {
+"Reason": "Risk of malware",
+"Value": -10
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Easy choice",
+"Value": -10
+},
+"ST": {
+"Reason": "Agreeable",
+"Value": 10
+}
+}
+followUp = Array[ExtResource("2_y2p2p")]([])
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
+
+[sub_resource type="Resource" id="Resource_3htin"]
+script = ExtResource("2_l60l4")
+speaker = " "
+text = "Let me just scan the USB first."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_quxi2"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Why? Do you not trust me?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ie2ag"]
+script = ExtResource("2_l60l4")
+speaker = ""
+text = "It's not that I don't trust you."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_e0cc7"]
+script = ExtResource("2_l60l4")
+speaker = ""
+text = "I just don't trust wherever you found those movies."
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_n6ynw"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "You're being a little paranoid {name}."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wttlo"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "I've never had any problems with that site before so it's probably fine {name}."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_erqyn"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "But sure, go and scan it if you really want."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_q050e"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You scan the USB, only to find that the device is completely safe."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_yb2o5"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Movie night may start a little late, but at least you know your laptop will be safe!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_y1fk6"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Josh really was right too, the quality is amazing!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_yblh5"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Everyone enjoys a viewing of Revengers: Endless Conflict and movie night is a success."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_i5jon"]
+resource_name = "No Malware"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Peace of mind",
+"Value": -5
+},
+"ST": {
+"Reason": "Paranoia",
+"Value": -5
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_q050e"), SubResource("Resource_yb2o5"), SubResource("Resource_y1fk6"), SubResource("Resource_yblh5")])
+update = true
+probability = 0.6
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_fiw5n"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You scan the USB and find that there was actually malware hidden within the files!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_khcw8"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Everyone is shocked, and Josh apologises for being so careless."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ymvl0"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "It's a good thing you scanned the USB!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_wbyne"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You switch to streaming instead, and movie night continues."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_aek6a"]
+resource_name = "Malware"
+script = ExtResource("4_en04f")
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "Avoided malware",
+"Value": 10
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Stressful Event",
+"Value": 10
+},
+"ST": {
+"Reason": "Vindication",
+"Value": 10
+}
+}
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_fiw5n"), SubResource("Resource_khcw8"), SubResource("Resource_ymvl0"), SubResource("Resource_wbyne")])
+update = true
+probability = 0.4
+metadata/_custom_type_script = "uid://btvhiafqpklfc"
+
+[sub_resource type="Resource" id="Resource_vhaow"]
+resource_name = "Scan"
+script = ExtResource("5_ux7d7")
+random_choices = Array[ExtResource("4_en04f")]([SubResource("Resource_i5jon"), SubResource("Resource_aek6a")])
+id = ""
+text = "Scan the USB with your antivirus before proceeding."
+outcomeText = Array[ExtResource("2_l60l4")]([SubResource("Resource_3htin"), SubResource("Resource_quxi2"), SubResource("Resource_ie2ag"), SubResource("Resource_e0cc7"), SubResource("Resource_n6ynw"), SubResource("Resource_wttlo"), SubResource("Resource_erqyn")])
+meterChanges = {
+"CK": {
+"Reason": "Good security habit",
+"Value": 10
+},
+"DH": {
+"Reason": "Reduces risk of malware",
+"Value": 5
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "Inconvenient choice",
+"Value": 5
+},
+"ST": {
+"Reason": "Paranoia",
+"Value": -5
+}
+}
+followUp = Array[ExtResource("2_y2p2p")]([])
+metadata/_custom_type_script = "uid://bjjiikxvqsl3t"
+
+[sub_resource type="Resource" id="Resource_q73ys"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "You arrive at the cinema and find your friends are already there."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_l60l4"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Maybe walk a little faster next time?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_01auv"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "Brilliant news! {name} is here everyone!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_y2p2p"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "Cool! Let's get this party started!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_en04f"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "Wait! There is an aspect of today which we have yet to sort out."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2x5px"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "How are we going watch the movie?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_5wvcr"]
+script = ExtResource("2_l60l4")
+speaker = "Winston"
+text = "It is a known fact that movies are not provided by the cinema room."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_u07g2"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "How did we not think of this before we got here?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_8caab"]
+script = ExtResource("2_l60l4")
+speaker = ""
+text = "We could stream maybe?"
+isPlayerText = true
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_bsrjj"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "No, our uni is in the middle of nowhere."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_gqyj3"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "We can't trust the eduroam Wi-Fi to stay stable for the whole film."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_b5cgh"]
+script = ExtResource("2_l60l4")
+speaker = "Mysterious Voice"
+text = "Josh laughs..."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_6l0jj"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "You fools!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_kjtia"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "I am four parallel universes ahead of you!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_2qnew"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Check out this USB! It's got all the movies you could possibly want on here."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_tw5on"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "Even Revengers: Endless Conflict!?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ofnyy"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Indeed!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_oedw7"]
+script = ExtResource("2_l60l4")
+speaker = "Amy"
+text = "But that's still in cinemas! How could you have it on there?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_5mewo"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "A magician never reveals his secrets."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ytqws"]
+script = ExtResource("2_l60l4")
+speaker = "Josh"
+text = "Here {name}, it'll be way better than streaming!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("3_01auv")
+choices = Array[ExtResource("1_q73ys")]([SubResource("Resource_auc33"), SubResource("Resource_iaj5i"), SubResource("Resource_vhaow")])
+prompt = Array[ExtResource("2_l60l4")]([SubResource("Resource_q73ys"), SubResource("Resource_l60l4"), SubResource("Resource_01auv"), SubResource("Resource_y2p2p"), SubResource("Resource_en04f"), SubResource("Resource_2x5px"), SubResource("Resource_5wvcr"), SubResource("Resource_u07g2"), SubResource("Resource_8caab"), SubResource("Resource_bsrjj"), SubResource("Resource_gqyj3"), SubResource("Resource_b5cgh"), SubResource("Resource_6l0jj"), SubResource("Resource_kjtia"), SubResource("Resource_2qnew"), SubResource("Resource_tw5on"), SubResource("Resource_ofnyy"), SubResource("Resource_oedw7"), SubResource("Resource_5mewo"), SubResource("Resource_ytqws")])
+tip = "Unknown USBs can house malware. Even just plugging them in is dangerous!"
+id = ""
+date = Vector2i(0, 0)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_l60l4")]([])
+metadata/_custom_type_script = "uid://l85prer7ehr7"

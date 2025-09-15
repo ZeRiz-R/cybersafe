@@ -39,7 +39,43 @@ var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.web
 				"Avatar7": { "texture": preload("res://Assets/Avatars/7.png"), "scale": Vector2(0.182, 0.182) },
 				"Avatar8": { "texture": preload("res://Assets/Avatars/8.png"), "scale": Vector2(0.182, 0.182) },
 				"Avatar9": { "texture": preload("res://Assets/Avatars/9.png"), "scale": Vector2(0.182, 0.182) }
-				} 
+				}
+				
+var avatar_mappings := {
+	"Default": "Default",
+	"Mysterious Voice": "Default",
+	"Avatar1": "Avatar1",
+	"Avatar2": "Avatar2",
+	"Avatar3": "Avatar3",
+	"Avatar4": "Avatar4",
+	"Avatar5": "Avatar5",
+	"Avatar6": "Avatar6",
+	"Avatar7": "Avatar7",
+	"Avatar8": "Avatar8",
+	"Avatar9": "Avatar9"
+}
+
+var male_characters := ["Josh", "Winston", "Sam"]
+var male_avatars := ["Avatar1", "Avatar3", "Avatar6", "Avatar9"]
+var female_characters := ["Amy", "Sarah", "Mei"] 
+var female_avatars := ["Avatar2", "Avatar4", "Avatar5", "Avatar7"]
+
+# Once player selects an avatar, that avatar is removed from the pool and the rest are
+# randomly distributed to the characters
+func distribute_avatars(player_choice):
+	male_avatars.erase(player_choice)
+	female_avatars.erase(player_choice)
+	
+	for i in range(len(male_characters)):
+		if i < len(male_characters):
+			avatar_mappings[male_characters[i]] = male_avatars[i]
+		else:
+			avatar_mappings[male_characters[i]] = "Default"
+	for i in range(len(female_characters)):
+		if i < len(female_avatars):
+			avatar_mappings[female_characters[i]] = female_avatars[i]
+		else:
+			avatar_mappings[female_characters[i]] = "Default"
 
 ## TEST DECISION EMAIL
 #var choice1 = Choice.new("Follow" ,"Follow", {"CK": {"Value": +30, "Reason": "Good reason"},

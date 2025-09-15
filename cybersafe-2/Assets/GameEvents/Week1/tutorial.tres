@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="StoryEvent" load_steps=18 format=3 uid="uid://bso8d8l38ibuv"]
+
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="1_vfast"]
+[ext_resource type="Script" uid="uid://cqabs4i5aiu08" path="res://story_event.gd" id="2_nkjou"]
+
+[sub_resource type="Resource" id="Resource_vfast"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Hey!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_nkjou"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "What am I, you ask?"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_12qvw"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Well, I'm just a mysterious entity who enjoys narrating!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_0du3f"]
+script = ExtResource("1_vfast")
+speaker = "Josh"
+text = "Don't worry about that. All of us new students can hear the voice too!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_feytx"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Over the next ten weeks, you will receive emails and messages as part of your student life."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_rg83j"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "You'll even encounter special events and scenarios!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_m4nh1"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Your job is to respond to these situations by selecting the most appropriate choice."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_3er1b"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Your choices will affect your Cyber Meters, which you can find to the right within your player card."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_r3wx2"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Each meter represents a different aspect of your cybersecurity rating."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_4uwgr"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Of course, you may notice one meter is not quite like the others."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_t3p7p"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "That is your STRESS meter."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_oxunx"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Difficult choices and mistakes will cause your STRESS to increase."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_pww3q"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Don't let it get too high!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_n8muk"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "Once there are no more events for the day, you can advance time by clicking the Time Arrow that will appear."
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_b5j3d"]
+script = ExtResource("1_vfast")
+speaker = "Mysterious Voice"
+text = "I don't like you very much, so I'm going to start you off with a handicap!"
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("2_nkjou")
+id = ""
+date = Vector2i(1, 0)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "Mysterious Voice Privileges",
+"Value": -10
+},
+"DH": {
+"Reason": "Mysterious Voice Privileges",
+"Value": -10
+},
+"DS": {
+"Reason": "Mysterious Voice privileges",
+"Value": -10
+},
+"S": {
+"Reason": "Mysterious Voice Privileges",
+"Value": 10
+},
+"ST": {
+"Reason": "Mysterious Voice Privileges",
+"Value": -10
+}
+}
+outcomeTextMain = Array[ExtResource("1_vfast")]([SubResource("Resource_vfast"), SubResource("Resource_nkjou"), SubResource("Resource_12qvw"), SubResource("Resource_0du3f"), SubResource("Resource_feytx"), SubResource("Resource_rg83j"), SubResource("Resource_m4nh1"), SubResource("Resource_3er1b"), SubResource("Resource_r3wx2"), SubResource("Resource_4uwgr"), SubResource("Resource_t3p7p"), SubResource("Resource_oxunx"), SubResource("Resource_pww3q"), SubResource("Resource_n8muk"), SubResource("Resource_b5j3d")])
+metadata/_custom_type_script = "uid://cqabs4i5aiu08"

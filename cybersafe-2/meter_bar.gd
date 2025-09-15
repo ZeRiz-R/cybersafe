@@ -24,7 +24,7 @@ func _ready():
 	if stress:
 		var temp = GREEN_COLOUR
 		GREEN_COLOUR = RED_COLOUR
-		RED_COLOUR = GREEN_COLOUR
+		RED_COLOUR = temp
 		var sbp = panel_container.get_theme_stylebox("panel") as StyleBoxFlat
 		sbp.bg_color = Color(0xff4846ff)
 	

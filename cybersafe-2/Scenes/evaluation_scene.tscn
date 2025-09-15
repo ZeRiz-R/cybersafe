@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3wnkkjtkcj14"]
+
+[ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="1_jteyj"]
+[ext_resource type="Script" uid="uid://d1q7lq4ntx5y1" path="res://Scenes/evaluation_scene.gd" id="1_rwx5x"]
+[ext_resource type="PackedScene" uid="uid://dopf7cqqwqivp" path="res://Scenes/text_box.tscn" id="3_eihky"]
+
+[node name="EvaluationScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwx5x")
+
+[node name="Wastelands" parent="." instance=ExtResource("1_jteyj")]
+layout_mode = 1
+
+[node name="ColorRect" parent="Wastelands" index="0"]
+color = Color(1, 1, 1, 1)
+
+[node name="TextBox" parent="." instance=ExtResource("3_eihky")]
+
+[node name="ColorRect" parent="TextBox" index="0"]
+visible = false
+
+[editable path="Wastelands"]
+[editable path="TextBox"]

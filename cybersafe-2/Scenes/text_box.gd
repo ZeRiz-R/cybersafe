@@ -82,10 +82,16 @@ func display_text():
 	change_state(state.READING)
 	content.visible_ratio = 0.0
 	
-	content.text = nextText.text
+	content.text = nextText.text.format(Constants.placeholders)
 	if speaker.text != nextText.speaker:
-		speaker.text = nextText.speaker
-		avatar.select_image(speaker.text)
+		if nextText.isPlayerText:
+			speaker.text = Player.playerName
+			avatar.select_image(Player.playerIcon)
+		else:
+			speaker.text = nextText.speaker
+			avatar.select_image(speaker.text)
+		anim_player.play("swap_speaker")
+		#await(anim_player.animation_finished)
 		pass
 		
 	show_textbox()

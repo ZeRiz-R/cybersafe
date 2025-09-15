@@ -326,6 +326,7 @@ size_flags_stretch_ratio = 0.14
 
 [node name="BackButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_rr4t8")]
 layout_mode = 2
+size_flags_horizontal = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

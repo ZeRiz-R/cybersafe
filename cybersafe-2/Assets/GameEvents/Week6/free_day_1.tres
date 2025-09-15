@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="FreeDayEvent" load_steps=6 format=3 uid="uid://2tv7kb7lnb2"]
+
+[ext_resource type="Script" uid="uid://h44bcugrvwau" path="res://Resources/choice.gd" id="1_l5dcu"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_x3vum"]
+[ext_resource type="Script" uid="uid://bxs4o3a51ol8" path="res://Resources/free_day_event.gd" id="3_u1toh"]
+
+[sub_resource type="Resource" id="Resource_4hl3p"]
+script = ExtResource("2_x3vum")
+speaker = "Mysterious Voice"
+text = "Looks like you've got a free day!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ta0a8"]
+script = ExtResource("2_x3vum")
+speaker = "Mysterious Voice"
+text = "How would you like to spend it?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+script = ExtResource("3_u1toh")
+choices = Array[ExtResource("1_l5dcu")]([])
+prompt = Array[ExtResource("2_x3vum")]([SubResource("Resource_4hl3p"), SubResource("Resource_ta0a8")])
+tip = "University can be stressful. Don't forget to take time for yourself!"
+id = ""
+date = Vector2i(6, 3)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("2_x3vum")]([])
+metadata/_custom_type_script = "uid://bxs4o3a51ol8"

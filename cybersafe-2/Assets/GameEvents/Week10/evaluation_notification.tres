@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="StoryEvent" load_steps=14 format=3 uid="uid://beq1vjrgrucnc"]
+
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="1_pvyx1"]
+[ext_resource type="Script" uid="uid://cqabs4i5aiu08" path="res://story_event.gd" id="2_votjm"]
+
+[sub_resource type="Resource" id="Resource_pvyx1"]
+script = ExtResource("1_pvyx1")
+speaker = "Mysterious Voice"
+text = "Hey! It's the end of the week!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_votjm"]
+script = ExtResource("1_pvyx1")
+speaker = "Mysterious Voice"
+text = "And the end of this week, means the end of term!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_hqxl5"]
+script = ExtResource("1_pvyx1")
+speaker = "Mysterious Voice"
+text = "Congratulations on making it to the end of the term!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_saovn"]
+script = ExtResource("1_pvyx1")
+speaker = "Sarah"
+text = "Yeah, congratulations!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_fu8lk"]
+script = ExtResource("1_pvyx1")
+speaker = "Sarah"
+text = "Hmm, how are we talking to you right now?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_qme2w"]
+script = ExtResource("1_pvyx1")
+speaker = "Winston"
+text = "Don't ask too many questions."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ws35h"]
+script = ExtResource("1_pvyx1")
+speaker = "Josh"
+text = "Maybe we were never real."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_ttkw2"]
+script = ExtResource("1_pvyx1")
+speaker = "Mei"
+text = "Perhaps your cybersecurity knowledge was the real friends you made along the way! "
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_18hfw"]
+script = ExtResource("1_pvyx1")
+speaker = "Amy"
+text = "The council of mysterious voices will now evaluate your performance."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_4004i"]
+script = ExtResource("1_pvyx1")
+speaker = "Mysterious Voice"
+text = "If these were the choices you made in real life, would you have survived?"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_m6qlk"]
+script = ExtResource("1_pvyx1")
+speaker = "Mysterious Voice"
+text = "Let's find out!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[resource]
+resource_name = "evaluation"
+script = ExtResource("2_votjm")
+id = ""
+date = Vector2i(10, 7)
+changes = false
+meterChanges = {
+"CK": {
+"Reason": "",
+"Value": 0
+},
+"DH": {
+"Reason": "",
+"Value": 0
+},
+"DS": {
+"Reason": "",
+"Value": 0
+},
+"S": {
+"Reason": "",
+"Value": 0
+},
+"ST": {
+"Reason": "",
+"Value": 0
+}
+}
+outcomeTextMain = Array[ExtResource("1_pvyx1")]([SubResource("Resource_pvyx1"), SubResource("Resource_votjm"), SubResource("Resource_hqxl5"), SubResource("Resource_saovn"), SubResource("Resource_fu8lk"), SubResource("Resource_qme2w"), SubResource("Resource_ws35h"), SubResource("Resource_ttkw2"), SubResource("Resource_18hfw"), SubResource("Resource_4004i"), SubResource("Resource_m6qlk")])
+metadata/_custom_type_script = "uid://cqabs4i5aiu08"

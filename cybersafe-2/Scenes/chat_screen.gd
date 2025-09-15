@@ -17,7 +17,7 @@ func _on_back_button_pressed():
 func initialise(_chat: Chat):
 	chat = _chat
 	chat_name.text = chat.chatName
-	avatar.select_image(chat.chatName)
+	avatar.select_image(chat.chatName.split(" ")[0])
 	load_chats()
 	queue_messages()
 

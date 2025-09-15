@@ -19,9 +19,9 @@ func _ready():
 func _on_queue_finished():
 	if Stores.activeDecision.noDecision:
 		anim_player.play("queue_finished")
+		Stores.activeDecision.complete_decision()
 		if Stores.activeDecision.changes:
 			await(Constants.display_outcome_text(get_tree().current_scene, Stores.activeDecision.get_outcome_text()))# QueueOutcomeText()
-			# CompleteDecision()
 			SceneTransition.change_scene(Constants.update_meters_scene, "arrow")
 	elif not Stores.activeDecision.complete:
 		decisionButton.show_animate()

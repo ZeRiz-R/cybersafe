@@ -13,7 +13,8 @@ func _ready():
 func connect_chat(chat: Chat, incomplete: bool):
 	chat_name.text = chat.chatName
 	set_meta("chat_obj", chat)
-	avatar.select_image(chat.chatName)
+	var short_name = chat.chatName.split(" ")[0] # Get first name only
+	avatar.select_image(short_name)
 	
 	if incomplete:
 		blue_icon.visible = true

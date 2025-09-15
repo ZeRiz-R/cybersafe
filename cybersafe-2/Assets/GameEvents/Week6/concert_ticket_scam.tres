@@ -12,36 +12,42 @@
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Hey! Maybe Sam has sent you the tickets now!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_1tprd"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You check your messages only to find..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_4w28e"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Sam has blocked you!?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_gu0u7"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "He never had the tickets to begin with! It was all just a scam..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_q8rnh"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You've lost a big sum of money, and even shared your student ID with him."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_nhv8g"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You need to be more careful in situations like these!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_tjy0p"]
@@ -105,24 +111,28 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You DM Sam your student ID and send over the payment."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_aiiuo"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "He tells you that he has to wait for the money to come through, but he'll send you the tickets tomorrow."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_1f4i4"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Your friends are excited that you'll be able to go to the concert with them!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_oww0h"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "However, you feel that something is not quite right..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_q2lci"]
@@ -269,24 +279,28 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Great idea!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_dqr4d"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Sam had no proof, so you were able to identify and deal with his scam."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_l7rr7"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You also saved Josh and other potential victims by speaking up!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_k8r84"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Just know that even \"proof\" can be faked."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_nc8ji"]
@@ -352,18 +366,21 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Turns out Sam didn't even have the tickets."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_cj0xa"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You may have avoided the scam, but looks like Josh was not so lucky."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_05oxt"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "If you had said something, maybe things would be different?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_rpyqk"]
@@ -452,12 +469,14 @@ metadata/_custom_type_script = "uid://c0geb3ij15nfi"
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "You may not be going to any concerts this time around, but at least you know you made a safe choice!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ep18k"]
 script = ExtResource("3_ykhc6")
 speaker = "Mysterious Voice"
 text = "Looks like Josh is buying a ticket from Sam though."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_bpgaa"]
