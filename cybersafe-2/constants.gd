@@ -38,12 +38,14 @@ var Avatars = { "Default": { "texture": preload("res://Assets/Avatars/winton.web
 				"Avatar6": { "texture": preload("res://Assets/Avatars/6.png"), "scale": Vector2(0.182, 0.182) },
 				"Avatar7": { "texture": preload("res://Assets/Avatars/7.png"), "scale": Vector2(0.182, 0.182) },
 				"Avatar8": { "texture": preload("res://Assets/Avatars/8.png"), "scale": Vector2(0.182, 0.182) },
-				"Avatar9": { "texture": preload("res://Assets/Avatars/9.png"), "scale": Vector2(0.182, 0.182) }
-				}
+				"Avatar9": { "texture": preload("res://Assets/Avatars/9.png"), "scale": Vector2(0.182, 0.182) },
+				"Panda": {"texture": preload("res://Assets/Avatars/panda.jpg"), "scale": Vector2(0.13, 0.14), "position": Vector2(10, 1)},
+				"RedPanda": {"texture": preload("res://Assets/Avatars/red_panda.jpg"), "scale": Vector2(0.77, 0.77)},
+				"QMark": {"texture": preload("res://Assets/Icons/qMark2.png"), "scale": Vector2(0.355, 0.355), "position": Vector2(76, 18)}}
 				
 var avatar_mappings := {
 	"Default": "Default",
-	"Mysterious Voice": "Default",
+	"Mysterious Voice": "QMark",
 	"Avatar1": "Avatar1",
 	"Avatar2": "Avatar2",
 	"Avatar3": "Avatar3",
@@ -52,7 +54,9 @@ var avatar_mappings := {
 	"Avatar6": "Avatar6",
 	"Avatar7": "Avatar7",
 	"Avatar8": "Avatar8",
-	"Avatar9": "Avatar9"
+	"Avatar9": "Avatar9",
+	"Legends25": "Panda",
+	"No": "RedPanda"
 }
 
 var male_characters := ["Josh", "Winston", "Sam"]
@@ -77,6 +81,16 @@ func distribute_avatars(player_choice):
 		else:
 			avatar_mappings[female_characters[i]] = "Default"
 
+
+var text_blips := {
+	"Default": preload("res://Assets/Music and SFX/text_blips/bleep004.wav"),
+	"Mysterious Voice": preload("res://Assets/Music and SFX/text_blips/bleep004.wav"),
+	"Josh": preload("res://Assets/Music and SFX/text_blips/bleep012.wav"),
+	"Amy": preload("res://Assets/Music and SFX/text_blips/bleep023.wav"),
+	"Winston": preload("res://Assets/Music and SFX/text_blips/bleep017.wav"),
+	"Mei": preload("res://Assets/Music and SFX/text_blips/bleep003.wav"),
+	"Sarah": preload("res://Assets/Music and SFX/text_blips/bleep013.wav")
+}
 ## TEST DECISION EMAIL
 #var choice1 = Choice.new("Follow" ,"Follow", {"CK": {"Value": +30, "Reason": "Good reason"},
 										 #"DH": {"Value": +10, "Reason": "Good reason"},

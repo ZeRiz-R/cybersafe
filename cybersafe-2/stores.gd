@@ -87,3 +87,19 @@ func popIgnoredEvent():
 func add_generic_event(event):
 	eventStore.append(event)
 	
+func reset_game():
+	emailStore.clear()
+	unreadEmails = 0
+	chatStore.clear()
+	unreadChats = 0
+	chatsInOrder.clear()
+	ignoredStore.clear()
+	ignoredEventDates.clear()
+	eventStore.clear()
+	
+	for stat in Player.meters:
+		Player.meters[stat] = 50
+	Player.meters["S"] = 0
+	
+	Calendar.currentDate = Vector2(1, -1)
+	

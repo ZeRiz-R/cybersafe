@@ -12,18 +12,21 @@
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Great choice!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_15kbn"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "That was a legitimate email from the administrations team!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8dgic"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "You register for your modules on time, and are able to attend lectures without delay!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_33yr0"]
@@ -61,18 +64,21 @@ metadata/_custom_type_script = "uid://h44bcugrvwau"
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Sending a report!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_w1fg1"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "IT gets back to you, letting you know the email is legitimate."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_1sla7"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Better safe than sorry at least! You register for your modules on time and are able to begin lectures without delay."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_0l0gv"]
@@ -110,30 +116,35 @@ metadata/_custom_type_script = "uid://h44bcugrvwau"
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "I've just remembered! You ignored a module selection email earlier."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_qmf1t"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "You've just received an email from the administrations team."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_js4ui"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "They say... they've not received module registration information from you!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_s8ldo"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Oh no! That was a legitimate email."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8l18j"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Looks like you won't be starting lectures on time..."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_6v4h3"]
@@ -171,12 +182,14 @@ metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Not even worth a response, huh?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_o078s"]
 script = ExtResource("2_sncho")
 speaker = "Mysterious Voice"
 text = "Well, I'm sure we'll hear about this soon enough."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_wyoww"]
@@ -217,7 +230,9 @@ sender = "administration@warwick.ac.uk"
 title = "Module Registration"
 body = "Dear {name},
 
-Module registration must be completed by 6 October 2025. This can be done by signing into the [color={link}][hint=https://tabula.warwick.ac.uk]login portal[/hint][/color] and navigating to the Modules tab. If you require advice for module selection, please refer to the [color={link}][hint=https://warwick.ac.uk/modules]module webpages[/hint][/color] or contact module supervisors directly. Note that late module registration will cause delays to your university timetable release.
+Module registration must be completed by 6 October 2025. This can be done by signing into the [color={link}][hint=https://tabula.warwick.ac.uk]login portal[/hint][/color] and navigating to the Modules tab. If you require advice for module selection, please refer to the [color={link}][hint=https://warwick.ac.uk/modules]module webpages[/hint][/color] or contact module supervisors directly.
+
+Note that late module registration will cause delays to your university timetable release.
 
 Kind regards,
 

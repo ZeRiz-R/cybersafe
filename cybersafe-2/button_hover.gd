@@ -28,16 +28,30 @@ func _on_mouse_exited():
 func _on_pressed():
 	match self.name:
 		"EmailButton":
+			SoundBank.play_sound("menu")
 			SceneTransition.change_scene("res://Scenes/email_inbox.tscn", "tiles")
 		"MessagesButton":
+			SoundBank.play_sound("menu")
 			SceneTransition.change_scene("res://Scenes/messages_inbox.tscn", "tiles")
+		"MinigamesButton":
+			SoundBank.play_sound("menu")
+			SceneTransition.change_scene("res://Scenes/minigames.tscn", "tiles")
+		"NewsButton":
+			SoundBank.play_sound("menu")
+			SceneTransition.change_scene("res://Scenes/news.tscn", "tiles")
 		"BackToDashboard":
+			SoundBank.play_sound("back")
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
 		"TimeButton":
+			SoundBank.play_sound("other")
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow_time")
 			Calendar.print_event()
 		"DecisionButton":
+			SoundBank.play_sound("menu")
 			decision_button_pressed()
+		"PlayGame":
+			SoundBank.play_sound("menu")
+			SceneTransition.change_scene("res://Scenes/avatar_select.tscn", "tiles")
 			
 func decision_button_pressed():
 	print("making a decision")

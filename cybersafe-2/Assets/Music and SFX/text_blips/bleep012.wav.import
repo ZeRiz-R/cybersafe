@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://50vawh3447pv"
+path="res://.godot/imported/bleep012.wav-c0b251cdf00cc1602eaba5e7ae8c2e1f.sample"
+
+[deps]
+
+source_file="res://Assets/Music and SFX/text_blips/bleep012.wav"
+dest_files=["res://.godot/imported/bleep012.wav-c0b251cdf00cc1602eaba5e7ae8c2e1f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

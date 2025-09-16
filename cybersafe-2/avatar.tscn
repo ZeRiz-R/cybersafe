@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgdd6h2t46rse"]
 
 [ext_resource type="Script" uid="uid://dopmi2sqxgpwn" path="res://avatar.gd" id="1_kn5ym"]
-[ext_resource type="Texture2D" uid="uid://buakrveqvlyu4" path="res://Assets/Avatars/winton.webp" id="2_kn5ym"]
+[ext_resource type="Texture2D" uid="uid://23vvi8bwketw" path="res://Assets/Icons/qMark2.png" id="2_kn5ym"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn5ym"]
 content_margin_left = 20.0
@@ -49,8 +49,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_07tn8")
 
 [node name="AvatarImage" type="TextureRect" parent="Panel"]
 layout_mode = 1
-offset_right = 516.0
-offset_bottom = 483.0
-scale = Vector2(0.85, 0.85)
+offset_left = 76.0
+offset_top = 18.0
+offset_right = 618.0
+offset_bottom = 962.0
+scale = Vector2(0.355, 0.355)
 mouse_filter = 2
 texture = ExtResource("2_kn5ym")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpbnha6xs8wmf"]
+[gd_scene load_steps=8 format=3 uid="uid://bpbnha6xs8wmf"]
 
 [ext_resource type="Script" uid="uid://dv70ij0uu4lic" path="res://chat_button.gd" id="1_y3f6x"]
 [ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="2_esrfc"]
+[ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="3_x8fss"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn6ad"]
 
@@ -12,8 +13,12 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="LabelSettings" id="LabelSettings_esrfc"]
-font_size = 36
+[sub_resource type="FontVariation" id="FontVariation_lm8nu"]
+base_font = ExtResource("3_x8fss")
+
+[sub_resource type="LabelSettings" id="LabelSettings_itp02"]
+font = SubResource("FontVariation_lm8nu")
+font_size = 32
 
 [node name="ChatButton" type="MarginContainer"]
 offset_right = 403.0
@@ -72,4 +77,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
 text = "CHAT NAME "
-label_settings = SubResource("LabelSettings_esrfc")
+label_settings = SubResource("LabelSettings_itp02")

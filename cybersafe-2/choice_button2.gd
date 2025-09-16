@@ -26,6 +26,7 @@ func _ready():
 	floating.float_speed = float_speed
 
 func _on_internal_pressed():
+	SoundBank.play_sound("other")
 	emit_signal("pressed")
 
 func set_label_text(new_text: String):

@@ -52,11 +52,16 @@ func add_sender_vbox():
 
 func instantiate_message(message, area):
 	var msg = chat_message.instantiate()
+	msg.message_sent.connect(_on_message_sent)
 	area.add_child(msg)
 	if message.isPlayerMessage:
 		msg.size_flags_horizontal = SIZE_SHRINK_END
 	msg.connect_message(message)
 	return msg
+
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+func _on_message_sent():
+	audio_player.play()
 
 func followUp(messages: Array[ChatMessage]):
 	for message in messages:

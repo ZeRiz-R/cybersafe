@@ -22,6 +22,8 @@ Stores="*res://stores.gd"
 Player="*res://player.gd"
 SceneTransition="*res://Scenes/scene_transition.tscn"
 Calendar="*res://calendar_manager.gd"
+MusicPlayer="*res://Scenes/music_player.tscn"
+SoundBank="*res://sound_bank.tscn"
 
 [display]
 

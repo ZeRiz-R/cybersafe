@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://48lrcbch5nyx"]
+[gd_scene load_steps=12 format=3 uid="uid://48lrcbch5nyx"]
 
 [ext_resource type="Script" uid="uid://cmo4kaq86dd2g" path="res://Scenes/chat_screen.gd" id="1_52q4q"]
 [ext_resource type="PackedScene" uid="uid://c5khr4g8eysxj" path="res://chat_message.tscn" id="1_vy133"]
-[ext_resource type="Texture2D" uid="uid://bo0yisa1lke0c" path="res://Assets/white_back_arrow.png" id="2_j1scr"]
-[ext_resource type="Texture2D" uid="uid://b74ddfhnd6vr" path="res://Assets/back_arrow_hover.png" id="3_rhckb"]
+[ext_resource type="Texture2D" uid="uid://bo0yisa1lke0c" path="res://Assets/Icons/white_back_arrow.png" id="2_j1scr"]
+[ext_resource type="Texture2D" uid="uid://b74ddfhnd6vr" path="res://Assets/Icons/back_arrow_hover.png" id="3_rhckb"]
 [ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="4_4b7rl"]
 [ext_resource type="FontFile" uid="uid://n6jgyq5vp0dh" path="res://Assets/Fonts/future-earth.ttf" id="4_b1hvo"]
+[ext_resource type="AudioStream" uid="uid://bsbm3k5vgnnom" path="res://Assets/Music and SFX/MessageSounds/message_sent.mp3" id="7_ug8mo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy133"]
 bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
@@ -106,3 +107,7 @@ layout_mode = 2
 
 [node name="ChatMessageContainer2" parent="VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" instance=ExtResource("1_vy133")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ug8mo")
+volume_db = -2.701

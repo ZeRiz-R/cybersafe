@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv2ma7godj7ip"]
 
 [ext_resource type="Script" uid="uid://bd7oo1q4jbhod" path="res://choice_button2.gd" id="1_6ilku"]
-[ext_resource type="Texture2D" uid="uid://cckf23rkcv7m4" path="res://Assets/ChoiceButton.png" id="1_s16gg"]
+[ext_resource type="Texture2D" uid="uid://cckf23rkcv7m4" path="res://Assets/Icons/ChoiceButton.png" id="1_s16gg"]
 [ext_resource type="Script" uid="uid://cdselh7lgm6ym" path="res://texture_button.gd" id="2_7vg5o"]
 [ext_resource type="PackedScene" uid="uid://bsd3q418acec5" path="res://floating.tscn" id="2_m7ulj"]
 [ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="5_5qmpc"]

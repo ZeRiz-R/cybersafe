@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://drknxxvjs3bug" path="res://back_button.tscn" id="3_qcpml"]
 [ext_resource type="PackedScene" uid="uid://ct0lqd441l27g" path="res://small_meter_box.tscn" id="4_00fjs"]
 [ext_resource type="Texture2D" uid="uid://c07ny0ad3xl28" path="res://Assets/Icons/WiFi_whit.png" id="4_p3ju4"]
-[ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/data_signal.png" id="5_00fjs"]
-[ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/battery_icon.png" id="6_bcmw0"]
+[ext_resource type="Texture2D" uid="uid://dqn4sle4vm6jt" path="res://Assets/Icons/data_signal.png" id="5_00fjs"]
+[ext_resource type="Texture2D" uid="uid://b2fg03i2aaend" path="res://Assets/Icons/battery_icon.png" id="6_bcmw0"]
 [ext_resource type="PackedScene" uid="uid://dxd62i1fq4hy4" path="res://decision_button.tscn" id="9_bcmw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88lbi"]

@@ -10,5 +10,6 @@ func _init(_id = "", _date = Vector2i.ZERO, _prompt: Array[TextBoxEntry] = [], _
 	messages = _messages
 
 func complete_decision():
+	if not complete:
+		Stores.popUnreadChat()
 	super.complete_decision()
-	Stores.popUnreadChat()

@@ -18,6 +18,7 @@ func load_choices(decision: Decision):
 			buttons[i].set_meta("choice", choices[i])
 		else:
 			buttons[i].set_label_text("No choice. Please don't click.")
+			buttons[i].visible = false
 		
 @onready var closeButton: Button = $MarginContainer/Button
 func connect_buttons():

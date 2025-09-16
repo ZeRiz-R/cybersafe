@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dg4yucklle2yj"]
+[gd_scene load_steps=34 format=3 uid="uid://dg4yucklle2yj"]
 
 [ext_resource type="Script" uid="uid://dtcstviw4o2c0" path="res://Scenes/update_meters_2.gd" id="1_oihvi"]
 [ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="2_1xy1h"]
@@ -31,6 +31,14 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 10
 
+[sub_resource type="FontVariation" id="FontVariation_lm8nu"]
+base_font = ExtResource("7_bcgja")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oq2wq"]
+font = SubResource("FontVariation_lm8nu")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p063e"]
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(-0.04, 0.135)
@@ -48,40 +56,40 @@ expand_margin_top = 20.0
 expand_margin_right = 5.0
 expand_margin_bottom = 20.0
 
-[sub_resource type="FontVariation" id="FontVariation_lm8nu"]
+[sub_resource type="FontVariation" id="FontVariation_p063e"]
 base_font = ExtResource("7_bcgja")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5mv56"]
 resource_local_to_scene = true
-font = SubResource("FontVariation_lm8nu")
+font = SubResource("FontVariation_p063e")
 font_color = Color(0, 0, 0, 1)
 outline_size = 7
 outline_color = Color(0.356863, 0.866667, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_raudm"]
 resource_local_to_scene = true
-font = SubResource("FontVariation_lm8nu")
+font = SubResource("FontVariation_p063e")
 font_color = Color(0, 0, 0, 1)
 outline_size = 7
 outline_color = Color(0.356863, 0.866667, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_86qv0"]
 resource_local_to_scene = true
-font = SubResource("FontVariation_lm8nu")
+font = SubResource("FontVariation_p063e")
 font_color = Color(0, 0, 0, 1)
 outline_size = 7
 outline_color = Color(0.356863, 0.866667, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ckdxr"]
 resource_local_to_scene = true
-font = SubResource("FontVariation_lm8nu")
+font = SubResource("FontVariation_p063e")
 font_color = Color(0, 0, 0, 1)
 outline_size = 7
 outline_color = Color(0.356863, 0.866667, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrn2r"]
 resource_local_to_scene = true
-font = SubResource("FontVariation_lm8nu")
+font = SubResource("FontVariation_p063e")
 font_color = Color(0, 0, 0, 1)
 outline_size = 7
 outline_color = Color(0.356863, 0.866667, 0, 1)
@@ -382,8 +390,7 @@ size_flags_stretch_ratio = 3.55
 
 [node name="PlayerPanel" type="PanelContainer" parent="MarginContainer/PlayerPanelWrapper"]
 layout_mode = 2
-offset_left = -2000.0
-offset_right = -1470.0
+offset_right = 530.0
 offset_bottom = 920.0
 pivot_offset = Vector2(536, 498)
 size_flags_horizontal = 3
@@ -410,16 +417,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="AvatarContainer" parent="MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/MarginContainer/Control" instance=ExtResource("2_1xy1h")]
+[node name="Avatar" parent="MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/MarginContainer/Control" instance=ExtResource("2_1xy1h")]
 layout_mode = 1
 scale = Vector2(0.77, 0.77)
 
 [node name="PlayerName" type="Label" parent="MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 size_flags_stretch_ratio = 0.19
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "PLAYER NAME"
+label_settings = SubResource("LabelSettings_oq2wq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -982,3 +990,5 @@ root_node = NodePath("../MarginContainer")
 libraries = {
 &"": SubResource("AnimationLibrary_bcgja")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

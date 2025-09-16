@@ -1,8 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3wnkkjtkcj14"]
+[gd_scene load_steps=8 format=3 uid="uid://c3wnkkjtkcj14"]
 
 [ext_resource type="PackedScene" uid="uid://bqjdf5oifnlaf" path="res://Scenes/wastelands.tscn" id="1_jteyj"]
 [ext_resource type="Script" uid="uid://d1q7lq4ntx5y1" path="res://Scenes/evaluation_scene.gd" id="1_rwx5x"]
+[ext_resource type="Script" uid="uid://ctuklgpecqpfe" path="res://Resources/text_box_entry.gd" id="2_4f7bu"]
 [ext_resource type="PackedScene" uid="uid://dopf7cqqwqivp" path="res://Scenes/text_box.tscn" id="3_eihky"]
+
+[sub_resource type="Resource" id="Resource_bhudf"]
+script = ExtResource("2_4f7bu")
+speaker = "Mysterious Voice"
+text = "Use what you learned here to be safer in the real world!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_1wc34"]
+script = ExtResource("2_4f7bu")
+speaker = "Mysterious Voice"
+text = "You can always try again from the main menu."
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
+
+[sub_resource type="Resource" id="Resource_b3rxr"]
+script = ExtResource("2_4f7bu")
+speaker = "Mysterious Voice"
+text = "Thanks for playing!"
+isPlayerText = false
+metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [node name="EvaluationScene" type="Control"]
 layout_mode = 3
@@ -12,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rwx5x")
+final_words = Array[ExtResource("2_4f7bu")]([SubResource("Resource_bhudf"), SubResource("Resource_1wc34"), SubResource("Resource_b3rxr")])
 
 [node name="Wastelands" parent="." instance=ExtResource("1_jteyj")]
 layout_mode = 1
@@ -23,6 +46,10 @@ color = Color(1, 1, 1, 1)
 
 [node name="ColorRect" parent="TextBox" index="0"]
 visible = false
+
+[node name="TextBoxContainer" parent="TextBox" index="1"]
+offset_top = -411.0
+offset_bottom = 400.0
 
 [editable path="Wastelands"]
 [editable path="TextBox"]

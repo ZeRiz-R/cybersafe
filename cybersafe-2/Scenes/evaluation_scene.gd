@@ -76,6 +76,9 @@ var dialogue_map := {
 var speakers = ["Josh", "Amy", "Winston", "Mei", "Sarah"]
 var i = 0
 func _ready():
+	text_box.available.connect(_on_ready)
+
+func _on_ready():
 	for stat in Player.meters:
 		var val = Player.meters[stat]
 		var temp = TextBoxEntry.new("Mysterious Voice",
@@ -96,4 +99,9 @@ func _ready():
 				temp = TextBoxEntry.new(speakers[i], dialogue)
 				text_box.queue_text(temp)
 		i += 1
-	print("Weval")
+	text_box.queue_array(final_words)
+	await(text_box.finished)
+	await(Stores.reset_game())
+	SceneTransition.change_scene("res://Scenes/main_menu.tscn", "fade")
+
+@export var final_words : Array[TextBoxEntry]

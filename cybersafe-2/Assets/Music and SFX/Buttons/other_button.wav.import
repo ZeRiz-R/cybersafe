@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bodfb1fdiqva3"
+path="res://.godot/imported/other_button.wav-fb4d8f4c85e753dc58f7b143b3970eef.sample"
+
+[deps]
+
+source_file="res://Assets/Music and SFX/Buttons/other_button.wav"
+dest_files=["res://.godot/imported/other_button.wav-fb4d8f4c85e753dc58f7b143b3970eef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

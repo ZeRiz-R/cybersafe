@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqjdf5oifnlaf"]
 
 [ext_resource type="Shader" uid="uid://btauhu3bi20w" path="res://Scenes/bg_move.gdshader" id="1_e150q"]
-[ext_resource type="Texture2D" uid="uid://dpyhv0lspn4q2" path="res://Assets/GeoPattern.jpg" id="2_oabym"]
+[ext_resource type="Texture2D" uid="uid://dpyhv0lspn4q2" path="res://Assets/Icons/GeoPattern.jpg" id="2_oabym"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_whppa"]
 shader = ExtResource("1_e150q")

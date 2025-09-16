@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dxd62i1fq4hy4"]
 
 [ext_resource type="Script" uid="uid://bs3d0joeyb7al" path="res://decision_button.gd" id="1_4f1vd"]
-[ext_resource type="Texture2D" uid="uid://23vvi8bwketw" path="res://Assets/qMark2.png" id="1_nho4q"]
+[ext_resource type="Texture2D" uid="uid://23vvi8bwketw" path="res://Assets/Icons/qMark2.png" id="1_nho4q"]
 [ext_resource type="Script" uid="uid://t21hj5ya1ubi" path="res://button_hover.gd" id="2_e8vv7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f1vd"]

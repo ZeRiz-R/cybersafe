@@ -9,16 +9,23 @@ var meterChanges
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var tip_text: Label = $TopTipWrapper/TopTipBox/VBoxContainer/TipWrapper/PanelContainer/TipText
 
+@onready var player_name: Label = $MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/PlayerName
+@onready var avatar: PanelContainer = $MarginContainer/PlayerPanelWrapper/PlayerPanel/MarginContainer2/VBoxContainer2/MarginContainer/Control/Avatar
 signal complete
 
 func _ready():
 	meterChanges = Stores.activeDecision.meterChanges
 	load_meters()
 	set_tip()
+	set_player()
 	# Update value
 	# Display reason
 	# anim_player.play("show_top_tip")
 	# await(anim_player.animation_finished)
+	
+func set_player():
+	player_name.text = Player.playerName
+	avatar.select_image(Player.playerIcon)
 	
 func update_meters(show_tip2: bool):
 	anim_player.play("slide_in")
@@ -26,6 +33,7 @@ func update_meters(show_tip2: bool):
 	
 	await(anim_player.animation_finished)
 	await(iterate_meters()) # Iterate through meters
+	audio_player.stop()
 	await(get_tree().create_timer(1).timeout)
 	anim_player.play_backwards("zoom_in")
 	await(anim_player.animation_finished)
@@ -41,6 +49,9 @@ func show_tip():
 	anim_player.play("show_cyber_tip")
 	await(anim_player.animation_finished)
 	
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var meter_up = preload("res://Assets/Music and SFX/MeterSounds/SpaceEngine_Start_00.wav")
+var meter_down = preload("res://Assets/Music and SFX/MeterSounds/SpaceEngine_Stop_00.wav")
 func iterate_meters():
 	var index = 0
 	print("Iterating meters")
@@ -50,6 +61,16 @@ func iterate_meters():
 		var bar = meterBars[index]
 		if bar.get_meter_value() != player_meter_value or meterChanges[stat]["Reason"] != "":
 			bar.tween_meter_value(player_meter_value)
+			# Play sound
+			if (meterChanges[stat]["Value"]) > 0:
+				audio_player.stream = meter_up
+				if bar.stress:
+					audio_player.stream = meter_down
+			else:
+				audio_player.stream = meter_down
+				if bar.stress:
+					audio_player.stream = meter_up
+			audio_player.play()
 			
 			var reason = bar.get_node("../ReasonText")
 			await(get_tree().create_timer(0.6).timeout)

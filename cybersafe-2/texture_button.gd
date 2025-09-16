@@ -36,11 +36,14 @@ func _on_mouse_exited():
 func _on_pressed():
 	match self.name:
 		"BackButton":
+			SoundBank.play_sound("back")
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "tiles")
 		"TimeButton":
+			SoundBank.play_sound("other")
 			SceneTransition.change_scene("res://Scenes/dashboard.tscn", "arrow_time")
 			Calendar.print_event()
 		"DecisionButton":
+			SoundBank.play_sound("menu")
 			decision_button_pressed()
 			
 func decision_button_pressed():

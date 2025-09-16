@@ -28,6 +28,7 @@ enum state {
 var currentState = state.READY
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 func _ready():
 	animate_outer()
 	await(open_textbox())
@@ -36,13 +37,15 @@ func _ready():
 	#queue_text("Is this a dagger which I see before me, the handle before my hand.")
 	emit_signal("available")
 	pass
-	
+
+signal finished	
 func _process(_delta: float) -> void:
 	match currentState:
 		state.READY:
 			if not textQueue.is_empty():
 				display_text()
 		state.READING:
+			blip_text()
 			if Input.is_action_just_pressed("finish_text"):			
 				content.visible_ratio = 1.0
 				text_tween.stop()
@@ -53,7 +56,16 @@ func _process(_delta: float) -> void:
 				change_state(state.READY)
 				if (textQueue.is_empty()):
 					hide_textbox()
+					emit_signal("finished")
 					queue_free()
+
+var last_visible_chars := 0
+func blip_text():
+	var visible_chars = content.visible_characters
+	var c = content.text[visible_chars - 1]
+	if not audio_player.playing:
+		audio_player.play()
+	last_visible_chars = visible_chars
 
 func open_textbox():
 	start.text = ""
@@ -90,6 +102,7 @@ func display_text():
 		else:
 			speaker.text = nextText.speaker
 			avatar.select_image(speaker.text)
+			audio_player.stream = Constants.text_blips.get(speaker.text, Constants.text_blips["Default"])
 		anim_player.play("swap_speaker")
 		#await(anim_player.animation_finished)
 		pass

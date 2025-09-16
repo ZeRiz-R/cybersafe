@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dopf7cqqwqivp"]
+[gd_scene load_steps=16 format=3 uid="uid://dopf7cqqwqivp"]
 
 [ext_resource type="Script" uid="uid://c0t0pnfhtwvf0" path="res://Scenes/text_box.gd" id="1_k7ve7"]
 [ext_resource type="FontFile" uid="uid://q3ak7veqknsm" path="res://Assets/Fonts/Arsenal-BoldItalic.ttf" id="2_0kxgl"]
 [ext_resource type="FontFile" uid="uid://buhmgneebe1dl" path="res://Assets/Fonts/Arsenal-Bold.ttf" id="2_ot2p7"]
 [ext_resource type="PackedScene" uid="uid://bgdd6h2t46rse" path="res://avatar.tscn" id="2_w6krc"]
 [ext_resource type="PackedScene" uid="uid://bsd3q418acec5" path="res://floating.tscn" id="3_8gqem"]
+[ext_resource type="AudioStream" uid="uid://j5apxe3iybaq" path="res://Assets/Music and SFX/text_blips/bleep004.wav" id="6_1q4u4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
 content_margin_left = 20.0
@@ -336,3 +337,8 @@ label_settings = SubResource("LabelSettings_d0rgj")
 libraries = {
 &"": SubResource("AnimationLibrary_ot2p7")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1q4u4")
+volume_db = 19.273
+pitch_scale = 1.15

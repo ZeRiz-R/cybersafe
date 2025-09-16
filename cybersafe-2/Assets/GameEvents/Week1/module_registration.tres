@@ -12,18 +12,21 @@
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = " Oh no!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_ss8fv"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "That email wasn't from the legitimate university domain!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_8ljnv"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "The link took you to a fraudulent website imitating the real one, allowing data thieves to acquire your personal data!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_p42w7"]
@@ -34,7 +37,7 @@ text = "Follow the instructions and submit your details"
 outcomeText = Array[ExtResource("2_l1d2h")]([SubResource("Resource_l1d2h"), SubResource("Resource_ss8fv"), SubResource("Resource_8ljnv")])
 meterChanges = {
 "CK": {
-"Reason": "Failed to identify phishing email",
+"Reason": "phishing email",
 "Value": -10
 },
 "DH": {
@@ -42,7 +45,7 @@ meterChanges = {
 "Value": -5
 },
 "DS": {
-"Reason": "Loss of personal information",
+"Reason": "personal data loss",
 "Value": -15
 },
 "S": {
@@ -61,18 +64,21 @@ metadata/_custom_type_script = "uid://h44bcugrvwau"
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Nice catch!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_02mn1"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "The email address and URL weren't quite right."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_qophj"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Reporting the email will help keep other students out of danger!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_kii5i"]
@@ -110,30 +116,35 @@ metadata/_custom_type_script = "uid://h44bcugrvwau"
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Following up on that registration email you ignored!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_dltym"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "According to IT, it was actually a phishing email."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_2l1nr"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Great job avoiding it!"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_jyt4j"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Although it seems some other students weren't quite so lucky."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_hxldw"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Perhaps you could have helped?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_y3ffl"]
@@ -171,12 +182,14 @@ metadata/_custom_type_script = "uid://tfgm3dvhdk1j"
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Not even worth a response, huh?"
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_f50nu"]
 script = ExtResource("2_l1d2h")
 speaker = "Mysterious Voice"
 text = "Well, we'll hear about this again soon enough."
+isPlayerText = false
 metadata/_custom_type_script = "uid://ctuklgpecqpfe"
 
 [sub_resource type="Resource" id="Resource_favt7"]
